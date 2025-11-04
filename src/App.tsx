@@ -923,10 +923,12 @@ function App() {
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <a href="#forex" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Что такое Forex</a>
-                    <a href="#accounts" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Типы счетов</a>
-                    <a href="#start" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Как начать торговлю</a>
-                    <a href="#demo" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Демо счет</a>
+                    <a href="#start" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">С чего начать</a>
+                    <a href="#what-is-forex" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Что такое форекс</a>
+                    <a href="#advantages" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Преимущества форекс</a>
+                    <a href="#demo" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Учебный счет</a>
+                    <a href="#trading-account" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Торговый счет</a>
+                    <a href="#literature" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Литература</a>
                   </div>
                 </div>
               </div>
@@ -937,11 +939,14 @@ function App() {
                   <ChevronDown className="h-4 w-4 ml-1" />
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <a href="#market-review" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Обзоры рынков</a>
-                    <a href="#trading-ideas" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Торговые идеи</a>
-                    <a href="#calendar" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Экономический календарь</a>
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[220px]">
+                    <a href="#trading-schedule" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Расписание торгов</a>
+                    <a href="#company-news" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Новости компании</a>
+                    <a href="#market-surveys" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Обзоры рынка</a>
+                    <a href="#news" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Новости</a>
+                    <a href="#events-calendar" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Календарь событий</a>
                     <a href="#quotes" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Котировки</a>
+                    <a href="#dividends" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Дивиденды на акции</a>
                   </div>
                 </div>
               </div>
@@ -952,11 +957,14 @@ function App() {
                   <ChevronDown className="h-4 w-4 ml-1" />
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[240px]">
+                    <a href="#help-forex" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Форекс</a>
+                    <a href="#digital-contracts" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Цифровые контракты</a>
+                    <a href="#how-to-trade" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Как торговать</a>
+                    <a href="#deposit-withdrawal" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Пополнение и вывод средств</a>
+                    <a href="#calculation-speed" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Скорость расчетов</a>
                     <a href="#knowledge-base" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">База знаний</a>
-                    <a href="#faq" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">FAQ</a>
-                    <a href="#payment-methods" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Способы оплаты</a>
-                    <a href="#support" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Поддержка 24/7</a>
+                    <a href="#glossary" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Словарь терминов</a>
                   </div>
                 </div>
               </div>
@@ -967,11 +975,22 @@ function App() {
                   <ChevronDown className="h-4 w-4 ml-1" />
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <a href="#platforms" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Торговые платформы</a>
-                    <a href="#calculators" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Калькуляторы</a>
-                    <a href="#copy-trading" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Копи-трейдинг</a>
-                    <a href="#vps" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">VPS сервер</a>
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[220px]">
+                    <a href="#trading-terminal" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Торговый терминал</a>
+                    <a href="#account-types" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Типы счетов</a>
+                    <a href="#trading-instruments" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Торговые инструменты</a>
+                    <a href="#copy-trading" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Копитрейдинг</a>
+                    <a href="#trader-calculator" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Калькулятор трейдера</a>
+                    <a href="#ecn-stp" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">ECN/STP технологии</a>
+                    <a href="#mql5-signals" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">MQL5 Сигналы</a>
+                    <a href="#vps-server" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">VPS сервер</a>
+                    <a href="#digital-contracts-tools" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Цифровые контракты</a>
+                    <a href="#cryptocurrencies" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Криптовалюты</a>
+                    <a href="#swap-free" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">SWAP FREE счета</a>
+                    <a href="#copy-start-bonus" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Копи Старт Бонус</a>
+                    <a href="#jettrade" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">JetTrade</a>
+                    <a href="#bonuses-promotions" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Бонусы и акции</a>
+                    <a href="#cashback-club" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Кэшбек клуб</a>
                   </div>
                 </div>
               </div>
@@ -982,11 +1001,18 @@ function App() {
                   <ChevronDown className="h-4 w-4 ml-1" />
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <a href="#about-company" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">О компании</a>
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[240px]">
+                    <a href="#about-news" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Новости компании</a>
                     <a href="#regulation" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Регулирование</a>
+                    <a href="#feedback-form" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Форма обратной связи</a>
+                    <a href="#agreement" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Договор</a>
+                    <a href="#aml-policy" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Политика AML</a>
+                    <a href="#refund-policy" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Политика возврата</a>
+                    <a href="#risk-warning" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Предупреждение о рисках</a>
+                    <a href="#privacy-policy" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Политика конфиденциальности</a>
+                    <a href="#achievements" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Наши достижения</a>
+                    <a href="#partner-program" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Партнерская программа</a>
                     <a href="#contacts" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Контакты</a>
-                    <a href="#documents" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Документы</a>
                   </div>
                 </div>
               </div>
@@ -1037,10 +1063,12 @@ function App() {
                   <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
                 </summary>
                 <div className="pl-4 space-y-2 mt-2">
-                  <a href="#forex" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Что такое Forex</a>
-                  <a href="#accounts" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Типы счетов</a>
-                  <a href="#start" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Как начать торговлю</a>
-                  <a href="#demo" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Демо счет</a>
+                  <a href="#start" className="block py-1 text-sm text-gray-600 hover:text-blue-600">С чего начать</a>
+                  <a href="#what-is-forex" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Что такое форекс</a>
+                  <a href="#advantages" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Преимущества форекс</a>
+                  <a href="#demo" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Учебный счет</a>
+                  <a href="#trading-account" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Торговый счет</a>
+                  <a href="#literature" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Литература</a>
                 </div>
               </details>
 
@@ -1050,10 +1078,13 @@ function App() {
                   <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
                 </summary>
                 <div className="pl-4 space-y-2 mt-2">
-                  <a href="#market-review" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Обзоры рынков</a>
-                  <a href="#trading-ideas" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Торговые идеи</a>
-                  <a href="#calendar" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Экономический календарь</a>
+                  <a href="#trading-schedule" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Расписание торгов</a>
+                  <a href="#company-news" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Новости компании</a>
+                  <a href="#market-surveys" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Обзоры рынка</a>
+                  <a href="#news" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Новости</a>
+                  <a href="#events-calendar" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Календарь событий</a>
                   <a href="#quotes" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Котировки</a>
+                  <a href="#dividends" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Дивиденды на акции</a>
                 </div>
               </details>
 
@@ -1063,10 +1094,13 @@ function App() {
                   <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
                 </summary>
                 <div className="pl-4 space-y-2 mt-2">
+                  <a href="#help-forex" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Форекс</a>
+                  <a href="#digital-contracts" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Цифровые контракты</a>
+                  <a href="#how-to-trade" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Как торговать</a>
+                  <a href="#deposit-withdrawal" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Пополнение и вывод средств</a>
+                  <a href="#calculation-speed" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Скорость расчетов</a>
                   <a href="#knowledge-base" className="block py-1 text-sm text-gray-600 hover:text-blue-600">База знаний</a>
-                  <a href="#faq" className="block py-1 text-sm text-gray-600 hover:text-blue-600">FAQ</a>
-                  <a href="#payment-methods" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Способы оплаты</a>
-                  <a href="#support" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Поддержка 24/7</a>
+                  <a href="#glossary" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Словарь терминов</a>
                 </div>
               </details>
 
@@ -1076,10 +1110,21 @@ function App() {
                   <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
                 </summary>
                 <div className="pl-4 space-y-2 mt-2">
-                  <a href="#platforms" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Торговые платформы</a>
-                  <a href="#calculators" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Калькуляторы</a>
-                  <a href="#copy-trading" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Копи-трейдинг</a>
-                  <a href="#vps" className="block py-1 text-sm text-gray-600 hover:text-blue-600">VPS сервер</a>
+                  <a href="#trading-terminal" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Торговый терминал</a>
+                  <a href="#account-types" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Типы счетов</a>
+                  <a href="#trading-instruments" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Торговые инструменты</a>
+                  <a href="#copy-trading" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Копитрейдинг</a>
+                  <a href="#trader-calculator" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Калькулятор трейдера</a>
+                  <a href="#ecn-stp" className="block py-1 text-sm text-gray-600 hover:text-blue-600">ECN/STP технологии</a>
+                  <a href="#mql5-signals" className="block py-1 text-sm text-gray-600 hover:text-blue-600">MQL5 Сигналы</a>
+                  <a href="#vps-server" className="block py-1 text-sm text-gray-600 hover:text-blue-600">VPS сервер</a>
+                  <a href="#digital-contracts-tools" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Цифровые контракты</a>
+                  <a href="#cryptocurrencies" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Криптовалюты</a>
+                  <a href="#swap-free" className="block py-1 text-sm text-gray-600 hover:text-blue-600">SWAP FREE счета</a>
+                  <a href="#copy-start-bonus" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Копи Старт Бонус</a>
+                  <a href="#jettrade" className="block py-1 text-sm text-gray-600 hover:text-blue-600">JetTrade</a>
+                  <a href="#bonuses-promotions" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Бонусы и акции</a>
+                  <a href="#cashback-club" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Кэшбек клуб</a>
                 </div>
               </details>
 
@@ -1089,10 +1134,17 @@ function App() {
                   <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
                 </summary>
                 <div className="pl-4 space-y-2 mt-2">
-                  <a href="#about-company" className="block py-1 text-sm text-gray-600 hover:text-blue-600">О компании</a>
+                  <a href="#about-news" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Новости компании</a>
                   <a href="#regulation" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Регулирование</a>
+                  <a href="#feedback-form" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Форма обратной связи</a>
+                  <a href="#agreement" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Договор</a>
+                  <a href="#aml-policy" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Политика AML</a>
+                  <a href="#refund-policy" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Политика возврата</a>
+                  <a href="#risk-warning" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Предупреждение о рисках</a>
+                  <a href="#privacy-policy" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Политика конфиденциальности</a>
+                  <a href="#achievements" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Наши достижения</a>
+                  <a href="#partner-program" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Партнерская программа</a>
                   <a href="#contacts" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Контакты</a>
-                  <a href="#documents" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Документы</a>
                 </div>
               </details>
 
