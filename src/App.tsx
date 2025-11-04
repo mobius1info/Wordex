@@ -15,6 +15,11 @@ import DemoAccountPage from './pages/DemoAccountPage';
 import TradingInstrumentsPage from './pages/TradingInstrumentsPage';
 import PlatformsPage from './pages/PlatformsPage';
 import AccountTypesPage from './pages/AccountTypesPage';
+import CompanyNewsPage from './pages/CompanyNewsPage';
+import MarketSurveysPage from './pages/MarketSurveysPage';
+import EventCalendarPage from './pages/EventCalendarPage';
+import QuotesPage from './pages/QuotesPage';
+import StockDividendsPage from './pages/StockDividendsPage';
 
 const translations = {
   ru: {
@@ -911,6 +916,11 @@ function App() {
       {activePage === 'advantages' && <ForexAdvantagesPage />}
       {activePage === 'demo' && <DemoAccountPage />}
       {activePage === 'trading-schedule' && <TradingSchedulePage />}
+      {activePage === 'company-news' && <CompanyNewsPage />}
+      {activePage === 'market-surveys' && <MarketSurveysPage />}
+      {activePage === 'event-calendar' && <EventCalendarPage />}
+      {activePage === 'quotes' && <QuotesPage />}
+      {activePage === 'dividends' && <StockDividendsPage />}
       {activePage === 'how-to-trade' && <HowToTradePage />}
       {activePage === 'trading-instruments' && <TradingInstrumentsPage />}
       {activePage === 'platforms' && <PlatformsPage />}
