@@ -5,6 +5,12 @@ import {
   Copy, Zap, Gift, CreditCard, ArrowRight, CheckCircle, Star, Download,
   Clock, Target, Briefcase, Database, LineChart
 } from 'lucide-react';
+import HomePage from './pages/HomePage';
+import BeginnersPage from './pages/BeginnersPage';
+import AnalyticsPage from './pages/AnalyticsPage';
+import HelpPage from './pages/HelpPage';
+import ToolsPage from './pages/ToolsPage';
+import AboutPage from './pages/AboutPage';
 
 const translations = {
   ru: {
@@ -864,6 +870,7 @@ function App() {
   const [showLanguages, setShowLanguages] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentPage, setCurrentPage] = useState<'home' | 'beginners' | 'analytics' | 'help' | 'tools' | 'about'>('home');
 
   const t = translations[language];
 
@@ -905,7 +912,7 @@ function App() {
       <header className="sticky top-0 bg-white border-b border-gray-200 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <div className="flex items-center space-x-3">
+            <button onClick={() => setCurrentPage('home')} className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
               <div className="bg-blue-600 p-2 rounded-lg">
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>
@@ -913,14 +920,14 @@ function App() {
                 <div className="text-2xl font-bold text-blue-600">WorldForex</div>
                 <div className="text-xs text-gray-500">Online Trading</div>
               </div>
-            </div>
+            </button>
 
             <nav className="hidden lg:flex items-center space-x-6">
-              <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.beginners}</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.analytics}</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.help}</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.tools}</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.about}</a>
+              <button onClick={() => { setCurrentPage('beginners'); setMobileMenuOpen(false); }} className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.beginners}</button>
+              <button onClick={() => { setCurrentPage('analytics'); setMobileMenuOpen(false); }} className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.analytics}</button>
+              <button onClick={() => { setCurrentPage('help'); setMobileMenuOpen(false); }} className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.help}</button>
+              <button onClick={() => { setCurrentPage('tools'); setMobileMenuOpen(false); }} className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.tools}</button>
+              <button onClick={() => { setCurrentPage('about'); setMobileMenuOpen(false); }} className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.about}</button>
             </nav>
 
             <div className="flex items-center space-x-4">
@@ -962,11 +969,11 @@ function App() {
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-gray-200 bg-white">
             <div className="px-4 py-4 space-y-3">
-              <a href="#" className="block text-gray-700 font-medium">{t.nav.beginners}</a>
-              <a href="#" className="block text-gray-700 font-medium">{t.nav.analytics}</a>
-              <a href="#" className="block text-gray-700 font-medium">{t.nav.help}</a>
-              <a href="#" className="block text-gray-700 font-medium">{t.nav.tools}</a>
-              <a href="#" className="block text-gray-700 font-medium">{t.nav.about}</a>
+              <button onClick={() => { setCurrentPage('beginners'); setMobileMenuOpen(false); }} className="block w-full text-left text-gray-700 font-medium">{t.nav.beginners}</button>
+              <button onClick={() => { setCurrentPage('analytics'); setMobileMenuOpen(false); }} className="block w-full text-left text-gray-700 font-medium">{t.nav.analytics}</button>
+              <button onClick={() => { setCurrentPage('help'); setMobileMenuOpen(false); }} className="block w-full text-left text-gray-700 font-medium">{t.nav.help}</button>
+              <button onClick={() => { setCurrentPage('tools'); setMobileMenuOpen(false); }} className="block w-full text-left text-gray-700 font-medium">{t.nav.tools}</button>
+              <button onClick={() => { setCurrentPage('about'); setMobileMenuOpen(false); }} className="block w-full text-left text-gray-700 font-medium">{t.nav.about}</button>
               <button className="w-full bg-red-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors mt-4">
                 {t.nav.openAccount}
               </button>
@@ -979,6 +986,25 @@ function App() {
       </header>
 
       <main>
+        {currentPage === 'home' && <HomePage t={t} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />}
+        {currentPage === 'beginners' && <BeginnersPage t={t} />}
+        {currentPage === 'analytics' && <AnalyticsPage t={t} />}
+        {currentPage === 'help' && <HelpPage t={t} />}
+        {currentPage === 'tools' && <ToolsPage t={t} />}
+        {currentPage === 'about' && <AboutPage t={t} />}
+
+        {currentPage !== 'home' && (
+          <button
+            onClick={() => setCurrentPage('home')}
+            className="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-40"
+            title="Back to home"
+          >
+            <ArrowRight className="h-6 w-6 transform -rotate-180" />
+          </button>
+        )}
+      </main>
+
+      {currentPage === 'home' && (
         <section className="relative h-[500px] sm:h-[600px] overflow-hidden">
           {t.hero.slides.map((slide, index) => (
             <div
@@ -1026,7 +1052,10 @@ function App() {
             ))}
           </div>
         </section>
+      )}
 
+      {currentPage === 'home' && (
+        <>
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1410,7 +1439,8 @@ function App() {
             </p>
           </div>
         </section>
-      </main>
+        </>
+      )}
 
       <footer className="bg-gray-900 text-gray-300 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
