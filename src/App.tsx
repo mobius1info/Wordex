@@ -923,10 +923,10 @@ function App() {
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Что такое Forex</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Типы счетов</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Как начать торговлю</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Демо счет</a>
+                    <a href="#forex" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Что такое Forex</a>
+                    <a href="#accounts" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Типы счетов</a>
+                    <a href="#start" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Как начать торговлю</a>
+                    <a href="#demo" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Демо счет</a>
                   </div>
                 </div>
               </div>
@@ -938,10 +938,10 @@ function App() {
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Обзоры рынков</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Торговые идеи</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Экономический календарь</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Котировки</a>
+                    <a href="#market-review" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Обзоры рынков</a>
+                    <a href="#trading-ideas" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Торговые идеи</a>
+                    <a href="#calendar" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Экономический календарь</a>
+                    <a href="#quotes" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Котировки</a>
                   </div>
                 </div>
               </div>
@@ -953,10 +953,10 @@ function App() {
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">База знаний</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">FAQ</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Способы оплаты</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Поддержка 24/7</a>
+                    <a href="#knowledge-base" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">База знаний</a>
+                    <a href="#faq" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">FAQ</a>
+                    <a href="#payment-methods" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Способы оплаты</a>
+                    <a href="#support" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Поддержка 24/7</a>
                   </div>
                 </div>
               </div>
@@ -968,10 +968,10 @@ function App() {
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Торговые платформы</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Калькуляторы</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Копи-трейдинг</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">VPS сервер</a>
+                    <a href="#platforms" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Торговые платформы</a>
+                    <a href="#calculators" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Калькуляторы</a>
+                    <a href="#copy-trading" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Копи-трейдинг</a>
+                    <a href="#vps" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">VPS сервер</a>
                   </div>
                 </div>
               </div>
@@ -983,10 +983,10 @@ function App() {
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">О компании</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Регулирование</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Контакты</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Документы</a>
+                    <a href="#about-company" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">О компании</a>
+                    <a href="#regulation" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Регулирование</a>
+                    <a href="#contacts" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Контакты</a>
+                    <a href="#documents" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Документы</a>
                   </div>
                 </div>
               </div>
@@ -1037,10 +1037,10 @@ function App() {
                   <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
                 </summary>
                 <div className="pl-4 space-y-2 mt-2">
-                  <a href="#" className="block py-1 text-sm text-gray-600">Что такое Forex</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">Типы счетов</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">Как начать торговлю</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">Демо счет</a>
+                  <a href="#forex" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Что такое Forex</a>
+                  <a href="#accounts" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Типы счетов</a>
+                  <a href="#start" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Как начать торговлю</a>
+                  <a href="#demo" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Демо счет</a>
                 </div>
               </details>
 
@@ -1050,10 +1050,10 @@ function App() {
                   <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
                 </summary>
                 <div className="pl-4 space-y-2 mt-2">
-                  <a href="#" className="block py-1 text-sm text-gray-600">Обзоры рынков</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">Торговые идеи</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">Экономический календарь</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">Котировки</a>
+                  <a href="#market-review" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Обзоры рынков</a>
+                  <a href="#trading-ideas" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Торговые идеи</a>
+                  <a href="#calendar" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Экономический календарь</a>
+                  <a href="#quotes" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Котировки</a>
                 </div>
               </details>
 
@@ -1063,10 +1063,10 @@ function App() {
                   <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
                 </summary>
                 <div className="pl-4 space-y-2 mt-2">
-                  <a href="#" className="block py-1 text-sm text-gray-600">База знаний</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">FAQ</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">Способы оплаты</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">Поддержка 24/7</a>
+                  <a href="#knowledge-base" className="block py-1 text-sm text-gray-600 hover:text-blue-600">База знаний</a>
+                  <a href="#faq" className="block py-1 text-sm text-gray-600 hover:text-blue-600">FAQ</a>
+                  <a href="#payment-methods" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Способы оплаты</a>
+                  <a href="#support" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Поддержка 24/7</a>
                 </div>
               </details>
 
@@ -1076,10 +1076,10 @@ function App() {
                   <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
                 </summary>
                 <div className="pl-4 space-y-2 mt-2">
-                  <a href="#" className="block py-1 text-sm text-gray-600">Торговые платформы</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">Калькуляторы</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">Копи-трейдинг</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">VPS сервер</a>
+                  <a href="#platforms" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Торговые платформы</a>
+                  <a href="#calculators" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Калькуляторы</a>
+                  <a href="#copy-trading" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Копи-трейдинг</a>
+                  <a href="#vps" className="block py-1 text-sm text-gray-600 hover:text-blue-600">VPS сервер</a>
                 </div>
               </details>
 
@@ -1089,10 +1089,10 @@ function App() {
                   <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
                 </summary>
                 <div className="pl-4 space-y-2 mt-2">
-                  <a href="#" className="block py-1 text-sm text-gray-600">О компании</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">Регулирование</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">Контакты</a>
-                  <a href="#" className="block py-1 text-sm text-gray-600">Документы</a>
+                  <a href="#about-company" className="block py-1 text-sm text-gray-600 hover:text-blue-600">О компании</a>
+                  <a href="#regulation" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Регулирование</a>
+                  <a href="#contacts" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Контакты</a>
+                  <a href="#documents" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Документы</a>
                 </div>
               </details>
 
