@@ -5,6 +5,7 @@ import {
   Copy, Zap, Gift, CreditCard, ArrowRight, CheckCircle, Star, Download,
   Clock, Target, Briefcase, Database, LineChart
 } from 'lucide-react';
+import Header from './components/Header';
 import WhereToStartPage from './pages/WhereToStartPage';
 import TradingSchedulePage from './pages/TradingSchedulePage';
 import HowToTradePage from './pages/HowToTradePage';
@@ -886,295 +887,25 @@ function App() {
     zh: '中文'
   };
 
-  if (activePage === 'start') {
-    return <WhereToStartPage onBack={() => setActivePage(null)} />;
-  }
-
-  if (activePage === 'trading-schedule') {
-    return <TradingSchedulePage onBack={() => setActivePage(null)} />;
-  }
-
-  if (activePage === 'how-to-trade') {
-    return <HowToTradePage onBack={() => setActivePage(null)} />;
-  }
-
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-blue-700 text-white py-2 text-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <span className="hidden sm:inline">{t.topBar.years}</span>
-            <span className="hidden sm:inline">•</span>
-            <span>{t.topBar.clients}</span>
-            <span className="hidden md:inline">•</span>
-            <span className="hidden md:inline">{t.topBar.countries}</span>
-          </div>
-          <div className="flex items-center space-x-4">
-            <button className="text-xs hover:text-blue-200 flex items-center">
-              <HelpCircle className="h-4 w-4 mr-1" />
-              {t.topBar.support}
-            </button>
-          </div>
-        </div>
-      </div>
+      <Header
+        language={language}
+        showLanguages={showLanguages}
+        setShowLanguages={setShowLanguages}
+        setLanguage={setLanguage}
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+        setActivePage={setActivePage}
+        translations={translations}
+      />
 
-      <header className="sticky top-0 bg-white border-b border-gray-200 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center space-x-3">
-              <div className="bg-blue-600 p-2 rounded-lg">
-                <TrendingUp className="h-8 w-8 text-white" />
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-blue-600">WorldForex</div>
-                <div className="text-xs text-gray-500">Online Trading</div>
-              </div>
-            </div>
+      {activePage === 'start' && <WhereToStartPage />}
+      {activePage === 'trading-schedule' && <TradingSchedulePage />}
+      {activePage === 'how-to-trade' && <HowToTradePage />}
 
-            <nav className="hidden lg:flex items-center space-x-6">
-              <div className="relative group">
-                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center py-6">
-                  {t.nav.beginners}
-                  <ChevronDown className="h-4 w-4 ml-1" />
-                </button>
-                <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <button onClick={() => setActivePage('start')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">С чего начать</button>
-                    <a href="#what-is-forex" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Что такое форекс</a>
-                    <a href="#advantages" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Преимущества форекс</a>
-                    <a href="#demo" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Учебный счет</a>
-                    <a href="#trading-account" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Торговый счет</a>
-                    <a href="#literature" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Литература</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative group">
-                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center py-6">
-                  {t.nav.analytics}
-                  <ChevronDown className="h-4 w-4 ml-1" />
-                </button>
-                <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[220px]">
-                    <button onClick={() => setActivePage('trading-schedule')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Расписание торгов</button>
-                    <a href="#company-news" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Новости компании</a>
-                    <a href="#market-surveys" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Обзоры рынка</a>
-                    <a href="#news" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Новости</a>
-                    <a href="#events-calendar" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Календарь событий</a>
-                    <a href="#quotes" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Котировки</a>
-                    <a href="#dividends" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Дивиденды на акции</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative group">
-                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center py-6">
-                  {t.nav.help}
-                  <ChevronDown className="h-4 w-4 ml-1" />
-                </button>
-                <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[240px]">
-                    <a href="#help-forex" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Форекс</a>
-                    <a href="#digital-contracts" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Цифровые контракты</a>
-                    <button onClick={() => setActivePage('how-to-trade')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Как торговать</button>
-                    <a href="#deposit-withdrawal" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Пополнение и вывод средств</a>
-                    <a href="#calculation-speed" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Скорость расчетов</a>
-                    <a href="#knowledge-base" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">База знаний</a>
-                    <a href="#glossary" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Словарь терминов</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative group">
-                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center py-6">
-                  {t.nav.tools}
-                  <ChevronDown className="h-4 w-4 ml-1" />
-                </button>
-                <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[220px]">
-                    <a href="#trading-terminal" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Торговый терминал</a>
-                    <a href="#account-types" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Типы счетов</a>
-                    <a href="#trading-instruments" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Торговые инструменты</a>
-                    <a href="#copy-trading" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Копитрейдинг</a>
-                    <a href="#trader-calculator" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Калькулятор трейдера</a>
-                    <a href="#ecn-stp" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">ECN/STP технологии</a>
-                    <a href="#mql5-signals" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">MQL5 Сигналы</a>
-                    <a href="#vps-server" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">VPS сервер</a>
-                    <a href="#digital-contracts-tools" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Цифровые контракты</a>
-                    <a href="#cryptocurrencies" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Криптовалюты</a>
-                    <a href="#swap-free" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">SWAP FREE счета</a>
-                    <a href="#copy-start-bonus" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Копи Старт Бонус</a>
-                    <a href="#jettrade" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">JetTrade</a>
-                    <a href="#bonuses-promotions" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Бонусы и акции</a>
-                    <a href="#cashback-club" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Кэшбек клуб</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative group">
-                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center py-6">
-                  {t.nav.about}
-                  <ChevronDown className="h-4 w-4 ml-1" />
-                </button>
-                <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[240px]">
-                    <a href="#about-news" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Новости компании</a>
-                    <a href="#regulation" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Регулирование</a>
-                    <a href="#feedback-form" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Форма обратной связи</a>
-                    <a href="#agreement" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Договор</a>
-                    <a href="#aml-policy" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Политика AML</a>
-                    <a href="#refund-policy" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Политика возврата</a>
-                    <a href="#risk-warning" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Предупреждение о рисках</a>
-                    <a href="#privacy-policy" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Политика конфиденциальности</a>
-                    <a href="#achievements" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Наши достижения</a>
-                    <a href="#partner-program" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Партнерская программа</a>
-                    <a href="#contacts" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Контакты</a>
-                  </div>
-                </div>
-              </div>
-            </nav>
-
-            <div className="flex items-center space-x-4">
-              <div className="relative hidden sm:block">
-                <button
-                  onClick={() => setShowLanguages(!showLanguages)}
-                  className="flex items-center space-x-1 text-gray-700 hover:text-blue-600"
-                >
-                  <Globe className="h-5 w-5" />
-                  <span className="text-sm">{language.toUpperCase()}</span>
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-                {showLanguages && (
-                  <div className="absolute top-full right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg py-2 min-w-[140px]">
-                    <button onClick={() => { setLanguage('ru'); setShowLanguages(false); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm">{languageLabels.ru}</button>
-                    <button onClick={() => { setLanguage('uk'); setShowLanguages(false); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm">{languageLabels.uk}</button>
-                    <button onClick={() => { setLanguage('en'); setShowLanguages(false); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm">{languageLabels.en}</button>
-                    <button onClick={() => { setLanguage('tr'); setShowLanguages(false); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm">{languageLabels.tr}</button>
-                    <button onClick={() => { setLanguage('zh'); setShowLanguages(false); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm">{languageLabels.zh}</button>
-                  </div>
-                )}
-              </div>
-              <button className="bg-red-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors hidden sm:block">
-                {t.nav.openAccount}
-              </button>
-              <button className="border-2 border-blue-600 text-blue-600 px-6 py-2 rounded-lg font-medium hover:bg-blue-50 transition-colors hidden sm:block">
-                {t.nav.login}
-              </button>
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden text-gray-700"
-              >
-                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200 bg-white">
-            <div className="px-4 py-4 space-y-3">
-              <details className="group">
-                <summary className="flex items-center justify-between text-gray-700 font-medium cursor-pointer py-2">
-                  {t.nav.beginners}
-                  <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
-                </summary>
-                <div className="pl-4 space-y-2 mt-2">
-                  <a href="#start" className="block py-1 text-sm text-gray-600 hover:text-blue-600">С чего начать</a>
-                  <a href="#what-is-forex" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Что такое форекс</a>
-                  <a href="#advantages" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Преимущества форекс</a>
-                  <a href="#demo" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Учебный счет</a>
-                  <a href="#trading-account" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Торговый счет</a>
-                  <a href="#literature" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Литература</a>
-                </div>
-              </details>
-
-              <details className="group">
-                <summary className="flex items-center justify-between text-gray-700 font-medium cursor-pointer py-2">
-                  {t.nav.analytics}
-                  <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
-                </summary>
-                <div className="pl-4 space-y-2 mt-2">
-                  <a href="#trading-schedule" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Расписание торгов</a>
-                  <a href="#company-news" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Новости компании</a>
-                  <a href="#market-surveys" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Обзоры рынка</a>
-                  <a href="#news" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Новости</a>
-                  <a href="#events-calendar" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Календарь событий</a>
-                  <a href="#quotes" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Котировки</a>
-                  <a href="#dividends" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Дивиденды на акции</a>
-                </div>
-              </details>
-
-              <details className="group">
-                <summary className="flex items-center justify-between text-gray-700 font-medium cursor-pointer py-2">
-                  {t.nav.help}
-                  <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
-                </summary>
-                <div className="pl-4 space-y-2 mt-2">
-                  <a href="#help-forex" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Форекс</a>
-                  <a href="#digital-contracts" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Цифровые контракты</a>
-                  <a href="#how-to-trade" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Как торговать</a>
-                  <a href="#deposit-withdrawal" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Пополнение и вывод средств</a>
-                  <a href="#calculation-speed" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Скорость расчетов</a>
-                  <a href="#knowledge-base" className="block py-1 text-sm text-gray-600 hover:text-blue-600">База знаний</a>
-                  <a href="#glossary" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Словарь терминов</a>
-                </div>
-              </details>
-
-              <details className="group">
-                <summary className="flex items-center justify-between text-gray-700 font-medium cursor-pointer py-2">
-                  {t.nav.tools}
-                  <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
-                </summary>
-                <div className="pl-4 space-y-2 mt-2">
-                  <a href="#trading-terminal" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Торговый терминал</a>
-                  <a href="#account-types" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Типы счетов</a>
-                  <a href="#trading-instruments" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Торговые инструменты</a>
-                  <a href="#copy-trading" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Копитрейдинг</a>
-                  <a href="#trader-calculator" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Калькулятор трейдера</a>
-                  <a href="#ecn-stp" className="block py-1 text-sm text-gray-600 hover:text-blue-600">ECN/STP технологии</a>
-                  <a href="#mql5-signals" className="block py-1 text-sm text-gray-600 hover:text-blue-600">MQL5 Сигналы</a>
-                  <a href="#vps-server" className="block py-1 text-sm text-gray-600 hover:text-blue-600">VPS сервер</a>
-                  <a href="#digital-contracts-tools" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Цифровые контракты</a>
-                  <a href="#cryptocurrencies" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Криптовалюты</a>
-                  <a href="#swap-free" className="block py-1 text-sm text-gray-600 hover:text-blue-600">SWAP FREE счета</a>
-                  <a href="#copy-start-bonus" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Копи Старт Бонус</a>
-                  <a href="#jettrade" className="block py-1 text-sm text-gray-600 hover:text-blue-600">JetTrade</a>
-                  <a href="#bonuses-promotions" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Бонусы и акции</a>
-                  <a href="#cashback-club" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Кэшбек клуб</a>
-                </div>
-              </details>
-
-              <details className="group">
-                <summary className="flex items-center justify-between text-gray-700 font-medium cursor-pointer py-2">
-                  {t.nav.about}
-                  <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
-                </summary>
-                <div className="pl-4 space-y-2 mt-2">
-                  <a href="#about-news" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Новости компании</a>
-                  <a href="#regulation" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Регулирование</a>
-                  <a href="#feedback-form" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Форма обратной связи</a>
-                  <a href="#agreement" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Договор</a>
-                  <a href="#aml-policy" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Политика AML</a>
-                  <a href="#refund-policy" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Политика возврата</a>
-                  <a href="#risk-warning" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Предупреждение о рисках</a>
-                  <a href="#privacy-policy" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Политика конфиденциальности</a>
-                  <a href="#achievements" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Наши достижения</a>
-                  <a href="#partner-program" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Партнерская программа</a>
-                  <a href="#contacts" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Контакты</a>
-                </div>
-              </details>
-
-              <button className="w-full bg-red-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors mt-4">
-                {t.nav.openAccount}
-              </button>
-              <button className="w-full border-2 border-blue-600 text-blue-600 px-6 py-2 rounded-lg font-medium hover:bg-blue-50 transition-colors">
-                {t.nav.login}
-              </button>
-            </div>
-          </div>
-        )}
-      </header>
-
+      {!activePage && (
+        <>
       <main>
         <section className="relative h-[500px] sm:h-[600px] overflow-hidden">
           {t.hero.slides.map((slide, index) => (
@@ -1689,6 +1420,8 @@ function App() {
           </div>
         </div>
       </footer>
+        </>
+      )}
     </div>
   );
 }
