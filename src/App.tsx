@@ -5,12 +5,6 @@ import {
   Copy, Zap, Gift, CreditCard, ArrowRight, CheckCircle, Star, Download,
   Clock, Target, Briefcase, Database, LineChart
 } from 'lucide-react';
-import HomePage from './pages/HomePage';
-import BeginnersPage from './pages/BeginnersPage';
-import AnalyticsPage from './pages/AnalyticsPage';
-import HelpPage from './pages/HelpPage';
-import ToolsPage from './pages/ToolsPage';
-import AboutPage from './pages/AboutPage';
 
 const translations = {
   ru: {
@@ -870,7 +864,7 @@ function App() {
   const [showLanguages, setShowLanguages] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentPage, setCurrentPage] = useState<'home' | 'beginners' | 'analytics' | 'help' | 'tools' | 'about'>('home');
+  const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
 
   const t = translations[language];
 
@@ -912,7 +906,7 @@ function App() {
       <header className="sticky top-0 bg-white border-b border-gray-200 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <button onClick={() => setCurrentPage('home')} className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+            <div className="flex items-center space-x-3">
               <div className="bg-blue-600 p-2 rounded-lg">
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>
@@ -920,14 +914,83 @@ function App() {
                 <div className="text-2xl font-bold text-blue-600">WorldForex</div>
                 <div className="text-xs text-gray-500">Online Trading</div>
               </div>
-            </button>
+            </div>
 
             <nav className="hidden lg:flex items-center space-x-6">
-              <button onClick={() => { setCurrentPage('beginners'); setMobileMenuOpen(false); }} className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.beginners}</button>
-              <button onClick={() => { setCurrentPage('analytics'); setMobileMenuOpen(false); }} className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.analytics}</button>
-              <button onClick={() => { setCurrentPage('help'); setMobileMenuOpen(false); }} className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.help}</button>
-              <button onClick={() => { setCurrentPage('tools'); setMobileMenuOpen(false); }} className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.tools}</button>
-              <button onClick={() => { setCurrentPage('about'); setMobileMenuOpen(false); }} className="text-gray-700 hover:text-blue-600 font-medium">{t.nav.about}</button>
+              <div className="relative" onMouseEnter={() => setHoveredMenu('beginners')} onMouseLeave={() => setHoveredMenu(null)}>
+                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+                  {t.nav.beginners}
+                  <ChevronDown className="h-4 w-4 ml-1" />
+                </button>
+                {hoveredMenu === 'beginners' && (
+                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px] z-50">
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Что такое Forex</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Типы счетов</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Как начать торговлю</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Демо счет</a>
+                  </div>
+                )}
+              </div>
+
+              <div className="relative" onMouseEnter={() => setHoveredMenu('analytics')} onMouseLeave={() => setHoveredMenu(null)}>
+                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+                  {t.nav.analytics}
+                  <ChevronDown className="h-4 w-4 ml-1" />
+                </button>
+                {hoveredMenu === 'analytics' && (
+                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px] z-50">
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Обзоры рынков</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Торговые идеи</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Экономический календарь</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Котировки</a>
+                  </div>
+                )}
+              </div>
+
+              <div className="relative" onMouseEnter={() => setHoveredMenu('help')} onMouseLeave={() => setHoveredMenu(null)}>
+                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+                  {t.nav.help}
+                  <ChevronDown className="h-4 w-4 ml-1" />
+                </button>
+                {hoveredMenu === 'help' && (
+                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px] z-50">
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">База знаний</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">FAQ</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Способы оплаты</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Поддержка 24/7</a>
+                  </div>
+                )}
+              </div>
+
+              <div className="relative" onMouseEnter={() => setHoveredMenu('tools')} onMouseLeave={() => setHoveredMenu(null)}>
+                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+                  {t.nav.tools}
+                  <ChevronDown className="h-4 w-4 ml-1" />
+                </button>
+                {hoveredMenu === 'tools' && (
+                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px] z-50">
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Торговые платформы</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Калькуляторы</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Копи-трейдинг</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">VPS сервер</a>
+                  </div>
+                )}
+              </div>
+
+              <div className="relative" onMouseEnter={() => setHoveredMenu('about')} onMouseLeave={() => setHoveredMenu(null)}>
+                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+                  {t.nav.about}
+                  <ChevronDown className="h-4 w-4 ml-1" />
+                </button>
+                {hoveredMenu === 'about' && (
+                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px] z-50">
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">О компании</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Регулирование</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Контакты</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Документы</a>
+                  </div>
+                )}
+              </div>
             </nav>
 
             <div className="flex items-center space-x-4">
@@ -969,11 +1032,71 @@ function App() {
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-gray-200 bg-white">
             <div className="px-4 py-4 space-y-3">
-              <button onClick={() => { setCurrentPage('beginners'); setMobileMenuOpen(false); }} className="block w-full text-left text-gray-700 font-medium">{t.nav.beginners}</button>
-              <button onClick={() => { setCurrentPage('analytics'); setMobileMenuOpen(false); }} className="block w-full text-left text-gray-700 font-medium">{t.nav.analytics}</button>
-              <button onClick={() => { setCurrentPage('help'); setMobileMenuOpen(false); }} className="block w-full text-left text-gray-700 font-medium">{t.nav.help}</button>
-              <button onClick={() => { setCurrentPage('tools'); setMobileMenuOpen(false); }} className="block w-full text-left text-gray-700 font-medium">{t.nav.tools}</button>
-              <button onClick={() => { setCurrentPage('about'); setMobileMenuOpen(false); }} className="block w-full text-left text-gray-700 font-medium">{t.nav.about}</button>
+              <details className="group">
+                <summary className="flex items-center justify-between text-gray-700 font-medium cursor-pointer py-2">
+                  {t.nav.beginners}
+                  <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
+                </summary>
+                <div className="pl-4 space-y-2 mt-2">
+                  <a href="#" className="block py-1 text-sm text-gray-600">Что такое Forex</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">Типы счетов</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">Как начать торговлю</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">Демо счет</a>
+                </div>
+              </details>
+
+              <details className="group">
+                <summary className="flex items-center justify-between text-gray-700 font-medium cursor-pointer py-2">
+                  {t.nav.analytics}
+                  <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
+                </summary>
+                <div className="pl-4 space-y-2 mt-2">
+                  <a href="#" className="block py-1 text-sm text-gray-600">Обзоры рынков</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">Торговые идеи</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">Экономический календарь</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">Котировки</a>
+                </div>
+              </details>
+
+              <details className="group">
+                <summary className="flex items-center justify-between text-gray-700 font-medium cursor-pointer py-2">
+                  {t.nav.help}
+                  <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
+                </summary>
+                <div className="pl-4 space-y-2 mt-2">
+                  <a href="#" className="block py-1 text-sm text-gray-600">База знаний</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">FAQ</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">Способы оплаты</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">Поддержка 24/7</a>
+                </div>
+              </details>
+
+              <details className="group">
+                <summary className="flex items-center justify-between text-gray-700 font-medium cursor-pointer py-2">
+                  {t.nav.tools}
+                  <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
+                </summary>
+                <div className="pl-4 space-y-2 mt-2">
+                  <a href="#" className="block py-1 text-sm text-gray-600">Торговые платформы</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">Калькуляторы</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">Копи-трейдинг</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">VPS сервер</a>
+                </div>
+              </details>
+
+              <details className="group">
+                <summary className="flex items-center justify-between text-gray-700 font-medium cursor-pointer py-2">
+                  {t.nav.about}
+                  <ChevronDown className="h-4 w-4 group-open:rotate-180 transition-transform" />
+                </summary>
+                <div className="pl-4 space-y-2 mt-2">
+                  <a href="#" className="block py-1 text-sm text-gray-600">О компании</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">Регулирование</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">Контакты</a>
+                  <a href="#" className="block py-1 text-sm text-gray-600">Документы</a>
+                </div>
+              </details>
+
               <button className="w-full bg-red-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors mt-4">
                 {t.nav.openAccount}
               </button>
@@ -986,25 +1109,6 @@ function App() {
       </header>
 
       <main>
-        {currentPage === 'home' && <HomePage t={t} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />}
-        {currentPage === 'beginners' && <BeginnersPage t={t} />}
-        {currentPage === 'analytics' && <AnalyticsPage t={t} />}
-        {currentPage === 'help' && <HelpPage t={t} />}
-        {currentPage === 'tools' && <ToolsPage t={t} />}
-        {currentPage === 'about' && <AboutPage t={t} />}
-
-        {currentPage !== 'home' && (
-          <button
-            onClick={() => setCurrentPage('home')}
-            className="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-40"
-            title="Back to home"
-          >
-            <ArrowRight className="h-6 w-6 transform -rotate-180" />
-          </button>
-        )}
-      </main>
-
-      {currentPage === 'home' && (
         <section className="relative h-[500px] sm:h-[600px] overflow-hidden">
           {t.hero.slides.map((slide, index) => (
             <div
@@ -1052,10 +1156,7 @@ function App() {
             ))}
           </div>
         </section>
-      )}
 
-      {currentPage === 'home' && (
-        <>
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1439,8 +1540,7 @@ function App() {
             </p>
           </div>
         </section>
-        </>
-      )}
+      </main>
 
       <footer className="bg-gray-900 text-gray-300 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
