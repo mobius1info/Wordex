@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Globe, ChevronDown, Menu, X, TrendingUp, DollarSign, Users, Shield,
   Smartphone, Monitor, Award, BarChart3, BookOpen, HelpCircle, Settings,
@@ -923,7 +924,7 @@ function App() {
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <a href="#start" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">С чего начать</a>
+                    <Link to="/start" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">С чего начать</Link>
                     <a href="#what-is-forex" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Что такое форекс</a>
                     <a href="#advantages" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Преимущества форекс</a>
                     <a href="#demo" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Учебный счет</a>
@@ -940,7 +941,7 @@ function App() {
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[220px]">
-                    <a href="#trading-schedule" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Расписание торгов</a>
+                    <Link to="/trading-schedule" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Расписание торгов</Link>
                     <a href="#company-news" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Новости компании</a>
                     <a href="#market-surveys" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Обзоры рынка</a>
                     <a href="#news" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Новости</a>
@@ -960,7 +961,7 @@ function App() {
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[240px]">
                     <a href="#help-forex" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Форекс</a>
                     <a href="#digital-contracts" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Цифровые контракты</a>
-                    <a href="#how-to-trade" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Как торговать</a>
+                    <Link to="/how-to-trade" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Как торговать</Link>
                     <a href="#deposit-withdrawal" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Пополнение и вывод средств</a>
                     <a href="#calculation-speed" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Скорость расчетов</a>
                     <a href="#knowledge-base" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">База знаний</a>
