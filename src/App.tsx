@@ -9,6 +9,12 @@ import Header from './components/Header';
 import WhereToStartPage from './pages/WhereToStartPage';
 import TradingSchedulePage from './pages/TradingSchedulePage';
 import HowToTradePage from './pages/HowToTradePage';
+import WhatIsForexPage from './pages/WhatIsForexPage';
+import ForexAdvantagesPage from './pages/ForexAdvantagesPage';
+import DemoAccountPage from './pages/DemoAccountPage';
+import TradingInstrumentsPage from './pages/TradingInstrumentsPage';
+import PlatformsPage from './pages/PlatformsPage';
+import AccountTypesPage from './pages/AccountTypesPage';
 
 const translations = {
   ru: {
@@ -901,8 +907,14 @@ function App() {
       />
 
       {activePage === 'start' && <WhereToStartPage />}
+      {activePage === 'what-is-forex' && <WhatIsForexPage />}
+      {activePage === 'advantages' && <ForexAdvantagesPage />}
+      {activePage === 'demo' && <DemoAccountPage />}
       {activePage === 'trading-schedule' && <TradingSchedulePage />}
       {activePage === 'how-to-trade' && <HowToTradePage />}
+      {activePage === 'trading-instruments' && <TradingInstrumentsPage />}
+      {activePage === 'platforms' && <PlatformsPage />}
+      {activePage === 'account-types' && <AccountTypesPage />}
 
       {!activePage && (
         <>

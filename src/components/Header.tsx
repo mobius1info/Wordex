@@ -73,10 +73,10 @@ export default function Header({
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
                     <button onClick={() => setActivePage('start')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">С чего начать</button>
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('what-is-forex')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Что такое форекс</button>
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('advantages')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Преимущества форекс</button>
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Учебный счет</button>
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('account-types')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Торговый счет</button>
+                    <button onClick={() => setActivePage('what-is-forex')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Что такое форекс</button>
+                    <button onClick={() => setActivePage('advantages')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Преимущества форекс</button>
+                    <button onClick={() => setActivePage('demo')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Учебный счет</button>
+                    <button onClick={() => setActivePage('account-types')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Торговый счет</button>
                     <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Литература</button>
                   </div>
                 </div>
@@ -125,10 +125,10 @@ export default function Header({
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Платформы</button>
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Мобильные приложения</button>
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('stats')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Калькуляторы</button>
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Инструменты анализа</button>
+                    <button onClick={() => setActivePage('platforms')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Платформы</button>
+                    <button onClick={() => setActivePage('platforms')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Мобильные приложения</button>
+                    <button onClick={() => setActivePage('account-types')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Типы счетов</button>
+                    <button onClick={() => setActivePage('trading-instruments')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Торговые инструменты</button>
                   </div>
                 </div>
               </div>
