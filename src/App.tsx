@@ -864,7 +864,6 @@ function App() {
   const [showLanguages, setShowLanguages] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
 
   const t = translations[language];
 
@@ -917,79 +916,79 @@ function App() {
             </div>
 
             <nav className="hidden lg:flex items-center space-x-6">
-              <div className="relative" onMouseEnter={() => setHoveredMenu('beginners')} onMouseLeave={() => setHoveredMenu(null)}>
-                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+              <div className="relative group">
+                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center py-6">
                   {t.nav.beginners}
                   <ChevronDown className="h-4 w-4 ml-1" />
                 </button>
-                {hoveredMenu === 'beginners' && (
-                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px] z-50">
+                <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Что такое Forex</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Типы счетов</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Как начать торговлю</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Демо счет</a>
                   </div>
-                )}
+                </div>
               </div>
 
-              <div className="relative" onMouseEnter={() => setHoveredMenu('analytics')} onMouseLeave={() => setHoveredMenu(null)}>
-                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+              <div className="relative group">
+                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center py-6">
                   {t.nav.analytics}
                   <ChevronDown className="h-4 w-4 ml-1" />
                 </button>
-                {hoveredMenu === 'analytics' && (
-                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px] z-50">
+                <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Обзоры рынков</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Торговые идеи</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Экономический календарь</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Котировки</a>
                   </div>
-                )}
+                </div>
               </div>
 
-              <div className="relative" onMouseEnter={() => setHoveredMenu('help')} onMouseLeave={() => setHoveredMenu(null)}>
-                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+              <div className="relative group">
+                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center py-6">
                   {t.nav.help}
                   <ChevronDown className="h-4 w-4 ml-1" />
                 </button>
-                {hoveredMenu === 'help' && (
-                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px] z-50">
+                <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">База знаний</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">FAQ</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Способы оплаты</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Поддержка 24/7</a>
                   </div>
-                )}
+                </div>
               </div>
 
-              <div className="relative" onMouseEnter={() => setHoveredMenu('tools')} onMouseLeave={() => setHoveredMenu(null)}>
-                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+              <div className="relative group">
+                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center py-6">
                   {t.nav.tools}
                   <ChevronDown className="h-4 w-4 ml-1" />
                 </button>
-                {hoveredMenu === 'tools' && (
-                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px] z-50">
+                <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Торговые платформы</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Калькуляторы</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Копи-трейдинг</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">VPS сервер</a>
                   </div>
-                )}
+                </div>
               </div>
 
-              <div className="relative" onMouseEnter={() => setHoveredMenu('about')} onMouseLeave={() => setHoveredMenu(null)}>
-                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+              <div className="relative group">
+                <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center py-6">
                   {t.nav.about}
                   <ChevronDown className="h-4 w-4 ml-1" />
                 </button>
-                {hoveredMenu === 'about' && (
-                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px] z-50">
+                <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">О компании</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Регулирование</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Контакты</a>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600">Документы</a>
                   </div>
-                )}
+                </div>
               </div>
             </nav>
 
