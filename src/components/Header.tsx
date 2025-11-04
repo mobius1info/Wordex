@@ -107,13 +107,13 @@ export default function Header({
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[240px]">
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('what-is-forex')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Форекс</button>
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Цифровые контракты</button>
+                    <button onClick={() => setActivePage('forex-help')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Форекс</button>
+                    <button onClick={() => setActivePage('forex-help')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Цифровые контракты</button>
                     <button onClick={() => setActivePage('how-to-trade')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Как торговать</button>
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Пополнение и вывод средств</button>
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('stats')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Скорость расчетов</button>
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">База знаний</button>
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Словарь терминов</button>
+                    <button onClick={() => setActivePage('deposit-withdrawal')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Пополнение и вывод средств</button>
+                    <button onClick={() => setActivePage('deposit-withdrawal')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Скорость расчетов</button>
+                    <button onClick={() => setActivePage('glossary')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">База знаний</button>
+                    <button onClick={() => setActivePage('glossary')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">Словарь терминов</button>
                   </div>
                 </div>
               </div>
