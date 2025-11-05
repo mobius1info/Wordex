@@ -1061,33 +1061,42 @@ function App() {
       {!activePage && (
         <>
       <main>
-        <section className="relative h-[500px] sm:h-[600px] overflow-hidden">
+        <section className="relative h-[600px] sm:h-[700px] overflow-hidden">
           {t.hero.slides.map((slide, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              className={`absolute inset-0 transition-all duration-1000 ${
+                index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
               }`}
             >
-              <div className={`h-full bg-gradient-to-br ${
-                index === 0 ? 'from-blue-600 to-blue-800' :
-                index === 1 ? 'from-purple-600 to-purple-800' :
-                index === 2 ? 'from-red-600 to-red-800' :
-                'from-green-600 to-green-800'
-              } flex items-center`}>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                  <div className="max-w-3xl">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+              <div className={`h-full relative ${
+                index === 0 ? 'bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900' :
+                index === 1 ? 'bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900' :
+                index === 2 ? 'bg-gradient-to-br from-slate-900 via-orange-900 to-slate-900' :
+                'bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900'
+              } flex items-center overflow-hidden`}>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+                  <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+                </div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+                  <div className="max-w-4xl">
+                    <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium mb-6 border border-white/20">
+                      ✨ {index === 0 ? 'Популярно' : index === 1 ? 'Выгодно' : index === 2 ? 'Быстро' : 'Надежно'}
+                    </div>
+                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                       {slide.title}
                     </h1>
-                    <p className="text-xl sm:text-2xl text-white/90 mb-8">
+                    <p className="text-xl sm:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed">
                       {slide.subtitle}
                     </p>
                     <div className="flex flex-wrap gap-4">
-                      <button className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">
+                      <button className="group bg-white text-gray-900 px-10 py-5 rounded-xl text-lg font-bold hover:bg-gray-100 transition-all shadow-2xl hover:shadow-white/20 hover:scale-105 transform">
                         {t.hero.learnMore}
+                        <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
                       </button>
-                      <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-colors">
+                      <button className="bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-10 py-5 rounded-xl text-lg font-bold hover:bg-white/20 transition-all hover:scale-105 transform">
                         {t.hero.openAccount}
                       </button>
                     </div>
@@ -1096,106 +1105,118 @@ function App() {
               </div>
             </div>
           ))}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
             {t.hero.slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+                className={`h-2 rounded-full transition-all ${
+                  index === currentSlide ? 'bg-white w-12' : 'bg-white/40 w-2 hover:bg-white/60'
                 }`}
               />
             ))}
           </div>
         </section>
 
-        <section className="py-16 bg-gray-50">
+        <section className="py-20 bg-gradient-to-b from-white to-gray-50 -mt-20 relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow text-center">
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <DollarSign className="h-8 w-8 text-blue-600" />
+              <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all text-center border border-gray-100 hover:border-blue-200 hover:-translate-y-2 transform">
+                <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  <DollarSign className="h-8 w-8 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-blue-600 mb-2">$1</div>
-                <div className="text-gray-600">{t.stats.minDeposit}</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent mb-2">$1</div>
+                <div className="text-gray-600 font-medium">{t.stats.minDeposit}</div>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow text-center">
-                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="h-8 w-8 text-green-600" />
+              <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all text-center border border-gray-100 hover:border-green-200 hover:-translate-y-2 transform">
+                <div className="bg-gradient-to-br from-green-500 to-green-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  <Clock className="h-8 w-8 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-green-600 mb-2">13+</div>
-                <div className="text-gray-600">{t.stats.yearsMarket}</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent mb-2">13+</div>
+                <div className="text-gray-600 font-medium">{t.stats.yearsMarket}</div>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow text-center">
-                <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-purple-600" />
+              <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all text-center border border-gray-100 hover:border-teal-200 hover:-translate-y-2 transform">
+                <div className="bg-gradient-to-br from-teal-500 to-teal-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  <Users className="h-8 w-8 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-purple-600 mb-2">350K+</div>
-                <div className="text-gray-600">{t.stats.activeClients}</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent mb-2">350K+</div>
+                <div className="text-gray-600 font-medium">{t.stats.activeClients}</div>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow text-center">
-                <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Globe className="h-8 w-8 text-orange-600" />
+              <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all text-center border border-gray-100 hover:border-orange-200 hover:-translate-y-2 transform">
+                <div className="bg-gradient-to-br from-orange-500 to-orange-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  <Globe className="h-8 w-8 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-orange-600 mb-2">50+</div>
-                <div className="text-gray-600">{t.stats.countries}</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent mb-2">50+</div>
+                <div className="text-gray-600 font-medium">{t.stats.countries}</div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-20 bg-white">
+        <section className="py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-20">
+              <div className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-4">
                 {t.offers.title}
-              </h2>
-              <p className="text-xl text-gray-600">
+              </div>
+              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
                 {t.offers.subtitle}
-              </p>
+              </h2>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-2xl p-8 hover:shadow-xl transition-shadow">
-                <div className="bg-blue-600 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                  <Gift className="h-7 w-7 text-white" />
+              <div className="group relative bg-white rounded-3xl p-8 hover:shadow-2xl transition-all border border-gray-100 overflow-hidden hover:-translate-y-2 transform">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full -mr-16 -mt-16"></div>
+                <div className="relative">
+                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-xl">
+                    <Gift className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.offers.bonus100.title}</h3>
+                  <p className="text-gray-600 mb-8 leading-relaxed">
+                    {t.offers.bonus100.description}
+                  </p>
+                  <button className="group/btn text-blue-600 font-bold hover:text-blue-700 inline-flex items-center">
+                    {t.offers.bonus100.button}
+                    <ArrowRight className="h-5 w-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t.offers.bonus100.title}</h3>
-                <p className="text-gray-600 mb-6">
-                  {t.offers.bonus100.description}
-                </p>
-                <button className="text-blue-600 font-semibold hover:text-blue-700 inline-flex items-center">
-                  {t.offers.bonus100.button} <ArrowRight className="h-4 w-4 ml-1" />
-                </button>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-50 to-white border-2 border-purple-200 rounded-2xl p-8 hover:shadow-xl transition-shadow">
-                <div className="bg-purple-600 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                  <DollarSign className="h-7 w-7 text-white" />
+              <div className="group relative bg-white rounded-3xl p-8 hover:shadow-2xl transition-all border border-gray-100 overflow-hidden hover:-translate-y-2 transform">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/10 rounded-full -mr-16 -mt-16"></div>
+                <div className="relative">
+                  <div className="bg-gradient-to-br from-teal-500 to-teal-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-xl">
+                    <DollarSign className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.offers.cashback.title}</h3>
+                  <p className="text-gray-600 mb-8 leading-relaxed">
+                    {t.offers.cashback.description}
+                  </p>
+                  <button className="group/btn text-teal-600 font-bold hover:text-teal-700 inline-flex items-center">
+                    {t.offers.cashback.button}
+                    <ArrowRight className="h-5 w-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t.offers.cashback.title}</h3>
-                <p className="text-gray-600 mb-6">
-                  {t.offers.cashback.description}
-                </p>
-                <button className="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center">
-                  {t.offers.cashback.button} <ArrowRight className="h-4 w-4 ml-1" />
-                </button>
               </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-white border-2 border-green-200 rounded-2xl p-8 hover:shadow-xl transition-shadow">
-                <div className="bg-green-600 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                  <Award className="h-7 w-7 text-white" />
+              <div className="group relative bg-white rounded-3xl p-8 hover:shadow-2xl transition-all border border-gray-100 overflow-hidden hover:-translate-y-2 transform">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full -mr-16 -mt-16"></div>
+                <div className="relative">
+                  <div className="bg-gradient-to-br from-green-500 to-green-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-xl">
+                    <Award className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.offers.copystart.title}</h3>
+                  <p className="text-gray-600 mb-8 leading-relaxed">
+                    {t.offers.copystart.description}
+                  </p>
+                  <button className="group/btn text-green-600 font-bold hover:text-green-700 inline-flex items-center">
+                    {t.offers.copystart.button}
+                    <ArrowRight className="h-5 w-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{t.offers.copystart.title}</h3>
-                <p className="text-gray-600 mb-6">
-                  {t.offers.copystart.description}
-                </p>
-                <button className="text-green-600 font-semibold hover:text-green-700 inline-flex items-center">
-                  {t.offers.copystart.button} <ArrowRight className="h-4 w-4 ml-1" />
-                </button>
               </div>
             </div>
           </div>
@@ -1297,70 +1318,91 @@ function App() {
           </div>
         </section>
 
-        <section className="py-20 bg-blue-900 text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-500 rounded-full blur-3xl"></div>
+          </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+                <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-semibold mb-6 border border-white/20">
+                  Торговые платформы
+                </div>
+                <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
                   {t.platforms.title}
                 </h2>
-                <p className="text-xl text-blue-100 mb-8">
+                <p className="text-xl text-white/80 mb-10">
                   {t.platforms.subtitle}
                 </p>
-                <div className="space-y-6 mb-8">
-                  <div className="flex items-start">
-                    <Monitor className="h-6 w-6 text-blue-300 mr-3 mt-1 flex-shrink-0" />
+                <div className="space-y-6 mb-10">
+                  <div className="flex items-start p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <div className="bg-blue-500/20 p-3 rounded-xl mr-4">
+                      <Monitor className="h-6 w-6 text-blue-300" />
+                    </div>
                     <div>
-                      <div className="font-semibold text-lg mb-1">{t.platforms.feature1.title}</div>
-                      <div className="text-blue-200">{t.platforms.feature1.description}</div>
+                      <div className="font-bold text-lg mb-1">{t.platforms.feature1.title}</div>
+                      <div className="text-white/70">{t.platforms.feature1.description}</div>
                     </div>
                   </div>
-                  <div className="flex items-start">
-                    <BarChart3 className="h-6 w-6 text-blue-300 mr-3 mt-1 flex-shrink-0" />
+                  <div className="flex items-start p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <div className="bg-teal-500/20 p-3 rounded-xl mr-4">
+                      <BarChart3 className="h-6 w-6 text-teal-300" />
+                    </div>
                     <div>
-                      <div className="font-semibold text-lg mb-1">{t.platforms.feature2.title}</div>
-                      <div className="text-blue-200">{t.platforms.feature2.description}</div>
+                      <div className="font-bold text-lg mb-1">{t.platforms.feature2.title}</div>
+                      <div className="text-white/70">{t.platforms.feature2.description}</div>
                     </div>
                   </div>
-                  <div className="flex items-start">
-                    <Zap className="h-6 w-6 text-blue-300 mr-3 mt-1 flex-shrink-0" />
+                  <div className="flex items-start p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
+                    <div className="bg-green-500/20 p-3 rounded-xl mr-4">
+                      <Zap className="h-6 w-6 text-green-300" />
+                    </div>
                     <div>
-                      <div className="font-semibold text-lg mb-1">{t.platforms.feature3.title}</div>
-                      <div className="text-blue-200">{t.platforms.feature3.description}</div>
+                      <div className="font-bold text-lg mb-1">{t.platforms.feature3.title}</div>
+                      <div className="text-white/70">{t.platforms.feature3.description}</div>
                     </div>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-4">
-                  <button className="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center">
+                  <button className="group bg-white text-gray-900 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all inline-flex items-center shadow-xl hover:scale-105 transform">
                     <Download className="h-5 w-5 mr-2" />
                     MetaTrader 4
                   </button>
-                  <button className="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center">
+                  <button className="group bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all inline-flex items-center hover:scale-105 transform">
                     <Download className="h-5 w-5 mr-2" />
                     MetaTrader 5
                   </button>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-                  <Monitor className="h-12 w-12 text-blue-300 mx-auto mb-3" />
-                  <div className="font-semibold mb-1">{t.platforms.desktop}</div>
-                  <div className="text-sm text-blue-200">Windows & Mac</div>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 text-center border border-white/20 hover:bg-white/20 transition-all hover:scale-105 transform">
+                  <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Monitor className="h-10 w-10 text-white" />
+                  </div>
+                  <div className="font-bold text-lg mb-2">{t.platforms.desktop}</div>
+                  <div className="text-sm text-white/70">Windows & Mac</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-                  <Smartphone className="h-12 w-12 text-blue-300 mx-auto mb-3" />
-                  <div className="font-semibold mb-1">{t.platforms.mobile}</div>
-                  <div className="text-sm text-blue-200">iOS & Android</div>
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 text-center border border-white/20 hover:bg-white/20 transition-all hover:scale-105 transform">
+                  <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Smartphone className="h-10 w-10 text-white" />
+                  </div>
+                  <div className="font-bold text-lg mb-2">{t.platforms.mobile}</div>
+                  <div className="text-sm text-white/70">iOS & Android</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-                  <Globe className="h-12 w-12 text-blue-300 mx-auto mb-3" />
-                  <div className="font-semibold mb-1">{t.platforms.web}</div>
-                  <div className="text-sm text-blue-200">Browser Trading</div>
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 text-center border border-white/20 hover:bg-white/20 transition-all hover:scale-105 transform">
+                  <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Globe className="h-10 w-10 text-white" />
+                  </div>
+                  <div className="font-bold text-lg mb-2">{t.platforms.web}</div>
+                  <div className="text-sm text-white/70">Browser Trading</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-                  <Database className="h-12 w-12 text-blue-300 mx-auto mb-3" />
-                  <div className="font-semibold mb-1">{t.platforms.vps}</div>
-                  <div className="text-sm text-blue-200">Virtual Server</div>
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 text-center border border-white/20 hover:bg-white/20 transition-all hover:scale-105 transform">
+                  <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Database className="h-10 w-10 text-white" />
+                  </div>
+                  <div className="font-bold text-lg mb-2">{t.platforms.vps}</div>
+                  <div className="text-sm text-white/70">Virtual Server</div>
                 </div>
               </div>
             </div>
@@ -1470,26 +1512,43 @@ function App() {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <Star className="h-16 w-16 text-yellow-400 mx-auto mb-6" />
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+        <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500 rounded-full blur-3xl"></div>
+          </div>
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-3xl mb-8 shadow-2xl animate-pulse">
+              <Star className="h-10 w-10 text-white" />
+            </div>
+            <h2 className="text-4xl sm:text-6xl font-bold mb-6 leading-tight">
               {t.cta.title}
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl sm:text-2xl text-white/80 mb-12 max-w-3xl mx-auto">
               {t.cta.subtitle}
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <button className="bg-red-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-700 transition-colors shadow-lg">
+            <div className="flex flex-wrap justify-center gap-6 mb-10">
+              <button className="group bg-gradient-to-r from-orange-500 to-red-600 text-white px-12 py-5 rounded-xl text-lg font-bold hover:from-orange-600 hover:to-red-700 transition-all shadow-2xl hover:shadow-orange-500/50 hover:scale-105 transform">
                 {t.cta.openReal}
+                <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </button>
-              <button className="bg-white text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors">
+              <button className="bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-12 py-5 rounded-xl text-lg font-bold hover:bg-white/20 transition-all hover:scale-105 transform">
                 {t.cta.tryDemo}
               </button>
             </div>
-            <p className="mt-6 text-blue-200 text-sm">
-              {t.cta.features}
-            </p>
+            <div className="flex flex-wrap justify-center gap-8 text-white/70">
+              <div className="flex items-center">
+                <CheckCircle className="h-5 w-5 mr-2 text-green-400" />
+                <span>Минимальный депозит $1</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="h-5 w-5 mr-2 text-green-400" />
+                <span>Бонусы до 100%</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="h-5 w-5 mr-2 text-green-400" />
+                <span>Поддержка 24/7</span>
+              </div>
+            </div>
           </div>
         </section>
       </main>
