@@ -471,6 +471,81 @@ export const pageTranslations = {
       readyText: 'Після практики на демо-рахунку відкрийте реальний рахунок та почніть заробляти на Forex',
       realButton: 'Відкрити реальний рахунок',
       continueDemo: 'Продовжити з демо'
+    },
+    accountTypes: {
+      title: 'Типи торгових рахунків',
+      subtitle: 'Оберіть рахунок, який ідеально підходить для вашого стилю торгівлі',
+      standard: {
+        name: 'Standard',
+        description: 'Для початківців трейдерів',
+        minDeposit: 'від $10',
+        minDepositLabel: 'мінімальний депозит',
+        feature1: 'Кредитне плече до 1:1000',
+        feature2: 'Спред від 1.5 пункту',
+        feature3: 'Без комісій',
+        feature4: 'Мікро та стандартні лоти',
+        feature5: 'Всі торгові інструменти',
+        button: 'Відкрити рахунок'
+      },
+      pro: {
+        name: 'Pro',
+        badge: 'Популярний',
+        description: 'Для активних трейдерів',
+        minDeposit: 'від $100',
+        minDepositLabel: 'мінімальний депозит',
+        feature1: 'Кредитне плече до 1:500',
+        feature2: 'Спред від 0.5 пункту',
+        feature3: 'Комісія $3 за лот',
+        feature4: 'ECN/STP виконання',
+        feature5: 'Пріоритетна підтримка',
+        button: 'Відкрити рахунок'
+      },
+      vip: {
+        name: 'VIP',
+        description: 'Для професіоналів',
+        minDeposit: 'від $5000',
+        minDepositLabel: 'мінімальний депозит',
+        feature1: 'Кредитне плече до 1:200',
+        feature2: 'Спред від 0 пунктів',
+        feature3: 'Комісія $2 за лот',
+        feature4: 'Персональний менеджер',
+        feature5: 'Аналітика та сигнали',
+        button: 'Відкрити рахунок'
+      },
+      comparison: {
+        title: 'Порівняння рахунків',
+        characteristic: 'Характеристика',
+        minDeposit: 'Мінімальний депозит',
+        spread: 'Спред EUR/USD',
+        commission: 'Комісія',
+        leverage: 'Кредитне плече',
+        execution: 'Виконання',
+        minLot: 'Мінімальний лот',
+        personalManager: 'Персональний менеджер',
+        tradingSignals: 'Торгові сигнали',
+        no: 'Немає',
+        market: 'Ринкове'
+      },
+      benefits: {
+        title: 'Переваги всіх рахунків',
+        item1: 'Миттєве виведення коштів',
+        item2: 'Без обмежень на стратегії',
+        item3: 'Торгівля на всіх платформах',
+        item4: 'Захист від негативного балансу'
+      },
+      additional: {
+        title: 'Додаткові можливості',
+        item1: 'Програма лояльності та бонуси',
+        item2: 'Кешбек на кожну угоду',
+        item3: 'Безкоштовні навчальні матеріали',
+        item4: 'VPS-сервер для автоматичної торгівлі'
+      },
+      cta: {
+        title: 'Не знаєте, який рахунок обрати?',
+        subtitle: 'Наші фахівці допоможуть підібрати оптимальний тип рахунку для ваших цілей',
+        contactButton: "Зв'язатися з нами",
+        demoButton: 'Відкрити демо-рахунок'
+      }
     }
   },
   tr: {
@@ -580,6 +655,81 @@ export const pageTranslations = {
       realButton: 'Gerçek Hesap Aç',
       continueDemo: 'Demo ile Devam Et'
     },
+    accountTypes: {
+      title: 'Ticaret Hesap Türleri',
+      subtitle: 'Ticaret tarzınıza mükemmel uyum sağlayan hesabı seçin',
+      standard: {
+        name: 'Standard',
+        description: 'Yeni başlayanlar için',
+        minDeposit: '$10\'dan başlayan',
+        minDepositLabel: 'minimum depozito',
+        feature1: '1:1000\'e kadar kaldıraç',
+        feature2: '1.5 pipten başlayan spread',
+        feature3: 'Komisyon yok',
+        feature4: 'Mikro ve standart lotlar',
+        feature5: 'Tüm ticaret enstrümanları',
+        button: 'Hesap Aç'
+      },
+      pro: {
+        name: 'Pro',
+        badge: 'Popüler',
+        description: 'Aktif yatırımcılar için',
+        minDeposit: '$100\'den başlayan',
+        minDepositLabel: 'minimum depozito',
+        feature1: '1:500\'e kadar kaldıraç',
+        feature2: '0.5 pipten başlayan spread',
+        feature3: 'Lot başına $3 komisyon',
+        feature4: 'ECN/STP gerçekleştirme',
+        feature5: 'Öncelikli destek',
+        button: 'Hesap Aç'
+      },
+      vip: {
+        name: 'VIP',
+        description: 'Profesyoneller için',
+        minDeposit: '$5000\'den başlayan',
+        minDepositLabel: 'minimum depozito',
+        feature1: '1:200\'e kadar kaldıraç',
+        feature2: '0 pipten başlayan spread',
+        feature3: 'Lot başına $2 komisyon',
+        feature4: 'Kişisel müşteri temsilcisi',
+        feature5: 'Analitik ve sinyaller',
+        button: 'Hesap Aç'
+      },
+      comparison: {
+        title: 'Hesap Karşılaştırması',
+        characteristic: 'Özellik',
+        minDeposit: 'Minimum Depozito',
+        spread: 'EUR/USD Spread',
+        commission: 'Komisyon',
+        leverage: 'Kaldıraç',
+        execution: 'Gerçekleştirme',
+        minLot: 'Minimum Lot',
+        personalManager: 'Kişisel Müşteri Temsilcisi',
+        tradingSignals: 'Ticaret Sinyalleri',
+        no: 'Hayır',
+        market: 'Piyasa'
+      },
+      benefits: {
+        title: 'Tüm Hesapların Avantajları',
+        item1: 'Anında para çekme',
+        item2: 'Strateji kısıtlaması yok',
+        item3: 'Tüm platformlarda ticaret',
+        item4: 'Negatif bakiye koruması'
+      },
+      additional: {
+        title: 'Ek Özellikler',
+        item1: 'Sadakat programı ve bonuslar',
+        item2: 'Her işlemde cashback',
+        item3: 'Ücretsiz eğitim materyalleri',
+        item4: 'Otomatik ticaret için VPS sunucusu'
+      },
+      cta: {
+        title: 'Hangi hesabı seçeceğinizi bilmiyor musunuz?',
+        subtitle: 'Uzmanlarımız hedeflerinize uygun optimal hesap türünü seçmenize yardımcı olacaktır',
+        contactButton: 'Bizimle İletişime Geçin',
+        demoButton: 'Demo Hesap Aç'
+      }
+    }
   },
   zh: {
     whereToStart: {
@@ -689,7 +839,7 @@ export const pageTranslations = {
       continueDemo: '继续使用演示'
     },
     accountTypes: {
-      title: '账户类型',
+      title: '交易账户类型',
       subtitle: '选择最适合您交易风格的账户',
       standard: {
         name: 'Standard',
