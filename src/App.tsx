@@ -74,10 +74,6 @@ const translations = {
           subtitle: 'Получайте до $25 за каждый торгуемый лот'
         },
         {
-          title: 'Jet Trade',
-          subtitle: 'Торгуйте цифровыми контрактами с прибылью до 95%'
-        },
-        {
           title: 'Бонус 100%',
           subtitle: 'Удвойте свой первый депозит и начните с большим капиталом'
         }
@@ -120,14 +116,6 @@ const translations = {
         feature2: 'Детальная статистика',
         feature3: 'Минимальные вложения от $1',
         button: 'Начать копирование'
-      },
-      jet: {
-        title: 'Jet Trade',
-        description: 'Торгуйте цифровыми контрактами. Прибыль до 95% за минуты.',
-        feature1: 'Прибыль до 95%',
-        feature2: 'Контракты от 60 секунд',
-        feature3: '100+ торговых активов',
-        button: 'Открыть JetTrade'
       },
       forex: {
         title: 'Forex/CFD',
@@ -203,7 +191,6 @@ const translations = {
       information: 'Информация',
       contacts: 'Контакты',
       copyTrading: 'Копи-трейдинг',
-      jetTrade: 'Jet Trade',
       forexCFD: 'Forex/CFD',
       platforms: 'Торговые платформы',
       about: 'О компании',
@@ -266,10 +253,6 @@ const translations = {
           subtitle: 'Отримуйте до $25 за кожен лот, що торгується'
         },
         {
-          title: 'Jet Trade',
-          subtitle: 'Торгуйте цифровими контрактами з прибутком до 95%'
-        },
-        {
           title: 'Бонус 100%',
           subtitle: 'Подвойте свій перший депозит і почніть з більшим капіталом'
         }
@@ -312,14 +295,6 @@ const translations = {
         feature2: 'Детальна статистика',
         feature3: 'Мінімальні вкладення від $1',
         button: 'Почати копіювання'
-      },
-      jet: {
-        title: 'Jet Trade',
-        description: 'Торгуйте цифровими контрактами. Прибуток до 95% за хвилини.',
-        feature1: 'Прибуток до 95%',
-        feature2: 'Контракти від 60 секунд',
-        feature3: '100+ торгових активів',
-        button: 'Відкрити JetTrade'
       },
       forex: {
         title: 'Forex/CFD',
@@ -395,7 +370,6 @@ const translations = {
       information: 'Інформація',
       contacts: 'Контакти',
       copyTrading: 'Копі-трейдинг',
-      jetTrade: 'Jet Trade',
       forexCFD: 'Forex/CFD',
       platforms: 'Торгові платформи',
       about: 'Про компанію',
@@ -458,10 +432,6 @@ const translations = {
           subtitle: 'Get up to $25 for each traded lot'
         },
         {
-          title: 'Jet Trade',
-          subtitle: 'Trade digital contracts with up to 95% profit'
-        },
-        {
           title: '100% Bonus',
           subtitle: 'Double your first deposit and start with bigger capital'
         }
@@ -504,14 +474,6 @@ const translations = {
         feature2: 'Detailed statistics',
         feature3: 'Minimum investment from $1',
         button: 'Start Copying'
-      },
-      jet: {
-        title: 'Jet Trade',
-        description: 'Trade digital contracts. Up to 95% profit in minutes.',
-        feature1: 'Profit up to 95%',
-        feature2: 'Contracts from 60 seconds',
-        feature3: '100+ trading assets',
-        button: 'Open JetTrade'
       },
       forex: {
         title: 'Forex/CFD',
@@ -587,7 +549,6 @@ const translations = {
       information: 'Information',
       contacts: 'Contacts',
       copyTrading: 'Copy Trading',
-      jetTrade: 'Jet Trade',
       forexCFD: 'Forex/CFD',
       platforms: 'Trading Platforms',
       about: 'About',
@@ -650,10 +611,6 @@ const translations = {
           subtitle: 'Her işlem lotundan 25$\'a kadar kazanın'
         },
         {
-          title: 'Jet Trade',
-          subtitle: '%95\'e varan kârla dijital sözleşmeler ticareti yapın'
-        },
-        {
           title: '%100 Bonus',
           subtitle: 'İlk depozitonuzu ikiye katlayın ve daha büyük sermaye ile başlayın'
         }
@@ -696,14 +653,6 @@ const translations = {
         feature2: 'Detaylı istatistikler',
         feature3: '1$\'dan başlayan minimum yatırım',
         button: 'Kopyalamaya Başla'
-      },
-      jet: {
-        title: 'Jet Trade',
-        description: 'Dijital sözleşmeler ticareti yapın. Dakikalar içinde %95\'e varan kâr.',
-        feature1: '%95\'e kadar kâr',
-        feature2: '60 saniyeden başlayan sözleşmeler',
-        feature3: '100+ ticaret varlığı',
-        button: 'JetTrade Aç'
       },
       forex: {
         title: 'Forex/CFD',
@@ -779,7 +728,6 @@ const translations = {
       information: 'Bilgi',
       contacts: 'İletişim',
       copyTrading: 'Kopya Ticaret',
-      jetTrade: 'Jet Trade',
       forexCFD: 'Forex/CFD',
       platforms: 'Ticaret Platformları',
       about: 'Hakkımızda',
@@ -842,10 +790,6 @@ const translations = {
           subtitle: '每笔交易手数可获得高达25美元'
         },
         {
-          title: 'Jet Trade',
-          subtitle: '交易数字合约，利润高达95%'
-        },
-        {
           title: '100%奖金',
           subtitle: '首次存款翻倍，以更大的资本开始'
         }
@@ -888,14 +832,6 @@ const translations = {
         feature2: '详细统计',
         feature3: '最低投资1美元起',
         button: '开始复制'
-      },
-      jet: {
-        title: 'Jet Trade',
-        description: '交易数字合约。几分钟内获得高达95%的利润。',
-        feature1: '利润高达95%',
-        feature2: '合约从60秒起',
-        feature3: '100+交易资产',
-        button: '打开JetTrade'
       },
       forex: {
         title: '外汇/差价合约',
@@ -971,7 +907,6 @@ const translations = {
       information: '信息',
       contacts: '联系方式',
       copyTrading: '复制交易',
-      jetTrade: 'Jet Trade',
       forexCFD: '外汇/差价合约',
       platforms: '交易平台',
       about: '关于我们',
@@ -1233,7 +1168,7 @@ function App() {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
               <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                   <Copy className="h-8 w-8 text-blue-600" />
@@ -1258,33 +1193,6 @@ function App() {
                 </ul>
                 <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                   {t.trading.copy.button}
-                </button>
-              </div>
-
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="bg-red-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                  <Zap className="h-8 w-8 text-red-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.trading.jet.title}</h3>
-                <p className="text-gray-600 mb-6">
-                  {t.trading.jet.description}
-                </p>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">{t.trading.jet.feature1}</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">{t.trading.jet.feature2}</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">{t.trading.jet.feature3}</span>
-                  </li>
-                </ul>
-                <button className="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
-                  {t.trading.jet.button}
                 </button>
               </div>
 
@@ -1569,7 +1477,6 @@ function App() {
               <h4 className="text-white font-semibold mb-4">{t.footer.trading}</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="#" className="hover:text-white transition-colors">{t.footer.copyTrading}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{t.footer.jetTrade}</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">{t.footer.forexCFD}</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">{t.footer.platforms}</a></li>
               </ul>
