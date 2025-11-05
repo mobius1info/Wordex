@@ -100,9 +100,9 @@ export default function QuotesPage({ language = 'ru' }: QuotesPageProps) {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">Котировки в реальном времени</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">{t.title}</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Актуальные цены на валюты, металлы, сырье, индексы и криптовалюты
+            {t.subtitle}
           </p>
         </div>
 
@@ -140,11 +140,11 @@ export default function QuotesPage({ language = 'ru' }: QuotesPageProps) {
           </div>
         </div>
 
-        {renderQuoteTable('Валютные пары', quotes.forex, <TrendingUp className="h-8 w-8" />)}
-        {renderQuoteTable('Драгоценные металлы', quotes.metals, <BarChart3 className="h-8 w-8" />)}
-        {renderQuoteTable('Сырьевые товары', quotes.commodities, <BarChart3 className="h-8 w-8" />)}
-        {renderQuoteTable('Фондовые индексы', quotes.indices, <TrendingUp className="h-8 w-8" />)}
-        {renderQuoteTable('Криптовалюты', quotes.crypto, <TrendingUp className="h-8 w-8" />)}
+        {renderQuoteTable(t.forex, quotes.forex, <TrendingUp className="h-8 w-8" />)}
+        {renderQuoteTable(t.metals, quotes.metals, <BarChart3 className="h-8 w-8" />)}
+        {renderQuoteTable(t.commodities, quotes.commodities, <BarChart3 className="h-8 w-8" />)}
+        {renderQuoteTable(t.indices, quotes.indices, <TrendingUp className="h-8 w-8" />)}
+        {renderQuoteTable(t.crypto, quotes.crypto, <TrendingUp className="h-8 w-8" />)}
 
         <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg mb-12">
           <h4 className="font-semibold text-blue-900 mb-3">Важная информация:</h4>

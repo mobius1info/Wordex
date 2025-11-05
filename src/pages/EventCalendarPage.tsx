@@ -101,9 +101,9 @@ export default function EventCalendarPage({ language = 'ru' }: EventCalendarPage
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">Экономический календарь</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">{t.title}</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Важные события и публикации экономических данных, влияющих на финансовые рынки
+            {t.subtitle}
           </p>
         </div>
 
