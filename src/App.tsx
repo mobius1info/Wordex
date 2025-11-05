@@ -970,6 +970,64 @@ function App() {
                   <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
                   <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
                 </div>
+                {index === 0 && (
+                  <div className="absolute right-10 top-1/2 -translate-y-1/2 opacity-40 pointer-events-none">
+                    <div className="flex items-center gap-12">
+                      <div className="text-center">
+                        <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-6 shadow-2xl animate-pulse-slow mb-4">
+                          <div className="text-white font-bold text-sm mb-2">Master Trader</div>
+                          <div className="bg-white/20 rounded-lg p-3 mb-2">
+                            <div className="text-white text-xs">EUR/USD</div>
+                            <div className="text-green-300 font-bold text-lg">BUY</div>
+                          </div>
+                          <div className="flex justify-between text-white text-xs">
+                            <span>+125 pips</span>
+                            <span>$2,500</span>
+                          </div>
+                        </div>
+                        <div className="bg-blue-500/30 rounded-lg px-4 py-2">
+                          <div className="text-white text-xs font-semibold">Account #1</div>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col items-center gap-3">
+                        <div className="animate-arrow-flow">
+                          <svg width="80" height="40" viewBox="0 0 80 40" className="text-blue-300">
+                            <path d="M 5 20 L 60 20" stroke="currentColor" strokeWidth="3" fill="none" strokeDasharray="5,5"/>
+                            <polygon points="60,15 75,20 60,25" fill="currentColor"/>
+                          </svg>
+                        </div>
+                        <div className="animate-arrow-flow" style={{ animationDelay: '0.5s' }}>
+                          <svg width="80" height="40" viewBox="0 0 80 40" className="text-blue-300">
+                            <path d="M 5 20 L 60 20" stroke="currentColor" strokeWidth="3" fill="none" strokeDasharray="5,5"/>
+                            <polygon points="60,15 75,20 60,25" fill="currentColor"/>
+                          </svg>
+                        </div>
+                        <div className="animate-arrow-flow" style={{ animationDelay: '1s' }}>
+                          <svg width="80" height="40" viewBox="0 0 80 40" className="text-blue-300">
+                            <path d="M 5 20 L 60 20" stroke="currentColor" strokeWidth="3" fill="none" strokeDasharray="5,5"/>
+                            <polygon points="60,15 75,20 60,25" fill="currentColor"/>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-3">
+                        <div className="bg-gradient-to-br from-green-400 to-green-600 rounded-xl p-4 shadow-xl animate-trade-signal">
+                          <div className="text-white text-xs font-semibold mb-1">Follower #1</div>
+                          <div className="text-white text-xs">Copy: 100%</div>
+                        </div>
+                        <div className="bg-gradient-to-br from-green-400 to-green-600 rounded-xl p-4 shadow-xl animate-trade-signal" style={{ animationDelay: '0.5s' }}>
+                          <div className="text-white text-xs font-semibold mb-1">Follower #2</div>
+                          <div className="text-white text-xs">Copy: 75%</div>
+                        </div>
+                        <div className="bg-gradient-to-br from-green-400 to-green-600 rounded-xl p-4 shadow-xl animate-trade-signal" style={{ animationDelay: '1s' }}>
+                          <div className="text-white text-xs font-semibold mb-1">Follower #3</div>
+                          <div className="text-white text-xs">Copy: 50%</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 {index === 1 && (
                   <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full opacity-30 pointer-events-none">
                     <div className="flex items-end justify-around h-full px-8 pb-20">
