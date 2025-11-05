@@ -70,10 +70,6 @@ const translations = {
           subtitle: 'Следуйте за успешными трейдерами и автоматически копируйте их сделки'
         },
         {
-          title: 'Кэшбэк Клуб',
-          subtitle: 'Получайте до $25 за каждый торгуемый лот'
-        },
-        {
           title: 'Бонус 100%',
           subtitle: 'Удвойте свой первый депозит и начните с большим капиталом'
         }
@@ -94,11 +90,6 @@ const translations = {
         title: 'Бонус 100%',
         description: 'Удвойте свой первый депозит. Получите 100% бонус на счет при пополнении',
         button: 'Получить бонус'
-      },
-      cashback: {
-        title: 'Кэшбэк до $25',
-        description: 'Получайте кэшбэк за каждый торгуемый лот. До $25 за лот в программе лояльности',
-        button: 'Подробнее'
       },
       copystart: {
         title: 'Copystart',
@@ -249,10 +240,6 @@ const translations = {
           subtitle: 'Слідуйте за успішними трейдерами та автоматично копіюйте їх угоди'
         },
         {
-          title: 'Кешбек Клуб',
-          subtitle: 'Отримуйте до $25 за кожен лот, що торгується'
-        },
-        {
           title: 'Бонус 100%',
           subtitle: 'Подвойте свій перший депозит і почніть з більшим капіталом'
         }
@@ -273,11 +260,6 @@ const translations = {
         title: 'Бонус 100%',
         description: 'Подвойте свій перший депозит. Отримайте 100% бонус на рахунок при поповненні',
         button: 'Отримати бонус'
-      },
-      cashback: {
-        title: 'Кешбек до $25',
-        description: 'Отримуйте кешбек за кожен лот, що торгується. До $25 за лот у програмі лояльності',
-        button: 'Детальніше'
       },
       copystart: {
         title: 'Copystart',
@@ -428,10 +410,6 @@ const translations = {
           subtitle: 'Follow successful traders and automatically copy their trades'
         },
         {
-          title: 'Cashback Club',
-          subtitle: 'Get up to $25 for each traded lot'
-        },
-        {
           title: '100% Bonus',
           subtitle: 'Double your first deposit and start with bigger capital'
         }
@@ -452,11 +430,6 @@ const translations = {
         title: '100% Bonus',
         description: 'Double your first deposit. Get 100% bonus on your account when depositing',
         button: 'Get Bonus'
-      },
-      cashback: {
-        title: 'Cashback up to $25',
-        description: 'Get cashback for each traded lot. Up to $25 per lot in loyalty program',
-        button: 'Learn More'
       },
       copystart: {
         title: 'Copystart',
@@ -607,10 +580,6 @@ const translations = {
           subtitle: 'Başarılı yatırımcıları takip edin ve işlemlerini otomatik olarak kopyalayın'
         },
         {
-          title: 'Cashback Kulübü',
-          subtitle: 'Her işlem lotundan 25$\'a kadar kazanın'
-        },
-        {
           title: '%100 Bonus',
           subtitle: 'İlk depozitonuzu ikiye katlayın ve daha büyük sermaye ile başlayın'
         }
@@ -631,11 +600,6 @@ const translations = {
         title: '%100 Bonus',
         description: 'İlk depozitonuzu ikiye katlayın. Para yatırdığınızda hesabınıza %100 bonus alın',
         button: 'Bonus Al'
-      },
-      cashback: {
-        title: '25$\'a kadar Cashback',
-        description: 'Her işlem lotu için cashback kazanın. Sadakat programında lot başına 25$\'a kadar',
-        button: 'Daha Fazla'
       },
       copystart: {
         title: 'Copystart',
@@ -786,10 +750,6 @@ const translations = {
           subtitle: '跟随成功的交易者并自动复制他们的交易'
         },
         {
-          title: '返现俱乐部',
-          subtitle: '每笔交易手数可获得高达25美元'
-        },
-        {
           title: '100%奖金',
           subtitle: '首次存款翻倍，以更大的资本开始'
         }
@@ -810,11 +770,6 @@ const translations = {
         title: '100%奖金',
         description: '首次存款翻倍。存款时获得100%账户奖金',
         button: '获取奖金'
-      },
-      cashback: {
-        title: '高达25美元返现',
-        description: '每笔交易手数获得返现。忠诚计划中每手高达25美元',
-        button: '了解更多'
       },
       copystart: {
         title: 'Copystart',
@@ -1102,7 +1057,7 @@ function App() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="group relative bg-white rounded-3xl p-8 hover:shadow-2xl transition-all border border-gray-100 overflow-hidden hover:-translate-y-2 transform">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full -mr-16 -mt-16"></div>
                 <div className="relative">
@@ -1115,23 +1070,6 @@ function App() {
                   </p>
                   <button className="group/btn text-blue-600 font-bold hover:text-blue-700 inline-flex items-center">
                     {t.offers.bonus100.button}
-                    <ArrowRight className="h-5 w-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </div>
-
-              <div className="group relative bg-white rounded-3xl p-8 hover:shadow-2xl transition-all border border-gray-100 overflow-hidden hover:-translate-y-2 transform">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/10 rounded-full -mr-16 -mt-16"></div>
-                <div className="relative">
-                  <div className="bg-gradient-to-br from-teal-500 to-teal-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-xl">
-                    <DollarSign className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.offers.cashback.title}</h3>
-                  <p className="text-gray-600 mb-8 leading-relaxed">
-                    {t.offers.cashback.description}
-                  </p>
-                  <button className="group/btn text-teal-600 font-bold hover:text-teal-700 inline-flex items-center">
-                    {t.offers.cashback.button}
                     <ArrowRight className="h-5 w-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                 </div>
