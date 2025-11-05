@@ -1004,6 +1004,22 @@ function App() {
     return () => clearInterval(interval);
   }, [language]);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setShowLanguages(false);
+  }, [activePage]);
+
   const languageLabels = {
     ru: 'Русский',
     uk: 'Українська',
