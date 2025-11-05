@@ -2,9 +2,6 @@ import { useState, useEffect } from 'react';
 import { supabase, NewsItem } from '../lib/supabase';
 import { Plus, Edit2, Trash2, Save, X, LogOut } from 'lucide-react';
 
-const ADMIN_LOGIN = import.meta.env.VITE_ADMIN_LOGIN || 'admin';
-const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'admin123';
-
 export default function AdminPage() {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -114,21 +111,45 @@ export default function AdminPage() {
     setNews(news.map((n) => (n.id === id ? { ...n, [field]: value } : n)));
   };
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
-    if (username === ADMIN_LOGIN && password === ADMIN_PASSWORD) {
-      setIsAuthenticated(true);
-      sessionStorage.setItem('adminAuth', 'true');
-      setUsername('');
-      setPassword('');
-    } else {
-      alert('Неверный логин или пароль');
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/admin-login`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+          },
+          body: JSON.stringify({ username, password }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsAuthenticated(true);
+        sessionStorage.setItem('adminAuth', 'true');
+        sessionStorage.setItem('adminToken', data.token);
+        setUsername('');
+        setPassword('');
+      } else {
+        alert('Неверный логин или пароль');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      alert('Ошибка входа. Попробуйте позже.');
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleLogout = () => {
     sessionStorage.removeItem('adminAuth');
+    sessionStorage.removeItem('adminToken');
     setIsAuthenticated(false);
   };
 
@@ -184,9 +205,10 @@ export default function AdminPage() {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              disabled={loading}
+              className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Войти
+              {loading ? 'Вход...' : 'Войти'}
             </button>
           </form>
         </div>
