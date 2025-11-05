@@ -31,33 +31,6 @@ export default function AdminPage() {
     { code: 'zh', name: '中文' },
   ];
 
-  useEffect(() => {
-    const authStatus = sessionStorage.getItem('adminAuth');
-    if (authStatus === 'true') {
-      setIsAuthenticated(true);
-      loadNews();
-    }
-  }, []);
-
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (username === ADMIN_LOGIN && password === ADMIN_PASSWORD) {
-      setIsAuthenticated(true);
-      sessionStorage.setItem('adminAuth', 'true');
-      loadNews();
-      setUsername('');
-      setPassword('');
-    } else {
-      alert('Неверный логин или пароль');
-    }
-  };
-
-  const handleLogout = () => {
-    sessionStorage.removeItem('adminAuth');
-    setIsAuthenticated(false);
-  };
-
   const loadNews = async () => {
     const { data, error } = await supabase
       .from('news')
@@ -135,6 +108,37 @@ export default function AdminPage() {
   const updateNewsField = (id: string, field: keyof NewsItem, value: string | boolean) => {
     setNews(news.map((n) => (n.id === id ? { ...n, [field]: value } : n)));
   };
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (username === ADMIN_LOGIN && password === ADMIN_PASSWORD) {
+      setIsAuthenticated(true);
+      sessionStorage.setItem('adminAuth', 'true');
+      setUsername('');
+      setPassword('');
+    } else {
+      alert('Неверный логин или пароль');
+    }
+  };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('adminAuth');
+    setIsAuthenticated(false);
+  };
+
+  useEffect(() => {
+    const authStatus = sessionStorage.getItem('adminAuth');
+    if (authStatus === 'true') {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      loadNews();
+    }
+  }, [isAuthenticated]);
 
   if (loading) {
     return (
