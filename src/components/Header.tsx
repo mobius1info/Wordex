@@ -1,5 +1,7 @@
 import { Globe, ChevronDown, Menu, X, TrendingUp, HelpCircle } from 'lucide-react';
 
+import { useState } from 'react';
+
 interface HeaderProps {
   language: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
   showLanguages: boolean;
@@ -21,6 +23,7 @@ export default function Header({
   setActivePage,
   translations
 }: HeaderProps) {
+  const [showMobileLanguages, setShowMobileLanguages] = useState(false);
   const t = translations[language];
 
   const languageLabels = {
@@ -182,24 +185,24 @@ export default function Header({
               {/* Language Selector Mobile */}
               <div className="border-b border-gray-200 pb-4 mb-4">
                 <button
-                  onClick={() => setShowLanguages(!showLanguages)}
+                  onClick={() => setShowMobileLanguages(!showMobileLanguages)}
                   className="flex items-center justify-between w-full text-gray-700 font-medium"
                 >
                   <div className="flex items-center">
                     <Globe className="h-5 w-5 mr-2" />
                     <span>{languageLabels[language]}</span>
                   </div>
-                  <ChevronDown className={`h-4 w-4 transition-transform ${showLanguages ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`h-4 w-4 transition-transform ${showMobileLanguages ? 'rotate-180' : ''}`} />
                 </button>
 
-                {showLanguages && (
+                {showMobileLanguages && (
                   <div className="mt-2 space-y-1">
                     {(Object.keys(languageLabels) as Array<'ru' | 'uk' | 'en' | 'tr' | 'zh'>).map((lang) => (
                       <button
                         key={lang}
                         onClick={() => {
                           setLanguage(lang);
-                          setShowLanguages(false);
+                          setShowMobileLanguages(false);
                         }}
                         className={`block w-full text-left px-4 py-2 text-sm rounded ${
                           language === lang ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700 hover:bg-gray-50'
