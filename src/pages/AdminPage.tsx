@@ -167,7 +167,7 @@ export default function AdminPage() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="admin"
+                placeholder="Введите логин"
                 required
               />
             </div>
@@ -178,7 +178,7 @@ export default function AdminPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="admin123"
+                placeholder="Введите пароль"
                 required
               />
             </div>
@@ -189,12 +189,6 @@ export default function AdminPage() {
               Войти
             </button>
           </form>
-          <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-            <p className="text-sm text-gray-600 text-center">
-              <strong>Логин:</strong> admin<br />
-              <strong>Пароль:</strong> admin123
-            </p>
-          </div>
         </div>
       </div>
     );
