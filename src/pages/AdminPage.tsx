@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { supabase, NewsItem } from '../lib/supabase';
 import { Plus, Edit2, Trash2, Save, X, LogOut } from 'lucide-react';
 
-const ADMIN_LOGIN = 'admin';
-const ADMIN_PASSWORD = 'admin123';
+const ADMIN_LOGIN = import.meta.env.VITE_ADMIN_LOGIN || 'admin';
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'admin123';
 
 export default function AdminPage() {
   const [news, setNews] = useState<NewsItem[]>([]);
