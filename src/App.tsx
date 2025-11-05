@@ -22,6 +22,8 @@ import QuotesPage from './pages/QuotesPage';
 import StockDividendsPage from './pages/StockDividendsPage';
 import DepositWithdrawalPage from './pages/DepositWithdrawalPage';
 import GlossaryPage from './pages/GlossaryPage';
+import AboutCompanyPage from './pages/AboutCompanyPage';
+import ContactsPage from './pages/ContactsPage';
 
 const translations = {
   ru: {
@@ -926,6 +928,8 @@ function App() {
       {activePage === 'how-to-trade' && <HowToTradePage />}
       {activePage === 'deposit-withdrawal' && <DepositWithdrawalPage />}
       {activePage === 'glossary' && <GlossaryPage />}
+      {activePage === 'about-company' && <AboutCompanyPage />}
+      {activePage === 'contacts' && <ContactsPage />}
       {activePage === 'trading-instruments' && <TradingInstrumentsPage />}
       {activePage === 'platforms' && <PlatformsPage />}
       {activePage === 'account-types' && <AccountTypesPage />}
