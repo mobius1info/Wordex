@@ -1414,20 +1414,6 @@ function App() {
                 <p>Email: support@wforex.com</p>
                 <p>{t.footer.support}</p>
               </div>
-              <div className="flex space-x-3">
-                <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
-                  <span className="text-xs font-bold">FB</span>
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
-                  <span className="text-xs font-bold">TW</span>
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
-                  <span className="text-xs font-bold">IG</span>
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
-                  <span className="text-xs font-bold">TG</span>
-                </a>
-              </div>
             </div>
           </div>
 
