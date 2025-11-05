@@ -177,7 +177,7 @@ const translations = {
       features: 'Минимальный депозит всего $1 • Бонусы до 100% • Поддержка 24/7'
     },
     footer: {
-      description: 'Надежный брокер с 13-летним опытом работы на финансовых рынках',
+      description: 'Надежный брокер с большим опытом работы на финансовых рынках',
       trading: 'Торговля',
       information: 'Информация',
       contacts: 'Контакты',
@@ -347,7 +347,7 @@ const translations = {
       features: 'Мінімальний депозит лише $1 • Бонуси до 100% • Підтримка 24/7'
     },
     footer: {
-      description: 'Надійний брокер з 13-річним досвідом роботи на фінансових ринках',
+      description: 'Надійний брокер з великим досвідом роботи на фінансових ринках',
       trading: 'Торгівля',
       information: 'Інформація',
       contacts: 'Контакти',
@@ -517,7 +517,7 @@ const translations = {
       features: 'Minimum deposit only $1 • Bonuses up to 100% • Support 24/7'
     },
     footer: {
-      description: 'Reliable broker with 13 years of experience in financial markets',
+      description: 'Reliable broker with extensive experience in financial markets',
       trading: 'Trading',
       information: 'Information',
       contacts: 'Contacts',
@@ -687,7 +687,7 @@ const translations = {
       features: 'Sadece 1$ minimum depozito • %100\'e kadar bonus • 7/24 destek'
     },
     footer: {
-      description: 'Finansal piyasalarda 13 yıllık deneyime sahip güvenilir broker',
+      description: 'Finansal piyasalarda geniş deneyime sahip güvenilir broker',
       trading: 'Ticaret',
       information: 'Bilgi',
       contacts: 'İletişim',
@@ -857,7 +857,7 @@ const translations = {
       features: '最低存款仅1美元 • 高达100%奖金 • 24/7支持'
     },
     footer: {
-      description: '在金融市场拥有13年经验的可靠经纪商',
+      description: '在金融市场拥有丰富经验的可靠经纪商',
       trading: '交易',
       information: '信息',
       contacts: '联系方式',
