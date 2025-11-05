@@ -1,6 +1,12 @@
 import { Calendar, Star, TrendingUp, AlertCircle } from 'lucide-react';
+import { analyticsTranslations } from '../translations/analyticsTranslations';
 
-export default function EventCalendarPage() {
+interface EventCalendarPageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function EventCalendarPage({ language = 'ru' }: EventCalendarPageProps) {
+  const t = analyticsTranslations[language].eventCalendar;
   const events = [
     {
       date: '18 ноября',

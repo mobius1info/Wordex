@@ -1,6 +1,12 @@
 import { DollarSign, Calendar, TrendingUp, CheckCircle } from 'lucide-react';
+import { analyticsTranslations } from '../translations/analyticsTranslations';
 
-export default function StockDividendsPage() {
+interface StockDividendsPageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function StockDividendsPage({ language = 'ru' }: StockDividendsPageProps) {
+  const t = analyticsTranslations[language].stockDividends;
   const dividends = [
     {
       company: 'Apple Inc.',

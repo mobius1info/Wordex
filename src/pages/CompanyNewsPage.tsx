@@ -1,6 +1,12 @@
 import { Calendar, Bell, TrendingUp, Award, Zap } from 'lucide-react';
+import { analyticsTranslations } from '../translations/analyticsTranslations';
 
-export default function CompanyNewsPage() {
+interface CompanyNewsPageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProps) {
+  const t = analyticsTranslations[language].companyNews;
   const news = [
     {
       date: '15 ноября 2025',
@@ -64,15 +70,15 @@ export default function CompanyNewsPage() {
     }
   ];
 
-  const categories = ['Все', 'Важное', 'Продукты', 'Технологии', 'Торговля', 'Награды', 'Бонусы', 'Обучение'];
+  const categories = [t.categories.all, t.categories.important, t.categories.products, t.categories.technology, t.categories.trading, t.categories.awards, t.categories.bonuses, t.categories.education];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">Новости компании</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">{t.title}</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Будьте в курсе последних событий, обновлений и достижений WorldForex
+            {t.subtitle}
           </p>
         </div>
 
@@ -80,18 +86,18 @@ export default function CompanyNewsPage() {
           <div className="flex items-center mb-4">
             <Bell className="h-12 w-12 mr-4" />
             <div>
-              <h2 className="text-3xl font-bold">Подпишитесь на рассылку</h2>
-              <p className="text-blue-100 mt-2">Получайте важные новости и обновления на ваш email</p>
+              <h2 className="text-3xl font-bold">{t.subscribe.title}</h2>
+              <p className="text-blue-100 mt-2">{t.subscribe.subtitle}</p>
             </div>
           </div>
           <div className="flex gap-4 mt-6">
             <input
               type="email"
-              placeholder="Ваш email"
+              placeholder={t.subscribe.placeholder}
               className="flex-1 px-4 py-3 rounded-lg text-gray-900"
             />
             <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              Подписаться
+              {t.subscribe.button}
             </button>
           </div>
         </div>

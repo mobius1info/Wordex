@@ -1,6 +1,12 @@
 import { TrendingUp, TrendingDown, BarChart3, Target, Clock } from 'lucide-react';
+import { analyticsTranslations } from '../translations/analyticsTranslations';
 
-export default function MarketSurveysPage() {
+interface MarketSurveysPageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function MarketSurveysPage({ language = 'ru' }: MarketSurveysPageProps) {
+  const t = analyticsTranslations[language].marketSurveys;
   const surveys = [
     {
       date: '15 ноября 2025',
@@ -74,9 +80,9 @@ export default function MarketSurveysPage() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">Обзоры рынка</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">{t.title}</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Профессиональная аналитика и прогнозы от наших экспертов
+            {t.subtitle}
           </p>
         </div>
 

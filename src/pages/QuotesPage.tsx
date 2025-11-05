@@ -1,6 +1,12 @@
 import { TrendingUp, TrendingDown, RefreshCw, BarChart3 } from 'lucide-react';
+import { analyticsTranslations } from '../translations/analyticsTranslations';
 
-export default function QuotesPage() {
+interface QuotesPageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function QuotesPage({ language = 'ru' }: QuotesPageProps) {
+  const t = analyticsTranslations[language].quotes;
   const quotes = {
     forex: [
       { pair: 'EUR/USD', bid: '1.0895', ask: '1.0897', change: '+0.15%', trend: 'up' },
