@@ -23,7 +23,6 @@ import DepositWithdrawalPage from './pages/DepositWithdrawalPage';
 import GlossaryPage from './pages/GlossaryPage';
 import AboutCompanyPage from './pages/AboutCompanyPage';
 import ContactsPage from './pages/ContactsPage';
-import AdminPage from './pages/AdminPage';
 
 const translations = {
   ru: {
@@ -940,7 +939,6 @@ function App() {
       {activePage === 'trading-instruments' && <TradingInstrumentsPage language={language} />}
       {activePage === 'platforms' && <PlatformsPage language={language} />}
       {activePage === 'account-types' && <AccountTypesPage language={language} />}
-      {activePage === 'admin' && <AdminPage />}
 
       {!activePage && (
         <>
@@ -1590,7 +1588,7 @@ function App() {
                   <span>•</span>
                   <a href="#" className="hover:text-white transition-colors">{t.footer.documents}</a>
                   <span>•</span>
-                  <button onClick={() => setActivePage('admin')} className="hover:text-white transition-colors">Admin</button>
+                  <a href="/admin" className="hover:text-white transition-colors">Admin</a>
                 </div>
               </div>
             </div>
