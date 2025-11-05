@@ -10,7 +10,7 @@ interface HeaderProps {
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (open: boolean) => void;
   setActivePage: (page: string | null) => void;
-  translations: any;
+  translations: Record<string, Record<string, unknown>>;
 }
 
 export default function Header({

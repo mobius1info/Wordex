@@ -1,7 +1,7 @@
 import { BookOpen, ArrowRight, CheckCircle } from 'lucide-react';
 
 interface BeginnersPageProps {
-  t: any;
+  t: Record<string, unknown>;
 }
 
 export default function BeginnersPage({ t }: BeginnersPageProps) {

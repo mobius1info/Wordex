@@ -1,4 +1,4 @@
-import { Calendar, Bell, TrendingUp, Award, Zap } from 'lucide-react';
+import { Calendar, Bell, TrendingUp, Award } from 'lucide-react';
 import { analyticsTranslations } from '../translations/analyticsTranslations';
 
 interface CompanyNewsPageProps {

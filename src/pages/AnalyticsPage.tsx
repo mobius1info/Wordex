@@ -1,7 +1,7 @@
 import { BarChart3, TrendingUp, Calendar, FileText } from 'lucide-react';
 
 interface AnalyticsPageProps {
-  t: any;
+  t: Record<string, unknown>;
 }
 
 export default function AnalyticsPage({ t }: AnalyticsPageProps) {

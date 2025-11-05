@@ -1,11 +1,11 @@
 import {
-  TrendingUp, DollarSign, Users, Shield, Smartphone, Monitor, Award, BarChart3,
+  DollarSign, Users, Smartphone, Monitor, Award, BarChart3,
   BookOpen, HelpCircle, Settings, Copy, Zap, Gift, CreditCard, ArrowRight,
-  CheckCircle, Star, Download, Clock, Target, Briefcase, Database, LineChart, Globe
+  CheckCircle, Star, Download, Clock, Target, Database, LineChart, Globe
 } from 'lucide-react';
 
 interface HomePageProps {
-  t: any;
+  t: Record<string, unknown>;
   currentSlide: number;
   setCurrentSlide: (index: number) => void;
 }
@@ -14,7 +14,7 @@ export default function HomePage({ t, currentSlide, setCurrentSlide }: HomePageP
   return (
     <>
       <section className="relative h-[500px] sm:h-[600px] overflow-hidden">
-        {t.hero.slides.map((slide: any, index: number) => (
+        {t.hero.slides.map((slide, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ${

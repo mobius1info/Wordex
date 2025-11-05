@@ -1,4 +1,4 @@
-import { TrendingUp, DollarSign, Briefcase, Bitcoin, BarChart3, Gem } from 'lucide-react';
+import { TrendingUp, Briefcase, Gem } from 'lucide-react';
 import PageWrapper from '../components/PageWrapper';
 
 interface TradingInstrumentsPageProps {

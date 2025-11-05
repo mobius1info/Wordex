@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import {
-  Globe, ChevronDown, Menu, X, TrendingUp, DollarSign, Users, Shield,
+  Globe, DollarSign, Users,
   Smartphone, Monitor, Award, BarChart3, BookOpen, HelpCircle, Settings,
   Copy, Zap, Gift, CreditCard, ArrowRight, CheckCircle, Star, Download,
-  Clock, Target, Briefcase, Database, LineChart
+  Clock, Target, Database, LineChart
 } from 'lucide-react';
 import Header from './components/Header';
 import WhereToStartPage from './pages/WhereToStartPage';
@@ -891,7 +891,7 @@ function App() {
       setCurrentSlide((prev) => (prev + 1) % t.hero.slides.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [language]);
+  }, [language, t.hero.slides.length]);
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -908,14 +908,6 @@ function App() {
     setMobileMenuOpen(false);
     setShowLanguages(false);
   }, [activePage]);
-
-  const languageLabels = {
-    ru: 'Русский',
-    uk: 'Українська',
-    en: 'English',
-    tr: 'Türkçe',
-    zh: '中文'
-  };
 
   return (
     <div className="min-h-screen bg-white">

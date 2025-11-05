@@ -1,7 +1,7 @@
 import { Building2, Award, Users, Globe, TrendingUp } from 'lucide-react';
 
 interface AboutPageProps {
-  t: any;
+  t: Record<string, unknown>;
 }
 
 export default function AboutPage({ t }: AboutPageProps) {

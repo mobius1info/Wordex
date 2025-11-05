@@ -1,10 +1,8 @@
-import { analyticsTranslations } from '../translations/analyticsTranslations';
-
 interface QuotesPageProps {
   language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
 }
 
-export default function QuotesPage({ language = 'ru' }: QuotesPageProps) {
+export default function QuotesPage(_props: QuotesPageProps) {
   return (
     <div className="w-full h-screen">
       <iframe

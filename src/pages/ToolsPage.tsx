@@ -1,7 +1,7 @@
 import { Settings, Calculator, TrendingUp, Zap } from 'lucide-react';
 
 interface ToolsPageProps {
-  t: any;
+  t: Record<string, unknown>;
 }
 
 export default function ToolsPage({ t }: ToolsPageProps) {

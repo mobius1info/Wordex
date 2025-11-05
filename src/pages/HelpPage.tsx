@@ -1,7 +1,7 @@
 import { HelpCircle, MessageCircle, Phone, Mail } from 'lucide-react';
 
 interface HelpPageProps {
-  t: any;
+  t: Record<string, unknown>;
 }
 
 export default function HelpPage({ t }: HelpPageProps) {
