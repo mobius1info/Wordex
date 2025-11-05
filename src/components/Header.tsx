@@ -33,24 +33,6 @@ export default function Header({
 
   return (
     <>
-      <div className="bg-blue-700 text-white py-2 text-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <span className="hidden sm:inline">{t.topBar.years}</span>
-            <span className="hidden sm:inline">•</span>
-            <span>{t.topBar.clients}</span>
-            <span className="hidden md:inline">•</span>
-            <span className="hidden md:inline">{t.topBar.countries}</span>
-          </div>
-          <div className="flex items-center space-x-4">
-            <button className="text-xs hover:text-blue-200 flex items-center">
-              <HelpCircle className="h-4 w-4 mr-1" />
-              {t.topBar.support}
-            </button>
-          </div>
-        </div>
-      </div>
-
       <header className="sticky top-0 bg-white border-b border-gray-200 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
