@@ -971,7 +971,7 @@ function App() {
                   <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
                 </div>
                 {index === 0 && (
-                  <div className="absolute right-10 top-1/2 -translate-y-1/2 opacity-40 pointer-events-none">
+                  <div className="hidden lg:block absolute right-10 top-1/2 -translate-y-1/2 opacity-40 pointer-events-none">
                     <div className="flex items-center gap-12">
                       <div className="text-center">
                         <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-6 shadow-2xl animate-pulse-slow mb-4">
@@ -1028,8 +1028,31 @@ function App() {
                     </div>
                   </div>
                 )}
+                {index === 0 && (
+                  <div className="lg:hidden absolute bottom-8 left-1/2 -translate-x-1/2 opacity-30 pointer-events-none">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg p-3 shadow-xl animate-pulse-slow">
+                        <div className="text-white text-xs font-bold">Master</div>
+                      </div>
+                      <div className="animate-arrow-flow">
+                        <svg width="40" height="20" viewBox="0 0 40 20" className="text-blue-300">
+                          <path d="M 2 10 L 30 10" stroke="currentColor" strokeWidth="2" fill="none" strokeDasharray="3,3"/>
+                          <polygon points="30,7 38,10 30,13" fill="currentColor"/>
+                        </svg>
+                      </div>
+                      <div className="flex gap-2">
+                        <div className="bg-gradient-to-br from-green-400 to-green-600 rounded-lg p-2 shadow-xl animate-trade-signal">
+                          <div className="text-white text-xs">F1</div>
+                        </div>
+                        <div className="bg-gradient-to-br from-green-400 to-green-600 rounded-lg p-2 shadow-xl animate-trade-signal" style={{ animationDelay: '0.5s' }}>
+                          <div className="text-white text-xs">F2</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 {index === 1 && (
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full opacity-30 pointer-events-none">
+                  <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full opacity-30 pointer-events-none">
                     <div className="flex items-end justify-around h-full px-8 pb-20">
                       <div className="animate-candle" style={{ animationDelay: '0s' }}>
                         <div className="w-2 bg-green-600" style={{ height: '180px' }}></div>
@@ -1064,23 +1087,49 @@ function App() {
                     </div>
                   </div>
                 )}
+                {index === 1 && (
+                  <div className="lg:hidden absolute bottom-8 left-1/2 -translate-x-1/2 opacity-30 pointer-events-none">
+                    <div className="flex items-end justify-center gap-3 h-32">
+                      <div className="animate-candle" style={{ animationDelay: '0s' }}>
+                        <div className="w-1 bg-green-600" style={{ height: '60px' }}></div>
+                        <div className="w-4 bg-green-500 -ml-1.5" style={{ height: '40px' }}></div>
+                        <div className="w-1 bg-green-600 ml-1.5" style={{ height: '30px' }}></div>
+                      </div>
+                      <div className="animate-candle" style={{ animationDelay: '0.5s' }}>
+                        <div className="w-1 bg-red-600" style={{ height: '40px' }}></div>
+                        <div className="w-4 bg-red-500 -ml-1.5" style={{ height: '50px' }}></div>
+                        <div className="w-1 bg-red-600 ml-1.5" style={{ height: '20px' }}></div>
+                      </div>
+                      <div className="animate-candle" style={{ animationDelay: '1s' }}>
+                        <div className="w-1 bg-green-600" style={{ height: '50px' }}></div>
+                        <div className="w-4 bg-green-500 -ml-1.5" style={{ height: '60px' }}></div>
+                        <div className="w-1 bg-green-600 ml-1.5" style={{ height: '35px' }}></div>
+                      </div>
+                      <div className="animate-candle" style={{ animationDelay: '1.5s' }}>
+                        <div className="w-1 bg-green-600" style={{ height: '55px' }}></div>
+                        <div className="w-4 bg-green-500 -ml-1.5" style={{ height: '45px' }}></div>
+                        <div className="w-1 bg-green-600 ml-1.5" style={{ height: '25px' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-                  <div className="max-w-4xl">
+                  <div className="max-w-4xl text-center lg:text-left">
                     <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium mb-6 border border-white/20">
                       ✨ {index === 0 ? 'Популярно' : index === 1 ? 'Выгодно' : index === 2 ? 'Быстро' : 'Надежно'}
                     </div>
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                       {slide.title}
                     </h1>
-                    <p className="text-xl sm:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed">
+                    <p className="text-lg sm:text-xl lg:text-2xl text-white/80 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                       {slide.subtitle}
                     </p>
-                    <div className="flex flex-wrap gap-4">
-                      <button className="group bg-white text-gray-900 px-10 py-5 rounded-xl text-lg font-bold hover:bg-gray-100 transition-all shadow-2xl hover:shadow-white/20 hover:scale-105 transform">
+                    <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start">
+                      <button className="group bg-white text-gray-900 px-8 sm:px-10 py-4 sm:py-5 rounded-xl text-base sm:text-lg font-bold hover:bg-gray-100 transition-all shadow-2xl hover:shadow-white/20 hover:scale-105 transform">
                         {t.hero.learnMore}
                         <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
                       </button>
-                      <button className="bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-10 py-5 rounded-xl text-lg font-bold hover:bg-white/20 transition-all hover:scale-105 transform">
+                      <button className="bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl text-base sm:text-lg font-bold hover:bg-white/20 transition-all hover:scale-105 transform">
                         {t.hero.openAccount}
                       </button>
                     </div>
