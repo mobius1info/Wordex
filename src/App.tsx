@@ -1374,14 +1374,8 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="bg-blue-600 p-2 rounded-lg">
-                  <TrendingUp className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <div className="text-lg font-bold text-white">WorldForex</div>
-                  <div className="text-xs text-gray-400">Online Trading</div>
-                </div>
+              <div className="mb-4">
+                <img src="/Logo copy.png" alt="Vantage Point" className="h-16 w-auto" />
               </div>
               <p className="text-sm text-gray-400 mb-4">
                 {t.footer.description}
