@@ -23,6 +23,7 @@ import DepositWithdrawalPage from './pages/DepositWithdrawalPage';
 import GlossaryPage from './pages/GlossaryPage';
 import AboutCompanyPage from './pages/AboutCompanyPage';
 import ContactsPage from './pages/ContactsPage';
+import AdminPage from './pages/AdminPage';
 
 const translations = {
   ru: {
@@ -939,6 +940,7 @@ function App() {
       {activePage === 'trading-instruments' && <TradingInstrumentsPage language={language} />}
       {activePage === 'platforms' && <PlatformsPage language={language} />}
       {activePage === 'account-types' && <AccountTypesPage language={language} />}
+      {activePage === 'admin' && <AdminPage />}
 
       {!activePage && (
         <>

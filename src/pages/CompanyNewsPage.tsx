@@ -1,5 +1,7 @@
+import { useState, useEffect } from 'react';
 import { Calendar, TrendingUp, Award } from 'lucide-react';
 import { analyticsTranslations } from '../translations/analyticsTranslations';
+import { supabase, NewsItem } from '../lib/supabase';
 
 interface CompanyNewsPageProps {
   language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
@@ -7,7 +9,31 @@ interface CompanyNewsPageProps {
 
 export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProps) {
   const t = analyticsTranslations[language].companyNews;
-  const news = [
+  const [news, setNews] = useState<NewsItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loadNews();
+  }, [language]);
+
+  const loadNews = async () => {
+    setLoading(true);
+    const { data, error } = await supabase
+      .from('news')
+      .select('*')
+      .eq('language', language)
+      .eq('published', true)
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.error('Error loading news:', error);
+    } else {
+      setNews(data || []);
+    }
+    setLoading(false);
+  };
+
+  const fallbackNews = [
     {
       date: '15 ноября 2025',
       title: 'Изменение расписания торговых сессий в период новогодних праздников',
@@ -71,6 +97,8 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
   ];
 
 
+  const displayNews = news.length > 0 ? news : fallbackNews;
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
@@ -81,9 +109,14 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
           </p>
         </div>
 
-
-        <div className="space-y-6">
-          {news.map((item, index) => (
+        {loading ? (
+          <div className="text-center py-12">
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-600 border-t-transparent"></div>
+            <p className="text-gray-600 mt-4">Загрузка новостей...</p>
+          </div>
+        ) : (
+          <div className="space-y-6">
+            {displayNews.map((item, index) => (
             <div
               key={index}
               className="bg-white rounded-xl shadow-md p-6 sm:p-8 hover:shadow-lg transition-shadow"
@@ -95,8 +128,9 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
               <p className="text-gray-600 leading-relaxed">{item.content}</p>
             </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16">
           <div className="bg-white rounded-xl shadow-lg p-6 text-center">
