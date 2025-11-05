@@ -32,6 +32,11 @@ export default function AdminPage() {
   ];
 
   const loadNews = async () => {
+    if (!supabase) {
+      console.error('Supabase не настроен');
+      return;
+    }
+
     const { data, error } = await supabase
       .from('news')
       .select('*')
