@@ -915,10 +915,10 @@ function App() {
         translations={translations}
       />
 
-      {activePage === 'start' && <WhereToStartPage />}
-      {activePage === 'what-is-forex' && <WhatIsForexPage />}
-      {activePage === 'advantages' && <ForexAdvantagesPage />}
-      {activePage === 'demo' && <DemoAccountPage />}
+      {activePage === 'start' && <WhereToStartPage language={language} />}
+      {activePage === 'what-is-forex' && <WhatIsForexPage language={language} />}
+      {activePage === 'advantages' && <ForexAdvantagesPage language={language} />}
+      {activePage === 'demo' && <DemoAccountPage language={language} />}
       {activePage === 'trading-schedule' && <TradingSchedulePage />}
       {activePage === 'company-news' && <CompanyNewsPage />}
       {activePage === 'market-surveys' && <MarketSurveysPage />}

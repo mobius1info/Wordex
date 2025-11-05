@@ -1,13 +1,19 @@
 import { CheckCircle, TrendingUp, Clock, DollarSign, Globe, Zap, Shield, Users } from 'lucide-react';
+import { pageTranslations } from '../translations/pageTranslations';
 
-export default function ForexAdvantagesPage() {
+interface ForexAdvantagesPageProps {
+  language: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function ForexAdvantagesPage({ language }: ForexAdvantagesPageProps) {
+  const t = pageTranslations[language].forexAdvantages;
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">Преимущества торговли на Forex</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">{t.title}</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Почему миллионы трейдеров по всему миру выбирают валютный рынок
+            {t.subtitle}
           </p>
         </div>
 
@@ -16,10 +22,9 @@ export default function ForexAdvantagesPage() {
             <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
               <Clock className="h-8 w-8 text-blue-600" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Круглосуточная торговля</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.adv1.title}</h3>
             <p className="text-gray-600">
-              Рынок Forex работает 24 часа в сутки 5 дней в неделю. Вы можете торговать в любое удобное время,
-              независимо от вашего часового пояса или рабочего графика.
+              {t.adv1.text}
             </p>
           </div>
 
@@ -27,10 +32,9 @@ export default function ForexAdvantagesPage() {
             <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
               <DollarSign className="h-8 w-8 text-green-600" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Низкий порог входа</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.adv2.title}</h3>
             <p className="text-gray-600">
-              Начните торговать с минимальным депозитом от $10. Благодаря кредитному плечу вы можете контролировать
-              крупные позиции с небольшим капиталом.
+              {t.adv2.text}
             </p>
           </div>
 
@@ -38,10 +42,9 @@ export default function ForexAdvantagesPage() {
             <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
               <TrendingUp className="h-8 w-8 text-purple-600" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Высокая ликвидность</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.adv3.title}</h3>
             <p className="text-gray-600">
-              Ежедневный оборот более $6 триллионов обеспечивает мгновенное исполнение ордеров по оптимальным ценам
-              без проскальзываний.
+              {t.adv3.text}
             </p>
           </div>
 
@@ -49,10 +52,9 @@ export default function ForexAdvantagesPage() {
             <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
               <Zap className="h-8 w-8 text-red-600" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Кредитное плечо</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.adv4.title}</h3>
             <p className="text-gray-600">
-              Используйте кредитное плечо до 1:1000 для увеличения торгового потенциала. Контролируйте позиции в сотни
-              раз превышающие ваш депозит.
+              {t.adv4.text}
             </p>
           </div>
 
@@ -60,9 +62,9 @@ export default function ForexAdvantagesPage() {
             <div className="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
               <Globe className="h-8 w-8 text-yellow-600" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Глобальный рынок</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.adv5.title}</h3>
             <p className="text-gray-600">
-              Торгуйте валютами со всего мира. Более 60 валютных пар доступны для трейдинга, от основных до экзотических.
+              {t.adv5.text}
             </p>
           </div>
 
@@ -70,16 +72,15 @@ export default function ForexAdvantagesPage() {
             <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
               <Shield className="h-8 w-8 text-indigo-600" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Прозрачность</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.adv6.title}</h3>
             <p className="text-gray-600">
-              Все котировки в реальном времени, отсутствие скрытых комиссий. Вы всегда знаете реальную стоимость
-              открытия и закрытия позиций.
+              {t.adv6.text}
             </p>
           </div>
         </div>
 
         <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Преимущества торговли с WorldForex</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">{t.ourAdvantages}</h2>
 
           <div className="space-y-6">
             <div className="flex items-start">
@@ -160,16 +161,16 @@ export default function ForexAdvantagesPage() {
 
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-12 text-center">
           <Users className="h-16 w-16 mx-auto mb-6" />
-          <h2 className="text-4xl font-bold mb-4">Присоединяйтесь к 350,000+ трейдеров</h2>
+          <h2 className="text-4xl font-bold mb-4">{t.ctaTitle}</h2>
           <p className="text-xl mb-8 opacity-90">
-            Начните торговать на Forex с надежным брокером уже сегодня
+            {t.ctaText}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-              Открыть реальный счет
+              {t.realButton}
             </button>
             <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
-              Попробовать демо
+              {t.demoButton}
             </button>
           </div>
         </div>

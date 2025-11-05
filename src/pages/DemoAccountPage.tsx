@@ -1,32 +1,38 @@
 import { BookOpen, CheckCircle, TrendingUp, Shield, Zap, Target } from 'lucide-react';
+import { pageTranslations } from '../translations/pageTranslations';
 
-export default function DemoAccountPage() {
+interface DemoAccountPageProps {
+  language: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function DemoAccountPage({ language }: DemoAccountPageProps) {
+  const t = pageTranslations[language].demoAccount;
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">Учебный (Демо) счет</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">{t.title}</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Практикуйтесь в торговле без риска с виртуальными средствами
+            {t.subtitle}
           </p>
         </div>
 
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-12 mb-12">
           <div className="max-w-3xl mx-auto text-center">
             <BookOpen className="h-16 w-16 mx-auto mb-6" />
-            <h2 className="text-4xl font-bold mb-4">Начните с демо-счета</h2>
+            <h2 className="text-4xl font-bold mb-4">{t.heroTitle}</h2>
             <p className="text-xl mb-8 opacity-90">
-              Получите $10,000 виртуальных средств и полный доступ ко всем функциям торговой платформы
+              {t.heroText}
             </p>
             <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-              Открыть демо-счет бесплатно
+              {t.heroButton}
             </button>
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div className="bg-white rounded-xl shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Что такое демо-счет?</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">{t.whatIsTitle}</h3>
             <p className="text-gray-600 mb-4">
               Демо-счет — это учебный счет с виртуальными деньгами, который полностью имитирует реальную торговлю
               на Forex. Это идеальный способ для новичков изучить платформу и отработать торговые стратегии
@@ -39,7 +45,7 @@ export default function DemoAccountPage() {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Преимущества демо-счета</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">{t.benefitsTitle}</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
@@ -66,7 +72,7 @@ export default function DemoAccountPage() {
         </div>
 
         <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Для кого подходит демо-счет?</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">{t.forWhoTitle}</h2>
 
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center p-6 bg-blue-50 rounded-xl">
@@ -96,7 +102,7 @@ export default function DemoAccountPage() {
         </div>
 
         <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Как начать работу с демо-счетом</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">{t.howToTitle}</h2>
 
           <div className="space-y-6">
             <div className="flex items-start">
@@ -152,16 +158,16 @@ export default function DemoAccountPage() {
 
         <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-2xl p-12 text-center">
           <Shield className="h-16 w-16 mx-auto mb-6" />
-          <h2 className="text-4xl font-bold mb-4">Готовы к реальной торговле?</h2>
+          <h2 className="text-4xl font-bold mb-4">{t.readyTitle}</h2>
           <p className="text-xl mb-8 opacity-90">
-            После практики на демо-счете откройте реальный счет и начните зарабатывать на Forex
+            {t.readyText}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-              Открыть реальный счет
+              {t.realButton}
             </button>
             <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
-              Продолжить с демо
+              {t.continueDemo}
             </button>
           </div>
         </div>
