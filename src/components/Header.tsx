@@ -55,7 +55,7 @@ export default function Header({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <button onClick={() => setActivePage(null)} className="flex items-center hover:opacity-80 transition-opacity">
-              <img src="/Logo.png" alt="Vantage Point" className="h-24" />
+              <img src="/Logo.png" alt="Vantage Point" className="h-32" />
             </button>
 
             <nav className="hidden lg:flex items-center space-x-6">
