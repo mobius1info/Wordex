@@ -970,6 +970,42 @@ function App() {
                   <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
                   <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
                 </div>
+                {index === 1 && (
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full opacity-30 pointer-events-none">
+                    <div className="flex items-end justify-around h-full px-8 pb-20">
+                      <div className="animate-candle" style={{ animationDelay: '0s' }}>
+                        <div className="w-2 bg-green-600" style={{ height: '180px' }}></div>
+                        <div className="w-8 bg-green-500 -ml-3 mt-2" style={{ height: '100px' }}></div>
+                        <div className="w-2 bg-green-600 ml-3" style={{ height: '80px' }}></div>
+                      </div>
+                      <div className="animate-candle" style={{ animationDelay: '0.5s' }}>
+                        <div className="w-2 bg-red-600" style={{ height: '120px' }}></div>
+                        <div className="w-8 bg-red-500 -ml-3 mt-2" style={{ height: '140px' }}></div>
+                        <div className="w-2 bg-red-600 ml-3" style={{ height: '60px' }}></div>
+                      </div>
+                      <div className="animate-candle" style={{ animationDelay: '1s' }}>
+                        <div className="w-2 bg-green-600" style={{ height: '90px' }}></div>
+                        <div className="w-8 bg-green-500 -ml-3 mt-2" style={{ height: '160px' }}></div>
+                        <div className="w-2 bg-green-600 ml-3" style={{ height: '100px' }}></div>
+                      </div>
+                      <div className="animate-candle" style={{ animationDelay: '1.5s' }}>
+                        <div className="w-2 bg-green-600" style={{ height: '150px' }}></div>
+                        <div className="w-8 bg-green-500 -ml-3 mt-2" style={{ height: '120px' }}></div>
+                        <div className="w-2 bg-green-600 ml-3" style={{ height: '70px' }}></div>
+                      </div>
+                      <div className="animate-candle" style={{ animationDelay: '2s' }}>
+                        <div className="w-2 bg-red-600" style={{ height: '100px' }}></div>
+                        <div className="w-8 bg-red-500 -ml-3 mt-2" style={{ height: '110px' }}></div>
+                        <div className="w-2 bg-red-600 ml-3" style={{ height: '90px' }}></div>
+                      </div>
+                      <div className="animate-candle" style={{ animationDelay: '2.5s' }}>
+                        <div className="w-2 bg-green-600" style={{ height: '140px' }}></div>
+                        <div className="w-8 bg-green-500 -ml-3 mt-2" style={{ height: '180px' }}></div>
+                        <div className="w-2 bg-green-600 ml-3" style={{ height: '60px' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
                   <div className="max-w-4xl">
                     <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium mb-6 border border-white/20">
