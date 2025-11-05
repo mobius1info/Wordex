@@ -54,14 +54,8 @@ export default function Header({
       <header className="sticky top-0 bg-white border-b border-gray-200 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <button onClick={() => setActivePage(null)} className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-              <div className="bg-blue-600 p-2 rounded-lg">
-                <TrendingUp className="h-8 w-8 text-white" />
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-blue-600">WorldForex</div>
-                <div className="text-xs text-gray-500">Online Trading</div>
-              </div>
+            <button onClick={() => setActivePage(null)} className="flex items-center hover:opacity-80 transition-opacity">
+              <img src="/Logo.png" alt="Vantage Point" className="h-12" />
             </button>
 
             <nav className="hidden lg:flex items-center space-x-6">
