@@ -42,6 +42,28 @@ const translations = {
       openAccount: 'Открыть счет',
       login: 'Войти'
     },
+    menuItems: {
+      whereToStart: 'С чего начать',
+      whatIsForex: 'Что такое форекс',
+      forexAdvantages: 'Преимущества форекс',
+      demoAccount: 'Учебный счет',
+      accountTypes: 'Торговый счет',
+      literature: 'Литература',
+      tradingSchedule: 'Расписание торгов',
+      marketSurveys: 'Обзоры рынка',
+      eventCalendar: 'Календарь событий',
+      quotes: 'Котировки',
+      dividends: 'Дивиденды на акции',
+      howToTrade: 'Как торговать',
+      depositWithdrawal: 'Пополнение и вывод средств',
+      glossary: 'Словарь терминов',
+      platforms: 'Платформы',
+      mobileApps: 'Мобильные приложения',
+      tradingInstruments: 'Торговые инструменты',
+      aboutCompany: 'О компании',
+      companyNews: 'Новости компании',
+      contacts: 'Контакты'
+    },
     hero: {
       slides: [
         {
@@ -211,6 +233,28 @@ const translations = {
       about: 'Про компанію',
       openAccount: 'Відкрити рахунок',
       login: 'Увійти'
+    },
+    menuItems: {
+      whereToStart: 'З чого почати',
+      whatIsForex: 'Що таке форекс',
+      forexAdvantages: 'Переваги форекс',
+      demoAccount: 'Навчальний рахунок',
+      accountTypes: 'Торговий рахунок',
+      literature: 'Література',
+      tradingSchedule: 'Розклад торгів',
+      marketSurveys: 'Огляди ринку',
+      eventCalendar: 'Календар подій',
+      quotes: 'Котирування',
+      dividends: 'Дивіденди на акції',
+      howToTrade: 'Як торгувати',
+      depositWithdrawal: 'Поповнення та виведення коштів',
+      glossary: 'Словник термінів',
+      platforms: 'Платформи',
+      mobileApps: 'Мобільні додатки',
+      tradingInstruments: 'Торгові інструменти',
+      aboutCompany: 'Про компанію',
+      companyNews: 'Новини компанії',
+      contacts: 'Контакти'
     },
     hero: {
       slides: [
@@ -382,6 +426,28 @@ const translations = {
       openAccount: 'Open Account',
       login: 'Login'
     },
+    menuItems: {
+      whereToStart: 'Where to Start',
+      whatIsForex: 'What is Forex',
+      forexAdvantages: 'Forex Advantages',
+      demoAccount: 'Demo Account',
+      accountTypes: 'Account Types',
+      literature: 'Literature',
+      tradingSchedule: 'Trading Schedule',
+      marketSurveys: 'Market Surveys',
+      eventCalendar: 'Event Calendar',
+      quotes: 'Quotes',
+      dividends: 'Stock Dividends',
+      howToTrade: 'How to Trade',
+      depositWithdrawal: 'Deposit & Withdrawal',
+      glossary: 'Glossary',
+      platforms: 'Platforms',
+      mobileApps: 'Mobile Apps',
+      tradingInstruments: 'Trading Instruments',
+      aboutCompany: 'About Company',
+      companyNews: 'Company News',
+      contacts: 'Contacts'
+    },
     hero: {
       slides: [
         {
@@ -552,6 +618,28 @@ const translations = {
       openAccount: 'Hesap Aç',
       login: 'Giriş'
     },
+    menuItems: {
+      whereToStart: 'Nereden Başlamalı',
+      whatIsForex: 'Forex Nedir',
+      forexAdvantages: 'Forex Avantajları',
+      demoAccount: 'Demo Hesap',
+      accountTypes: 'Hesap Türleri',
+      literature: 'Literatür',
+      tradingSchedule: 'Ticaret Programı',
+      marketSurveys: 'Piyasa İncelemeleri',
+      eventCalendar: 'Etkinlik Takvimi',
+      quotes: 'Kotasyonlar',
+      dividends: 'Hisse Temettüleri',
+      howToTrade: 'Nasıl Ticaret Yapılır',
+      depositWithdrawal: 'Para Yatırma ve Çekme',
+      glossary: 'Terimler Sözlüğü',
+      platforms: 'Platformlar',
+      mobileApps: 'Mobil Uygulamalar',
+      tradingInstruments: 'Ticaret Araçları',
+      aboutCompany: 'Şirket Hakkında',
+      companyNews: 'Şirket Haberleri',
+      contacts: 'İletişim'
+    },
     hero: {
       slides: [
         {
@@ -721,6 +809,28 @@ const translations = {
       about: '关于我们',
       openAccount: '开设账户',
       login: '登录'
+    },
+    menuItems: {
+      whereToStart: '从哪里开始',
+      whatIsForex: '什么是外汇',
+      forexAdvantages: '外汇优势',
+      demoAccount: '模拟账户',
+      accountTypes: '账户类型',
+      literature: '文献',
+      tradingSchedule: '交易时间表',
+      marketSurveys: '市场调查',
+      eventCalendar: '事件日历',
+      quotes: '报价',
+      dividends: '股票股息',
+      howToTrade: '如何交易',
+      depositWithdrawal: '存款和取款',
+      glossary: '术语表',
+      platforms: '平台',
+      mobileApps: '移动应用',
+      tradingInstruments: '交易工具',
+      aboutCompany: '关于公司',
+      companyNews: '公司新闻',
+      contacts: '联系方式'
     },
     hero: {
       slides: [
