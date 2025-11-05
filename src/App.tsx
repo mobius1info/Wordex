@@ -1589,6 +1589,8 @@ function App() {
                   <a href="#" className="hover:text-white transition-colors">{t.footer.terms}</a>
                   <span>•</span>
                   <a href="#" className="hover:text-white transition-colors">{t.footer.documents}</a>
+                  <span>•</span>
+                  <button onClick={() => setActivePage('admin')} className="hover:text-white transition-colors">Admin</button>
                 </div>
               </div>
             </div>

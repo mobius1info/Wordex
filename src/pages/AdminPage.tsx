@@ -2,12 +2,15 @@ import { useState, useEffect } from 'react';
 import { supabase, NewsItem } from '../lib/supabase';
 import { Plus, Edit2, Trash2, Save, X, LogOut } from 'lucide-react';
 
+const ADMIN_LOGIN = 'admin';
+const ADMIN_PASSWORD = 'admin123';
+
 export default function AdminPage() {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [showAddForm, setShowAddForm] = useState(false);
   const [formData, setFormData] = useState<Partial<NewsItem>>({
@@ -29,39 +32,29 @@ export default function AdminPage() {
   ];
 
   useEffect(() => {
-    checkAuth();
-  }, []);
-
-  useEffect(() => {
-    if (isAuthenticated) {
+    const authStatus = sessionStorage.getItem('adminAuth');
+    if (authStatus === 'true') {
+      setIsAuthenticated(true);
       loadNews();
     }
-  }, [isAuthenticated]);
+  }, []);
 
-  const checkAuth = async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    setIsAuthenticated(!!session);
-    setLoading(false);
-  };
-
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
 
-    if (error) {
-      alert('Ошибка входа: ' + error.message);
-    } else {
+    if (username === ADMIN_LOGIN && password === ADMIN_PASSWORD) {
       setIsAuthenticated(true);
-      setEmail('');
+      sessionStorage.setItem('adminAuth', 'true');
+      loadNews();
+      setUsername('');
       setPassword('');
+    } else {
+      alert('Неверный логин или пароль');
     }
   };
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
+  const handleLogout = () => {
+    sessionStorage.removeItem('adminAuth');
     setIsAuthenticated(false);
   };
 
@@ -159,12 +152,13 @@ export default function AdminPage() {
           <p className="text-gray-600 mb-8 text-center">Управление новостями компании</p>
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Логин</label>
               <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="admin"
                 required
               />
             </div>
@@ -175,6 +169,7 @@ export default function AdminPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="admin123"
                 required
               />
             </div>
@@ -185,6 +180,12 @@ export default function AdminPage() {
               Войти
             </button>
           </form>
+          <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+            <p className="text-sm text-gray-600 text-center">
+              <strong>Логин:</strong> admin<br />
+              <strong>Пароль:</strong> admin123
+            </p>
+          </div>
         </div>
       </div>
     );
