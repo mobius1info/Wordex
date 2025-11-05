@@ -1,17 +1,14 @@
 import { Download, Monitor, TrendingUp, BarChart3, Shield, DollarSign } from 'lucide-react';
+import PageWrapper from '../components/PageWrapper';
 
-export default function HowToTradePage() {
+interface HowToTradePageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function HowToTradePage({ language }: HowToTradePageProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">Как торговать на Forex</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Полное руководство по началу торговли на валютном рынке
-          </p>
-        </div>
-
-        <div className="space-y-12">
+    <PageWrapper language={language} pageKey="howToTrade">
+      <div className="space-y-12">
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
             <div className="flex items-start">
               <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
@@ -216,7 +213,6 @@ export default function HowToTradePage() {
             Открыть торговый счет
           </button>
         </div>
-      </div>
-    </div>
+    </PageWrapper>
   );
 }

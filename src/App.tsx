@@ -1029,20 +1029,20 @@ function App() {
       {activePage === 'what-is-forex' && <WhatIsForexPage language={language} />}
       {activePage === 'advantages' && <ForexAdvantagesPage language={language} />}
       {activePage === 'demo' && <DemoAccountPage language={language} />}
-      {activePage === 'trading-schedule' && <TradingSchedulePage />}
-      {activePage === 'company-news' && <CompanyNewsPage />}
-      {activePage === 'market-surveys' && <MarketSurveysPage />}
-      {activePage === 'event-calendar' && <EventCalendarPage />}
-      {activePage === 'quotes' && <QuotesPage />}
-      {activePage === 'dividends' && <StockDividendsPage />}
-      {activePage === 'how-to-trade' && <HowToTradePage />}
-      {activePage === 'deposit-withdrawal' && <DepositWithdrawalPage />}
-      {activePage === 'glossary' && <GlossaryPage />}
-      {activePage === 'about-company' && <AboutCompanyPage />}
-      {activePage === 'contacts' && <ContactsPage />}
-      {activePage === 'trading-instruments' && <TradingInstrumentsPage />}
-      {activePage === 'platforms' && <PlatformsPage />}
-      {activePage === 'account-types' && <AccountTypesPage />}
+      {activePage === 'trading-schedule' && <TradingSchedulePage language={language} />}
+      {activePage === 'company-news' && <CompanyNewsPage language={language} />}
+      {activePage === 'market-surveys' && <MarketSurveysPage language={language} />}
+      {activePage === 'event-calendar' && <EventCalendarPage language={language} />}
+      {activePage === 'quotes' && <QuotesPage language={language} />}
+      {activePage === 'dividends' && <StockDividendsPage language={language} />}
+      {activePage === 'how-to-trade' && <HowToTradePage language={language} />}
+      {activePage === 'deposit-withdrawal' && <DepositWithdrawalPage language={language} />}
+      {activePage === 'glossary' && <GlossaryPage language={language} />}
+      {activePage === 'about-company' && <AboutCompanyPage language={language} />}
+      {activePage === 'contacts' && <ContactsPage language={language} />}
+      {activePage === 'trading-instruments' && <TradingInstrumentsPage language={language} />}
+      {activePage === 'platforms' && <PlatformsPage language={language} />}
+      {activePage === 'account-types' && <AccountTypesPage language={language} />}
 
       {!activePage && (
         <>
