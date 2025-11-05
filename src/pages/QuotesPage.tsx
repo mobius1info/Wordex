@@ -25,12 +25,6 @@ export default function QuotesPage({ language = 'ru' }: QuotesPageProps) {
             allow="fullscreen"
           />
         </div>
-
-        <div className="mt-8 bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg max-w-7xl mx-auto">
-          <p className="text-blue-800 text-sm">
-            {t.disclaimer}
-          </p>
-        </div>
       </div>
     </div>
   );
