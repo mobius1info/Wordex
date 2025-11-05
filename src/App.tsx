@@ -1375,7 +1375,7 @@ function App() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="mb-4">
-                <img src="/Logo copy.png" alt="Vantage Point" className="h-16 w-auto" />
+                <img src="/Logo copy.png" alt="Vantage Point" className="h-64 w-auto" />
               </div>
               <p className="text-sm text-gray-400 mb-4">
                 {t.footer.description}
