@@ -72,7 +72,6 @@ export default function Header({
                     <button onClick={() => setActivePage('market-surveys')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.marketSurveys}</button>
                     <button onClick={() => setActivePage('event-calendar')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.eventCalendar}</button>
                     <button onClick={() => setActivePage('quotes')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.quotes}</button>
-                    <button onClick={() => setActivePage('dividends')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.dividends}</button>
                   </div>
                 </div>
               </div>
@@ -241,7 +240,6 @@ export default function Header({
                 <button onClick={() => { setActivePage('market-surveys'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.marketSurveys}</button>
                 <button onClick={() => { setActivePage('event-calendar'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.eventCalendar}</button>
                 <button onClick={() => { setActivePage('quotes'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.quotes}</button>
-                <button onClick={() => { setActivePage('dividends'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.dividends}</button>
               </div>
 
               {/* Help Section */}

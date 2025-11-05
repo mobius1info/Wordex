@@ -19,7 +19,6 @@ import CompanyNewsPage from './pages/CompanyNewsPage';
 import MarketSurveysPage from './pages/MarketSurveysPage';
 import EventCalendarPage from './pages/EventCalendarPage';
 import QuotesPage from './pages/QuotesPage';
-import StockDividendsPage from './pages/StockDividendsPage';
 import DepositWithdrawalPage from './pages/DepositWithdrawalPage';
 import GlossaryPage from './pages/GlossaryPage';
 import AboutCompanyPage from './pages/AboutCompanyPage';
@@ -1050,7 +1049,6 @@ function App() {
       {activePage === 'market-surveys' && <MarketSurveysPage language={language} />}
       {activePage === 'event-calendar' && <EventCalendarPage language={language} />}
       {activePage === 'quotes' && <QuotesPage language={language} />}
-      {activePage === 'dividends' && <StockDividendsPage language={language} />}
       {activePage === 'how-to-trade' && <HowToTradePage language={language} />}
       {activePage === 'deposit-withdrawal' && <DepositWithdrawalPage language={language} />}
       {activePage === 'glossary' && <GlossaryPage language={language} />}
