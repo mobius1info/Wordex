@@ -1,13 +1,20 @@
 import { DollarSign, Star, Award, Zap, CheckCircle } from 'lucide-react';
+import { pageTranslations } from '../translations/pageTranslations';
 
-export default function AccountTypesPage() {
+interface AccountTypesPageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function AccountTypesPage({ language = 'ru' }: AccountTypesPageProps) {
+  const t = pageTranslations[language].accountTypes;
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">Типы торговых счетов</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">{t.title}</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Выберите счет, который идеально подходит для вашего стиля торговли
+            {t.subtitle}
           </p>
         </div>
 
@@ -15,40 +22,40 @@ export default function AccountTypesPage() {
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
             <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-8">
               <DollarSign className="h-12 w-12 mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Standard</h3>
-              <p className="text-blue-100">Для начинающих трейдеров</p>
+              <h3 className="text-2xl font-bold mb-2">{t.standard.name}</h3>
+              <p className="text-blue-100">{t.standard.description}</p>
             </div>
             <div className="p-8">
               <div className="mb-6">
-                <div className="text-4xl font-bold text-gray-900 mb-2">от $10</div>
-                <div className="text-gray-600">минимальный депозит</div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">{t.standard.minDeposit}</div>
+                <div className="text-gray-600">{t.standard.minDepositLabel}</div>
               </div>
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Кредитное плечо до 1:1000</span>
+                  <span className="text-gray-700">{t.standard.feature1}</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Спред от 1.5 пункта</span>
+                  <span className="text-gray-700">{t.standard.feature2}</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Без комиссий</span>
+                  <span className="text-gray-700">{t.standard.feature3}</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Микро и стандартные лоты</span>
+                  <span className="text-gray-700">{t.standard.feature4}</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Все торговые инструменты</span>
+                  <span className="text-gray-700">{t.standard.feature5}</span>
                 </li>
               </ul>
 
               <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                Открыть счет
+                {t.standard.button}
               </button>
             </div>
           </div>
@@ -56,11 +63,11 @@ export default function AccountTypesPage() {
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow border-2 border-purple-500">
             <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-8 relative">
               <div className="absolute top-4 right-4 bg-yellow-400 text-purple-900 px-3 py-1 rounded-full text-sm font-bold">
-                Популярный
+                {t.pro.badge}
               </div>
               <Star className="h-12 w-12 mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Pro</h3>
-              <p className="text-purple-100">Для активных трейдеров</p>
+              <h3 className="text-2xl font-bold mb-2">{t.pro.name}</h3>
+              <p className="text-purple-100">{t.pro.description}</p>
             </div>
             <div className="p-8">
               <div className="mb-6">

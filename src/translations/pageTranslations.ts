@@ -364,7 +364,6 @@ export const pageTranslations = {
         demoButton: 'Open Demo Account'
       }
     }
-    }
   },
   uk: {
     whereToStart: {
@@ -581,7 +580,7 @@ export const pageTranslations = {
       realButton: 'Gerçek Hesap Aç',
       continueDemo: 'Demo ile Devam Et'
     },
-    accountTypes: {
+  },
   zh: {
     whereToStart: {
       title: '如何开始外汇交易',
@@ -592,6 +591,7 @@ export const pageTranslations = {
         item1: '什么是货币对和报价',
         item2: '点差和佣金如何运作',
         item3: '理解杠杆'
+      },
       step2: {
         title: '第2步：模拟账户',
         description: '开设免费模拟账户，无需冒真实资金风险即可练习。这使您可以掌握平台并测试策略。',
