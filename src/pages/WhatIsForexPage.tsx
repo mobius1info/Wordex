@@ -1,69 +1,64 @@
 import { TrendingUp, Globe, Clock, Users, BarChart3, Shield } from 'lucide-react';
-import { pageTranslations } from '../translations/pageTranslations';
 
-interface WhatIsForexPageProps {
-  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
-}
-
-export default function WhatIsForexPage({ language = 'ru' }: WhatIsForexPageProps) {
-  const t = pageTranslations[language].whatIsForex;
-
+export default function WhatIsForexPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">{t.title}</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">Что такое Forex</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t.subtitle}
+            Международный валютный рынок и возможности для трейдеров
           </p>
         </div>
 
         <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
           <div className="prose max-w-none">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.mainTitle}</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Валютный рынок Forex</h2>
             <p className="text-lg text-gray-700 mb-6">
-              {t.mainText}
+              Forex (Foreign Exchange) — это международный межбанковский валютный рынок, на котором осуществляется
+              купля-продажа валют. Это самый большой и ликвидный финансовый рынок в мире с ежедневным оборотом
+              более 6 триллионов долларов США.
             </p>
 
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">{t.characteristics}</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Основные характеристики рынка Forex</h3>
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="bg-blue-50 p-6 rounded-xl">
                 <div className="flex items-center mb-4">
                   <Globe className="h-8 w-8 text-blue-600 mr-3" />
-                  <h4 className="text-xl font-semibold">{t.char1.title}</h4>
+                  <h4 className="text-xl font-semibold">Глобальный рынок</h4>
                 </div>
                 <p className="text-gray-700">
-                  {t.char1.text}
+                  Работает круглосуточно 5 дней в неделю, охватывает все временные зоны от Токио до Нью-Йорка.
                 </p>
               </div>
 
               <div className="bg-green-50 p-6 rounded-xl">
                 <div className="flex items-center mb-4">
                   <BarChart3 className="h-8 w-8 text-green-600 mr-3" />
-                  <h4 className="text-xl font-semibold">{t.char2.title}</h4>
+                  <h4 className="text-xl font-semibold">Высокая ликвидность</h4>
                 </div>
                 <p className="text-gray-700">
-                  {t.char2.text}
+                  Огромные торговые объемы обеспечивают возможность быстрого открытия и закрытия позиций.
                 </p>
               </div>
 
               <div className="bg-purple-50 p-6 rounded-xl">
                 <div className="flex items-center mb-4">
                   <Clock className="h-8 w-8 text-purple-600 mr-3" />
-                  <h4 className="text-xl font-semibold">{t.char3.title}</h4>
+                  <h4 className="text-xl font-semibold">24/5 торговля</h4>
                 </div>
                 <p className="text-gray-700">
-                  {t.char3.text}
+                  Торгуйте в любое удобное время с понедельника по пятницу, независимо от часового пояса.
                 </p>
               </div>
 
               <div className="bg-red-50 p-6 rounded-xl">
                 <div className="flex items-center mb-4">
                   <TrendingUp className="h-8 w-8 text-red-600 mr-3" />
-                  <h4 className="text-xl font-semibold">{t.char4.title}</h4>
+                  <h4 className="text-xl font-semibold">Кредитное плечо</h4>
                 </div>
                 <p className="text-gray-700">
-                  {t.char4.text}
+                  Возможность торговать суммами, превышающими ваш депозит в десятки и сотни раз.
                 </p>
               </div>
             </div>
@@ -160,13 +155,13 @@ export default function WhatIsForexPage({ language = 'ru' }: WhatIsForexPageProp
             <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white p-8 rounded-2xl mb-8">
               <div className="flex items-center mb-4">
                 <Shield className="h-10 w-10 mr-4" />
-                <h3 className="text-2xl font-bold">{t.ctaTitle}</h3>
+                <h3 className="text-2xl font-bold">Начните торговать сегодня</h3>
               </div>
               <p className="text-lg mb-6">
-                {t.ctaText}
+                Откройте торговый счет и получите доступ к глобальным валютным рынкам с минимальным депозитом.
               </p>
               <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                {t.ctaButton}
+                Открыть счет
               </button>
             </div>
           </div>
