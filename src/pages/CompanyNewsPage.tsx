@@ -1,4 +1,4 @@
-import { Calendar, Bell, TrendingUp, Award } from 'lucide-react';
+import { Calendar, TrendingUp, Award } from 'lucide-react';
 import { analyticsTranslations } from '../translations/analyticsTranslations';
 
 interface CompanyNewsPageProps {
@@ -70,7 +70,6 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
     }
   ];
 
-  const categories = [t.categories.all, t.categories.important, t.categories.products, t.categories.technology, t.categories.trading, t.categories.awards, t.categories.bonuses, t.categories.education];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -82,82 +81,24 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
           </p>
         </div>
 
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-8 mb-12">
-          <div className="flex items-center mb-4">
-            <Bell className="h-12 w-12 mr-4" />
-            <div>
-              <h2 className="text-3xl font-bold">{t.subscribe.title}</h2>
-              <p className="text-blue-100 mt-2">{t.subscribe.subtitle}</p>
-            </div>
-          </div>
-          <div className="flex gap-4 mt-6">
-            <input
-              type="email"
-              placeholder={t.subscribe.placeholder}
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900"
-            />
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              {t.subscribe.button}
-            </button>
-          </div>
-        </div>
-
-        <div className="mb-8">
-          <div className="flex flex-wrap gap-3">
-            {categories.map((category) => (
-              <button
-                key={category}
-                className={`px-6 py-2 rounded-full font-medium transition-colors ${
-                  category === 'Все'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
 
         <div className="space-y-6">
           {news.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border-l-4 border-blue-500"
+              className="bg-white rounded-xl shadow-md p-6 sm:p-8 hover:shadow-lg transition-shadow"
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center text-sm text-gray-500">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  {item.date}
-                </div>
-                <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                  item.category === 'Важное' ? 'bg-red-100 text-red-700' :
-                  item.category === 'Продукты' ? 'bg-blue-100 text-blue-700' :
-                  item.category === 'Технологии' ? 'bg-purple-100 text-purple-700' :
-                  item.category === 'Награды' ? 'bg-yellow-100 text-yellow-700' :
-                  item.category === 'Торговля' ? 'bg-green-100 text-green-700' :
-                  item.category === 'Бонусы' ? 'bg-pink-100 text-pink-700' :
-                  'bg-gray-100 text-gray-700'
-                }`}>
-                  {item.category}
-                </span>
+              <div className="flex items-center text-sm text-gray-500 mb-4">
+                <Calendar className="h-4 w-4 mr-2" />
+                {item.date}
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
               <p className="text-gray-600 leading-relaxed">{item.content}</p>
-              <button className="mt-4 text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                Читать далее →
-              </button>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center">
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-            Загрузить ещё
-          </button>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
+        <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16">
           <div className="bg-white rounded-xl shadow-lg p-6 text-center">
             <TrendingUp className="h-12 w-12 text-blue-600 mx-auto mb-4" />
             <h4 className="text-xl font-bold text-gray-900 mb-2">Обзоры рынка</h4>
