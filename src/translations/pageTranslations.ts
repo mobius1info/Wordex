@@ -105,6 +105,81 @@ export const pageTranslations = {
       readyText: 'После практики на демо-счете откройте реальный счет и начните зарабатывать на Forex',
       realButton: 'Открыть реальный счет',
       continueDemo: 'Продолжить с демо'
+    },
+    accountTypes: {
+      title: 'Типы торговых счетов',
+      subtitle: 'Выберите счет, который идеально подходит для вашего стиля торговли',
+      standard: {
+        name: 'Standard',
+        description: 'Для начинающих трейдеров',
+        minDeposit: 'от $10',
+        minDepositLabel: 'минимальный депозит',
+        feature1: 'Кредитное плечо до 1:1000',
+        feature2: 'Спред от 1.5 пункта',
+        feature3: 'Без комиссий',
+        feature4: 'Микро и стандартные лоты',
+        feature5: 'Все торговые инструменты',
+        button: 'Открыть счет'
+      },
+      pro: {
+        name: 'Pro',
+        badge: 'Популярный',
+        description: 'Для активных трейдеров',
+        minDeposit: 'от $100',
+        minDepositLabel: 'минимальный депозит',
+        feature1: 'Кредитное плечо до 1:500',
+        feature2: 'Спред от 0.5 пункта',
+        feature3: 'Комиссия $3 за лот',
+        feature4: 'ECN/STP исполнение',
+        feature5: 'Приоритетная поддержка',
+        button: 'Открыть счет'
+      },
+      vip: {
+        name: 'VIP',
+        description: 'Для профессионалов',
+        minDeposit: 'от $5000',
+        minDepositLabel: 'минимальный депозит',
+        feature1: 'Кредитное плечо до 1:200',
+        feature2: 'Спред от 0 пунктов',
+        feature3: 'Комиссия $2 за лот',
+        feature4: 'Персональный менеджер',
+        feature5: 'Аналитика и сигналы',
+        button: 'Открыть счет'
+      },
+      comparison: {
+        title: 'Сравнение счетов',
+        characteristic: 'Характеристика',
+        minDeposit: 'Минимальный депозит',
+        spread: 'Спред EUR/USD',
+        commission: 'Комиссия',
+        leverage: 'Кредитное плечо',
+        execution: 'Исполнение',
+        minLot: 'Минимальный лот',
+        personalManager: 'Персональный менеджер',
+        tradingSignals: 'Торговые сигналы',
+        no: 'Нет',
+        market: 'Рыночное'
+      },
+      benefits: {
+        title: 'Преимущества всех счетов',
+        item1: 'Моментальный вывод средств',
+        item2: 'Без ограничений на стратегии',
+        item3: 'Торговля на всех платформах',
+        item4: 'Защита от отрицательного баланса'
+      },
+      additional: {
+        title: 'Дополнительные возможности',
+        item1: 'Программа лояльности и бонусы',
+        item2: 'Кэшбек на каждую сделку',
+        item3: 'Бесплатные обучающие материалы',
+        item4: 'VPS-сервер для автоматической торговли'
+      },
+      cta: {
+        title: 'Не знаете, какой счет выбрать?',
+        subtitle: 'Наши специалисты помогут подобрать оптимальный тип счета для ваших целей',
+        contactButton: 'Связаться с нами',
+        demoButton: 'Открыть демо-счет'
+      }
     }
   },
   en: {
@@ -213,6 +288,82 @@ export const pageTranslations = {
       readyText: 'After practicing on a demo account, open a real account and start earning on Forex',
       realButton: 'Open Real Account',
       continueDemo: 'Continue with Demo'
+    },
+    accountTypes: {
+      title: 'Account Types',
+      subtitle: 'Choose the account that perfectly suits your trading style',
+      standard: {
+        name: 'Standard',
+        description: 'For beginner traders',
+        minDeposit: 'from $10',
+        minDepositLabel: 'minimum deposit',
+        feature1: 'Leverage up to 1:1000',
+        feature2: 'Spread from 1.5 pips',
+        feature3: 'No commissions',
+        feature4: 'Micro and standard lots',
+        feature5: 'All trading instruments',
+        button: 'Open Account'
+      },
+      pro: {
+        name: 'Pro',
+        badge: 'Popular',
+        description: 'For active traders',
+        minDeposit: 'from $100',
+        minDepositLabel: 'minimum deposit',
+        feature1: 'Leverage up to 1:500',
+        feature2: 'Spread from 0.5 pips',
+        feature3: 'Commission $3 per lot',
+        feature4: 'ECN/STP execution',
+        feature5: 'Priority support',
+        button: 'Open Account'
+      },
+      vip: {
+        name: 'VIP',
+        description: 'For professionals',
+        minDeposit: 'from $5000',
+        minDepositLabel: 'minimum deposit',
+        feature1: 'Leverage up to 1:200',
+        feature2: 'Spread from 0 pips',
+        feature3: 'Commission $2 per lot',
+        feature4: 'Personal manager',
+        feature5: 'Analytics and signals',
+        button: 'Open Account'
+      },
+      comparison: {
+        title: 'Account Comparison',
+        characteristic: 'Characteristic',
+        minDeposit: 'Minimum Deposit',
+        spread: 'EUR/USD Spread',
+        commission: 'Commission',
+        leverage: 'Leverage',
+        execution: 'Execution',
+        minLot: 'Minimum Lot',
+        personalManager: 'Personal Manager',
+        tradingSignals: 'Trading Signals',
+        no: 'No',
+        market: 'Market'
+      },
+      benefits: {
+        title: 'Benefits of All Accounts',
+        item1: 'Instant withdrawal',
+        item2: 'No strategy restrictions',
+        item3: 'Trading on all platforms',
+        item4: 'Negative balance protection'
+      },
+      additional: {
+        title: 'Additional Features',
+        item1: 'Loyalty program and bonuses',
+        item2: 'Cashback on every trade',
+        item3: 'Free training materials',
+        item4: 'VPS server for automated trading'
+      },
+      cta: {
+        title: 'Not sure which account to choose?',
+        subtitle: 'Our specialists will help you choose the optimal account type for your goals',
+        contactButton: 'Contact Us',
+        demoButton: 'Open Demo Account'
+      }
+    }
     }
   },
   uk: {
@@ -429,8 +580,8 @@ export const pageTranslations = {
       readyText: 'Demo hesapta pratik yaptıktan sonra gerçek hesap açın ve Forex\'te kazanmaya başlayın',
       realButton: 'Gerçek Hesap Aç',
       continueDemo: 'Demo ile Devam Et'
-    }
-  },
+    },
+    accountTypes: {
   zh: {
     whereToStart: {
       title: '如何开始外汇交易',
@@ -441,7 +592,6 @@ export const pageTranslations = {
         item1: '什么是货币对和报价',
         item2: '点差和佣金如何运作',
         item3: '理解杠杆'
-      },
       step2: {
         title: '第2步：模拟账户',
         description: '开设免费模拟账户，无需冒真实资金风险即可练习。这使您可以掌握平台并测试策略。',
@@ -537,6 +687,81 @@ export const pageTranslations = {
       readyText: '在模拟账户上练习后，开设真实账户并开始在外汇上赚钱',
       realButton: '开设真实账户',
       continueDemo: '继续使用演示'
+    },
+    accountTypes: {
+      title: '账户类型',
+      subtitle: '选择最适合您交易风格的账户',
+      standard: {
+        name: 'Standard',
+        description: '适合初学者',
+        minDeposit: '从$10起',
+        minDepositLabel: '最低存款',
+        feature1: '高达1:1000的杠杆',
+        feature2: '点差从1.5点起',
+        feature3: '无佣金',
+        feature4: '微型和标准手',
+        feature5: '所有交易工具',
+        button: '开设账户'
+      },
+      pro: {
+        name: 'Pro',
+        badge: '最受欢迎',
+        description: '适合活跃交易者',
+        minDeposit: '从$100起',
+        minDepositLabel: '最低存款',
+        feature1: '高达1:500的杠杆',
+        feature2: '点差从0.5点起',
+        feature3: '每手$3佣金',
+        feature4: 'ECN/STP执行',
+        feature5: '优先支持',
+        button: '开设账户'
+      },
+      vip: {
+        name: 'VIP',
+        description: '专业人士',
+        minDeposit: '从$5000起',
+        minDepositLabel: '最低存款',
+        feature1: '高达1:200的杠杆',
+        feature2: '0点起的点差',
+        feature3: '每手$2佣金',
+        feature4: '个人经理',
+        feature5: '分析和信号',
+        button: '开设账户'
+      },
+      comparison: {
+        title: '账户比较',
+        characteristic: '特征',
+        minDeposit: '最低存款',
+        spread: 'EUR/USD点差',
+        commission: '佣金',
+        leverage: '杠杆',
+        execution: '执行',
+        minLot: '最小手数',
+        personalManager: '个人经理',
+        tradingSignals: '交易信号',
+        no: '无',
+        market: '市场'
+      },
+      benefits: {
+        title: '所有账户的优势',
+        item1: '即时出金',
+        item2: '策略无限制',
+        item3: '所有平台交易',
+        item4: '负余额保护'
+      },
+      additional: {
+        title: '额外功能',
+        item1: '忠诚度计划和奖金',
+        item2: '每笔交易返现',
+        item3: '免费培训材料',
+        item4: '自动交易VPS服务器'
+      },
+      cta: {
+        title: '不知道选择哪个账户？',
+        subtitle: '我们的专家将帮助您选择最适合您目标的账户类型',
+        contactButton: '联系我们',
+        demoButton: '开设模拟账户'
+      }
     }
   }
 };
