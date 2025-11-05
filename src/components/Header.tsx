@@ -166,6 +166,116 @@ export default function Header({
             </div>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden border-t border-gray-200">
+            <div className="px-4 py-4 space-y-4 bg-white">
+              {/* Language Selector Mobile */}
+              <div className="border-b border-gray-200 pb-4 mb-4">
+                <button
+                  onClick={() => setShowLanguages(!showLanguages)}
+                  className="flex items-center justify-between w-full text-gray-700 font-medium"
+                >
+                  <div className="flex items-center">
+                    <Globe className="h-5 w-5 mr-2" />
+                    <span>{languageLabels[language]}</span>
+                  </div>
+                  <ChevronDown className={`h-4 w-4 transition-transform ${showLanguages ? 'rotate-180' : ''}`} />
+                </button>
+
+                {showLanguages && (
+                  <div className="mt-2 space-y-1">
+                    {(Object.keys(languageLabels) as Array<'ru' | 'uk' | 'en' | 'tr' | 'zh'>).map((lang) => (
+                      <button
+                        key={lang}
+                        onClick={() => {
+                          setLanguage(lang);
+                          setShowLanguages(false);
+                        }}
+                        className={`block w-full text-left px-4 py-2 text-sm rounded ${
+                          language === lang ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        {languageLabels[lang]}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Beginners Section */}
+              <div className="space-y-2">
+                <div className="flex items-center text-gray-900 font-semibold mb-2">
+                  <TrendingUp className="h-5 w-5 mr-2" />
+                  {t.nav.beginners}
+                </div>
+                <button onClick={() => { setActivePage('start'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.whereToStart}</button>
+                <button onClick={() => { setActivePage('what-is-forex'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.whatIsForex}</button>
+                <button onClick={() => { setActivePage('advantages'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.forexAdvantages}</button>
+                <button onClick={() => { setActivePage('demo'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.demoAccount}</button>
+                <button onClick={() => { setActivePage('account-types'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.accountTypes}</button>
+              </div>
+
+              {/* Analytics Section */}
+              <div className="space-y-2 border-t border-gray-200 pt-4">
+                <div className="flex items-center text-gray-900 font-semibold mb-2">
+                  <TrendingUp className="h-5 w-5 mr-2" />
+                  {t.nav.analytics}
+                </div>
+                <button onClick={() => { setActivePage('trading-schedule'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.tradingSchedule}</button>
+                <button onClick={() => { setActivePage('market-surveys'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.marketSurveys}</button>
+                <button onClick={() => { setActivePage('event-calendar'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.eventCalendar}</button>
+                <button onClick={() => { setActivePage('quotes'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.quotes}</button>
+                <button onClick={() => { setActivePage('dividends'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.dividends}</button>
+              </div>
+
+              {/* Help Section */}
+              <div className="space-y-2 border-t border-gray-200 pt-4">
+                <div className="flex items-center text-gray-900 font-semibold mb-2">
+                  <HelpCircle className="h-5 w-5 mr-2" />
+                  {t.nav.help}
+                </div>
+                <button onClick={() => { setActivePage('how-to-trade'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.howToTrade}</button>
+                <button onClick={() => { setActivePage('deposit-withdrawal'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.depositWithdrawal}</button>
+                <button onClick={() => { setActivePage('glossary'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.glossary}</button>
+              </div>
+
+              {/* Tools Section */}
+              <div className="space-y-2 border-t border-gray-200 pt-4">
+                <div className="flex items-center text-gray-900 font-semibold mb-2">
+                  <TrendingUp className="h-5 w-5 mr-2" />
+                  {t.nav.tools}
+                </div>
+                <button onClick={() => { setActivePage('platforms'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.platforms}</button>
+                <button onClick={() => { setActivePage('platforms'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.mobileApps}</button>
+                <button onClick={() => { setActivePage('account-types'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.accountTypes}</button>
+                <button onClick={() => { setActivePage('trading-instruments'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.tradingInstruments}</button>
+              </div>
+
+              {/* About Section */}
+              <div className="space-y-2 border-t border-gray-200 pt-4">
+                <div className="flex items-center text-gray-900 font-semibold mb-2">
+                  <HelpCircle className="h-5 w-5 mr-2" />
+                  {t.nav.about}
+                </div>
+                <button onClick={() => { setActivePage('about-company'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.aboutCompany}</button>
+                <button onClick={() => { setActivePage('company-news'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.companyNews}</button>
+                <button onClick={() => { setActivePage('contacts'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.contacts}</button>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="space-y-3 border-t border-gray-200 pt-4">
+                <button className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                  {t.nav.openAccount}
+                </button>
+                <button className="w-full text-blue-600 font-semibold hover:text-blue-700 py-2">
+                  {t.nav.login}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </header>
     </>
   );
