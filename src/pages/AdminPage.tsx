@@ -52,7 +52,16 @@ export default function AdminPage() {
       return;
     }
 
-    const { error } = await supabase.from('news').insert([formData]);
+    const newsData = {
+      ...formData,
+      publish_ru: formData.publish_ru ?? true,
+      publish_uk: formData.publish_uk ?? true,
+      publish_en: formData.publish_en ?? true,
+      publish_tr: formData.publish_tr ?? true,
+      publish_zh: formData.publish_zh ?? true,
+    };
+
+    const { error } = await supabase.from('news').insert([newsData]);
 
     if (error) {
       alert('Ошибка добавления: ' + error.message);
@@ -65,6 +74,11 @@ export default function AdminPage() {
         category: 'Важное',
         language: 'ru',
         published: true,
+        publish_ru: true,
+        publish_uk: true,
+        publish_en: true,
+        publish_tr: true,
+        publish_zh: true,
       });
       loadNews();
     }
@@ -83,6 +97,11 @@ export default function AdminPage() {
         category: newsItem.category,
         language: newsItem.language,
         published: newsItem.published,
+        publish_ru: newsItem.publish_ru ?? true,
+        publish_uk: newsItem.publish_uk ?? true,
+        publish_en: newsItem.publish_en ?? true,
+        publish_tr: newsItem.publish_tr ?? true,
+        publish_zh: newsItem.publish_zh ?? true,
         updated_at: new Date().toISOString(),
       })
       .eq('id', id);
