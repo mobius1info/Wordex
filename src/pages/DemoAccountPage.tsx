@@ -1,11 +1,9 @@
 import { BookOpen, CheckCircle, TrendingUp, Shield, Zap, Target } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 import { pageTranslations } from '../translations/pageTranslations';
 
-interface DemoAccountPageProps {
-  language: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
-}
-
-export default function DemoAccountPage({ language }: DemoAccountPageProps) {
+export default function DemoAccountPage() {
+  const { language } = useLanguage();
   const t = pageTranslations[language].demoAccount;
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

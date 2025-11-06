@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, MessageCircle, Send, Clock } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function ContactsPage() {
   const contacts = [

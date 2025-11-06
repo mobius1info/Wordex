@@ -1,11 +1,9 @@
 import { DollarSign, Star, Award, Zap, CheckCircle } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 import { pageTranslations } from '../translations/pageTranslations';
 
-interface AccountTypesPageProps {
-  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
-}
-
-export default function AccountTypesPage({ language = 'ru' }: AccountTypesPageProps) {
+export default function AccountTypesPage() {
+  const { language } = useLanguage();
   const t = pageTranslations[language].accountTypes;
 
   return (

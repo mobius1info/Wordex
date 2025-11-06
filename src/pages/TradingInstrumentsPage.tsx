@@ -1,11 +1,9 @@
 import { TrendingUp, Briefcase, Gem } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 import PageWrapper from '../components/PageWrapper';
 
-interface TradingInstrumentsPageProps {
-  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
-}
-
-export default function TradingInstrumentsPage({ language }: TradingInstrumentsPageProps) {
+export default function TradingInstrumentsPage() {
+  const { language } = useLanguage();
   return (
     <PageWrapper language={language} pageKey="tradingInstruments">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">

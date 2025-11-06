@@ -1,11 +1,9 @@
 import { TrendingUp, TrendingDown, BarChart3, Target, Clock } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 import { analyticsTranslations } from '../translations/analyticsTranslations';
 
-interface MarketSurveysPageProps {
-  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
-}
-
-export default function MarketSurveysPage({ language = 'ru' }: MarketSurveysPageProps) {
+export default function MarketSurveysPage() {
+  const { language } = useLanguage();
   const t = analyticsTranslations[language].marketSurveys;
   const surveys = [
     {

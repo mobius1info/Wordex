@@ -1,4 +1,5 @@
 import { Award, Users, TrendingUp, Shield, Globe, Target } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function AboutCompanyPage() {
   const achievements = [

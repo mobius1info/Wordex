@@ -1,14 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 import { Calendar, TrendingUp, Award } from 'lucide-react';
 import { analyticsTranslations } from '../translations/analyticsTranslations';
 import { supabase, NewsItem } from '../lib/supabase';
 
-interface CompanyNewsPageProps {
-  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
-}
-
-export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProps) {
-  console.log('CompanyNewsPage rendered with language:', language);
+export default function CompanyNewsPage() {
+  const { language } = useLanguage();
   const t = analyticsTranslations[language].companyNews;
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);

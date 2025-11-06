@@ -1,11 +1,9 @@
 import { ArrowRight, CheckCircle, TrendingUp, BookOpen, DollarSign, Users } from 'lucide-react';
 import { pageTranslations } from '../translations/pageTranslations';
+import { useLanguage } from '../contexts/LanguageContext';
 
-interface WhereToStartPageProps {
-  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
-}
-
-export default function WhereToStartPage({ language = 'ru' }: WhereToStartPageProps) {
+export default function WhereToStartPage() {
+  const { language } = useLanguage();
   const t = pageTranslations[language].whereToStart;
 
   return (

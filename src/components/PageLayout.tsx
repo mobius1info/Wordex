@@ -1,6 +1,6 @@
 import { ReactNode, useState, useEffect } from 'react';
 import Header from './Header';
-import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const translations = {
   ru: {
@@ -44,7 +44,7 @@ interface PageLayoutProps {
 }
 
 export default function PageLayout({ children }: PageLayoutProps) {
-  const [language, setLanguage] = useState<'ru' | 'uk' | 'en' | 'tr' | 'zh'>('ru');
+  const { language, setLanguage } = useLanguage();
   const [showLanguages, setShowLanguages] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 

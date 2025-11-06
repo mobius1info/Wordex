@@ -1,4 +1,5 @@
 import { CreditCard, Wallet, Bitcoin, CheckCircle, Clock, Shield } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function DepositWithdrawalPage() {
   const methods = [

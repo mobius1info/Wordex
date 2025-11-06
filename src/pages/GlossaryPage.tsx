@@ -1,4 +1,5 @@
 import { BookOpen, Search } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function GlossaryPage() {
   const terms = [

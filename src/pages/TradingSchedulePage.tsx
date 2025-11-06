@@ -1,11 +1,9 @@
 import { Clock, Calendar, TrendingUp } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 import { simplePageTranslations } from '../translations/simplePageTranslations';
 
-interface TradingSchedulePageProps {
-  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
-}
-
-export default function TradingSchedulePage({ language = 'ru' }: TradingSchedulePageProps) {
+export default function TradingSchedulePage() {
+  const { language } = useLanguage();
   const t = simplePageTranslations[language].tradingSchedule;
   const sessions = [
     { name: 'Токио', open: '00:00', close: '09:00', color: 'bg-red-500' },

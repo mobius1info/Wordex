@@ -1,8 +1,4 @@
-interface QuotesPageProps {
-  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
-}
-
-export default function QuotesPage(_props: QuotesPageProps) {
+export default function QuotesPage() {
   return (
     <div className="w-full h-screen">
       <iframe
