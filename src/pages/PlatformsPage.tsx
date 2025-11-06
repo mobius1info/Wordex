@@ -1,14 +1,19 @@
 import { Monitor, Smartphone, Download, CheckCircle, Zap, BarChart3 } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { platformsTranslations } from '../translations/platformsTranslations';
 
-export default function PlatformsPage() {
+interface PlatformsPageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function PlatformsPage({ language = 'ru' }: PlatformsPageProps) {
+  const t = platformsTranslations[language] || platformsTranslations.ru;
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">Торговые платформы</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">{t.title}</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Профессиональные инструменты для успешной торговли на любом устройстве
+            {t.subtitle}
           </p>
         </div>
 
@@ -16,42 +21,28 @@ export default function PlatformsPage() {
           <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-blue-600">
             <div className="flex items-center mb-6">
               <Monitor className="h-12 w-12 text-blue-600 mr-4" />
-              <h2 className="text-3xl font-bold text-gray-900">MetaTrader 4</h2>
+              <h2 className="text-3xl font-bold text-gray-900">{t.mt4.title}</h2>
             </div>
             <p className="text-gray-600 mb-6 text-lg">
-              Самая популярная торговая платформа в мире с миллионами пользователей
+              {t.mt4.description}
             </p>
 
             <div className="space-y-4 mb-8">
-              <div className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">Удобный и интуитивный интерфейс</span>
-              </div>
-              <div className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">Более 30 встроенных индикаторов</span>
-              </div>
-              <div className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">Поддержка автоматической торговли</span>
-              </div>
-              <div className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">Торговые сигналы и советники</span>
-              </div>
-              <div className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">Встроенный маркет индикаторов</span>
-              </div>
+              {t.mt4.features.map((feature, idx) => (
+                <div key={idx} className="flex items-start">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">{feature}</span>
+                </div>
+              ))}
             </div>
 
             <div className="flex gap-4">
               <button className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center">
                 <Download className="h-5 w-5 mr-2" />
-                Скачать MT4
+                {t.mt4.downloadButton}
               </button>
               <button className="flex-1 border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-                Веб-версия
+                {t.mt4.webButton}
               </button>
             </div>
           </div>

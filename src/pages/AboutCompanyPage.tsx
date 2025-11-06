@@ -1,8 +1,15 @@
 import { Award, Users, TrendingUp, Shield, Globe, Target } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { aboutCompanyTranslations } from '../translations/aboutCompanyTranslations';
 
-export default function AboutCompanyPage() {
-  const achievements = [
+interface AboutCompanyPageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function AboutCompanyPage({ language = 'ru' }: AboutCompanyPageProps) {
+  const t = aboutCompanyTranslations[language] || aboutCompanyTranslations.ru;
+
+  const achievements = t.achievements.map(a => ({ year: a.year, title: a.title, description: a.description }));
+  const oldAchievements = [
     { year: '2015', title: 'Основание компании', description: 'Начало работы на рынке Forex' },
     { year: '2017', title: '50,000+ клиентов', description: 'Достигнута отметка в 50 тысяч активных трейдеров' },
     { year: '2019', title: 'Международная экспансия', description: 'Открытие офисов в 15 странах мира' },
