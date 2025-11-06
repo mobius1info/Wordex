@@ -71,7 +71,6 @@ export default function Header({
                     <Link to="/prop-trading" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.propTrading}</Link>
                     <Link to="/demo" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.demoAccount}</Link>
                     <Link to="/account-types" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.accountTypes}</Link>
-                    <Link to="/#features" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.literature}</Link>
                   </div>
                 </div>
               </div>
@@ -113,7 +112,6 @@ export default function Header({
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
                     <Link to="/platforms" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.platforms}</Link>
-                    <Link to="/platforms" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.mobileApps}</Link>
                     <Link to="/account-types" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.accountTypes}</Link>
                     <Link to="/trading-instruments" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.tradingInstruments}</Link>
                   </div>
@@ -276,7 +274,6 @@ export default function Header({
                   {t.nav.tools}
                 </div>
                 <Link to="/platforms" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.platforms}</Link>
-                <Link to="/platforms" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.mobileApps}</Link>
                 <Link to="/account-types" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.accountTypes}</Link>
                 <Link to="/trading-instruments" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.tradingInstruments}</Link>
               </div>
