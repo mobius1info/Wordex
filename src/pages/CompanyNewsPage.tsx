@@ -127,7 +127,7 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
                 {item.date}
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{item.content}</p>
+              <div className="text-gray-600 leading-relaxed whitespace-pre-wrap">{item.content}</div>
             </div>
             ))}
           </div>
