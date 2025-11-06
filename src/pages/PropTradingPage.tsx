@@ -1,5 +1,4 @@
 import { TrendingUp, DollarSign, Target, Award, CheckCircle, Users, BarChart3, Shield } from 'lucide-react';
-import PageWrapper from '../components/PageWrapper';
 
 interface PropTradingPageProps {
   language: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
@@ -501,7 +500,7 @@ export default function PropTradingPage({ language }: PropTradingPageProps) {
   };
 
   return (
-    <PageWrapper>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -658,6 +657,6 @@ export default function PropTradingPage({ language }: PropTradingPageProps) {
           </button>
         </div>
       </div>
-    </PageWrapper>
+    </div>
   );
 }
