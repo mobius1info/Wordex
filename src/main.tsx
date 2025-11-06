@@ -21,6 +21,7 @@ import TradingInstrumentsPage from './pages/TradingInstrumentsPage.tsx';
 import AboutCompanyPage from './pages/AboutCompanyPage.tsx';
 import CompanyNewsPage from './pages/CompanyNewsPage.tsx';
 import ContactsPage from './pages/ContactsPage.tsx';
+import PageLayout from './components/PageLayout.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -29,24 +30,24 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/admin" element={<AdminPage />} />
-        <Route path="/start" element={<WhereToStartPage />} />
-        <Route path="/what-is-forex" element={<WhatIsForexPage />} />
-        <Route path="/advantages" element={<ForexAdvantagesPage />} />
-        <Route path="/prop-trading" element={<PropTradingPage />} />
-        <Route path="/demo" element={<DemoAccountPage />} />
-        <Route path="/account-types" element={<AccountTypesPage />} />
-        <Route path="/trading-schedule" element={<TradingSchedulePage />} />
-        <Route path="/market-surveys" element={<MarketSurveysPage />} />
-        <Route path="/event-calendar" element={<EventCalendarPage />} />
-        <Route path="/quotes" element={<QuotesPage />} />
-        <Route path="/how-to-trade" element={<HowToTradePage />} />
-        <Route path="/deposit-withdrawal" element={<DepositWithdrawalPage />} />
-        <Route path="/glossary" element={<GlossaryPage />} />
-        <Route path="/platforms" element={<PlatformsPage />} />
-        <Route path="/trading-instruments" element={<TradingInstrumentsPage />} />
-        <Route path="/about-company" element={<AboutCompanyPage />} />
-        <Route path="/company-news" element={<CompanyNewsPage />} />
-        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="/start" element={<PageLayout><WhereToStartPage language="ru" /></PageLayout>} />
+        <Route path="/what-is-forex" element={<PageLayout><WhatIsForexPage language="ru" /></PageLayout>} />
+        <Route path="/advantages" element={<PageLayout><ForexAdvantagesPage language="ru" /></PageLayout>} />
+        <Route path="/prop-trading" element={<PageLayout><PropTradingPage language="ru" /></PageLayout>} />
+        <Route path="/demo" element={<PageLayout><DemoAccountPage language="ru" /></PageLayout>} />
+        <Route path="/account-types" element={<PageLayout><AccountTypesPage language="ru" /></PageLayout>} />
+        <Route path="/trading-schedule" element={<PageLayout><TradingSchedulePage language="ru" /></PageLayout>} />
+        <Route path="/market-surveys" element={<PageLayout><MarketSurveysPage language="ru" /></PageLayout>} />
+        <Route path="/event-calendar" element={<PageLayout><EventCalendarPage language="ru" /></PageLayout>} />
+        <Route path="/quotes" element={<PageLayout><QuotesPage language="ru" /></PageLayout>} />
+        <Route path="/how-to-trade" element={<PageLayout><HowToTradePage language="ru" /></PageLayout>} />
+        <Route path="/deposit-withdrawal" element={<PageLayout><DepositWithdrawalPage language="ru" /></PageLayout>} />
+        <Route path="/glossary" element={<PageLayout><GlossaryPage language="ru" /></PageLayout>} />
+        <Route path="/platforms" element={<PageLayout><PlatformsPage language="ru" /></PageLayout>} />
+        <Route path="/trading-instruments" element={<PageLayout><TradingInstrumentsPage language="ru" /></PageLayout>} />
+        <Route path="/about-company" element={<PageLayout><AboutCompanyPage language="ru" /></PageLayout>} />
+        <Route path="/company-news" element={<PageLayout><CompanyNewsPage language="ru" /></PageLayout>} />
+        <Route path="/contacts" element={<PageLayout><ContactsPage language="ru" /></PageLayout>} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

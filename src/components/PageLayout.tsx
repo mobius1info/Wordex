@@ -69,9 +69,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
         setMobileMenuOpen={setMobileMenuOpen}
         translations={translations}
       />
-      <div className="pt-20">
-        {children}
-      </div>
+      {children}
     </div>
   );
 }
