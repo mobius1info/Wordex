@@ -48,6 +48,8 @@ export default function AdminPage() {
 
   const translateContent = async (text: string, sourceLang: string, targetLangs: string[]) => {
     try {
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
       const apiUrl = `${supabaseUrl}/functions/v1/translate-news`;
       const response = await fetch(apiUrl, {
         method: 'POST',

@@ -16,47 +16,37 @@ interface TranslateResponse {
   translations: Record<string, string>;
 }
 
-const languageNames: Record<string, string> = {
-  ru: 'Russian',
-  uk: 'Ukrainian',
-  en: 'English',
-  tr: 'Turkish',
-  zh: 'Chinese'
+const languageCodes: Record<string, string> = {
+  ru: 'ru',
+  uk: 'uk',
+  en: 'en',
+  tr: 'tr',
+  zh: 'zh-CN'
 };
 
 async function translateText(text: string, sourceLang: string, targetLang: string): Promise<string> {
   try {
-    const prompt = `Translate the following text from ${languageNames[sourceLang] || sourceLang} to ${languageNames[targetLang] || targetLang}. Preserve all formatting, line breaks, and paragraph structure. Only return the translated text without any additional comments or explanations.\n\nText to translate:\n${text}`;
+    const sourceLangCode = languageCodes[sourceLang] || sourceLang;
+    const targetLangCode = languageCodes[targetLang] || targetLang;
     
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${Deno.env.get('OPENAI_API_KEY')}`,
-      },
-      body: JSON.stringify({
-        model: 'gpt-3.5-turbo',
-        messages: [
-          {
-            role: 'system',
-            content: 'You are a professional translator. Translate text accurately while preserving formatting, tone, and meaning. Return only the translation without any additional text.'
-          },
-          {
-            role: 'user',
-            content: prompt
-          }
-        ],
-        temperature: 0.3,
-        max_tokens: 2000,
-      }),
-    });
-
+    // Use MyMemory Translation API (free, no API key required)
+    const encodedText = encodeURIComponent(text);
+    const url = `https://api.mymemory.translated.net/get?q=${encodedText}&langpair=${sourceLangCode}|${targetLangCode}`;
+    
+    const response = await fetch(url);
+    
     if (!response.ok) {
-      throw new Error(`OpenAI API error: ${response.statusText}`);
+      console.error(`Translation API error: ${response.statusText}`);
+      return text;
     }
 
     const data = await response.json();
-    return data.choices[0]?.message?.content?.trim() || text;
+    
+    if (data.responseStatus === 200 && data.responseData?.translatedText) {
+      return data.responseData.translatedText;
+    }
+    
+    return text;
   } catch (error) {
     console.error(`Translation error for ${targetLang}:`, error);
     return text;
@@ -87,9 +77,12 @@ Deno.serve(async (req: Request) => {
     const translations: Record<string, string> = {};
     translations[sourceLang] = text;
 
+    // Translate sequentially to avoid rate limiting
     for (const targetLang of targetLangs) {
       if (targetLang !== sourceLang) {
         translations[targetLang] = await translateText(text, sourceLang, targetLang);
+        // Small delay to avoid rate limiting
+        await new Promise(resolve => setTimeout(resolve, 200));
       }
     }
 
