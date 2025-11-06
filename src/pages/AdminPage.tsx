@@ -51,6 +51,10 @@ export default function AdminPage() {
       const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
       const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
       const apiUrl = `${supabaseUrl}/functions/v1/translate-news`;
+
+      console.log('Translation request:', { text: text.substring(0, 50), sourceLang, targetLangs });
+      console.log('API URL:', apiUrl);
+
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
@@ -60,14 +64,20 @@ export default function AdminPage() {
         body: JSON.stringify({ text, sourceLang, targetLangs }),
       });
 
+      console.log('Response status:', response.status);
+
       if (!response.ok) {
-        throw new Error('Translation failed');
+        const errorText = await response.text();
+        console.error('Translation API error:', errorText);
+        throw new Error(`Translation failed: ${errorText}`);
       }
 
       const data = await response.json();
+      console.log('Translation response:', data);
       return data.translations;
     } catch (error) {
       console.error('Translation error:', error);
+      alert('Ошибка перевода: ' + (error as Error).message);
       return null;
     }
   };
@@ -84,8 +94,23 @@ export default function AdminPage() {
       (lang) => formData[`publish_${lang}` as keyof NewsItem]
     );
 
-    const titleTranslations = await translateContent(formData.title || '', formData.language || 'ru', selectedLangs);
-    const contentTranslations = await translateContent(formData.content || '', formData.language || 'ru', selectedLangs);
+    console.log('Selected languages:', selectedLangs);
+    console.log('Source language:', formData.language);
+
+    let titleTranslations = null;
+    let contentTranslations = null;
+
+    if (selectedLangs.length > 0) {
+      titleTranslations = await translateContent(formData.title || '', formData.language || 'ru', selectedLangs);
+      console.log('Title translations:', titleTranslations);
+
+      contentTranslations = await translateContent(formData.content || '', formData.language || 'ru', selectedLangs);
+      console.log('Content translations:', contentTranslations);
+
+      if (!titleTranslations || !contentTranslations) {
+        alert('Предупреждение: Перевод не удался. Новость будет сохранена без переводов.');
+      }
+    }
 
     const newsData = {
       ...formData,
@@ -105,6 +130,8 @@ export default function AdminPage() {
       content_tr: contentTranslations?.tr || formData.content,
       content_zh: contentTranslations?.zh || formData.content,
     };
+
+    console.log('News data to be saved:', newsData);
 
     const { error } = await supabase.from('news').insert([newsData]);
 
