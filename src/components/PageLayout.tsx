@@ -43,9 +43,16 @@ interface PageLayoutProps {
 }
 
 export default function PageLayout({ children }: PageLayoutProps) {
-  const [language, setLanguage] = useState<'ru' | 'uk' | 'en' | 'tr' | 'zh'>('ru');
+  const [language, setLanguage] = useState<'ru' | 'uk' | 'en' | 'tr' | 'zh'>(() => {
+    const saved = localStorage.getItem('language');
+    return (saved as 'ru' | 'uk' | 'en' | 'tr' | 'zh') || 'ru';
+  });
   const [showLanguages, setShowLanguages] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
 
   useEffect(() => {
     if (mobileMenuOpen) {

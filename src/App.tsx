@@ -866,12 +866,19 @@ const translations = {
 };
 
 function App() {
-  const [language, setLanguage] = useState<'ru' | 'uk' | 'en' | 'tr' | 'zh'>('ru');
+  const [language, setLanguage] = useState<'ru' | 'uk' | 'en' | 'tr' | 'zh'>(() => {
+    const saved = localStorage.getItem('language');
+    return (saved as 'ru' | 'uk' | 'en' | 'tr' | 'zh') || 'ru';
+  });
   const [showLanguages, setShowLanguages] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const t = translations[language] || translations.ru;
+
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
 
   useEffect(() => {
     const interval = setInterval(() => {
