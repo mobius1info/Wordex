@@ -257,6 +257,8 @@ export default function AdminPage() {
       const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
       const apiUrl = `${supabaseUrl}/functions/v1/translate-existing-news`;
 
+      console.log('Starting translation...');
+
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
@@ -265,13 +267,19 @@ export default function AdminPage() {
         },
       });
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Translation failed: ${errorText}`);
+      const data = await response.json();
+      console.log('Translation response:', data);
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || `Translation failed: ${response.statusText}`);
       }
 
-      const data = await response.json();
-      alert(`Успешно! Переведено ${data.translatedCount} из ${data.totalItems} новостей.`);
+      if (data.totalItems === 0) {
+        alert('Новостей для перевода не найдено.');
+      } else {
+        alert(`Успешно! Переведено ${data.translatedCount} из ${data.totalItems} новостей.`);
+      }
+
       loadNews();
     } catch (error) {
       console.error('Translation error:', error);

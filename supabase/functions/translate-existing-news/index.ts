@@ -19,25 +19,36 @@ const allLanguages = ['ru', 'uk', 'en', 'tr', 'zh'];
 
 async function translateText(text: string, sourceLang: string, targetLang: string): Promise<string> {
   try {
+    if (!text || text.trim() === '') {
+      return text;
+    }
+
     const sourceLangCode = languageCodes[sourceLang] || sourceLang;
     const targetLangCode = languageCodes[targetLang] || targetLang;
-    
+
+    if (sourceLangCode === targetLangCode) {
+      return text;
+    }
+
     const encodedText = encodeURIComponent(text);
     const url = `https://api.mymemory.translated.net/get?q=${encodedText}&langpair=${sourceLangCode}|${targetLangCode}`;
-    
+
+    console.log(`Translating from ${sourceLangCode} to ${targetLangCode}`);
     const response = await fetch(url);
-    
+
     if (!response.ok) {
       console.error(`Translation API error: ${response.statusText}`);
       return text;
     }
 
     const data = await response.json();
-    
+
     if (data.responseStatus === 200 && data.responseData?.translatedText) {
+      console.log(`Translated: ${text.substring(0, 30)}... -> ${data.responseData.translatedText.substring(0, 30)}...`);
       return data.responseData.translatedText;
     }
-    
+
+    console.log('No translation returned, using original');
     return text;
   } catch (error) {
     console.error(`Translation error for ${targetLang}:`, error);
@@ -58,19 +69,28 @@ Deno.serve(async (req: Request) => {
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-    // Get all news items without complete translations
+    console.log('Fetching all news items...');
+
     const { data: newsItems, error: fetchError } = await supabase
       .from('news')
       .select('*')
-      .or('title_ru.is.null,title_uk.is.null,title_en.is.null,title_tr.is.null,title_zh.is.null');
+      .eq('published', true);
 
     if (fetchError) {
+      console.error('Fetch error:', fetchError);
       throw new Error(`Failed to fetch news: ${fetchError.message}`);
     }
 
+    console.log(`Found ${newsItems?.length || 0} news items`);
+
     if (!newsItems || newsItems.length === 0) {
       return new Response(
-        JSON.stringify({ message: 'No news items need translation', count: 0 }),
+        JSON.stringify({
+          success: true,
+          message: 'No news items found',
+          totalItems: 0,
+          translatedCount: 0
+        }),
         {
           status: 200,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -79,40 +99,45 @@ Deno.serve(async (req: Request) => {
     }
 
     let translatedCount = 0;
+    let processedCount = 0;
 
     for (const item of newsItems) {
-      const sourceLang = item.language || 'ru';
-      const updates: any = {};
+      processedCount++;
+      console.log(`Processing item ${processedCount}/${newsItems.length}: ${item.title?.substring(0, 30)}`);
 
-      // Translate title
+      const sourceLang = item.language || 'tr';
+      const updates: any = {};
+      let needsUpdate = false;
+
       for (const lang of allLanguages) {
         const titleField = `title_${lang}`;
-        if (!item[titleField] || item[titleField] === '') {
+        const contentField = `content_${lang}`;
+
+        if (!item[titleField] || item[titleField] === '' || item[titleField] === item.title) {
+          needsUpdate = true;
           if (lang === sourceLang) {
             updates[titleField] = item.title;
           } else {
             const translated = await translateText(item.title, sourceLang, lang);
             updates[titleField] = translated;
-            await new Promise(resolve => setTimeout(resolve, 300));
+            await new Promise(resolve => setTimeout(resolve, 400));
           }
         }
-      }
 
-      // Translate content
-      for (const lang of allLanguages) {
-        const contentField = `content_${lang}`;
-        if (!item[contentField] || item[contentField] === '') {
+        if (!item[contentField] || item[contentField] === '' || item[contentField] === item.content) {
+          needsUpdate = true;
           if (lang === sourceLang) {
             updates[contentField] = item.content;
           } else {
             const translated = await translateText(item.content, sourceLang, lang);
             updates[contentField] = translated;
-            await new Promise(resolve => setTimeout(resolve, 300));
+            await new Promise(resolve => setTimeout(resolve, 400));
           }
         }
       }
 
-      if (Object.keys(updates).length > 0) {
+      if (needsUpdate && Object.keys(updates).length > 0) {
+        console.log(`Updating item ${item.id} with ${Object.keys(updates).length} fields`);
         const { error: updateError } = await supabase
           .from('news')
           .update(updates)
@@ -122,16 +147,24 @@ Deno.serve(async (req: Request) => {
           console.error(`Failed to update news ${item.id}:`, updateError);
         } else {
           translatedCount++;
+          console.log(`Successfully updated item ${translatedCount}`);
         }
+      } else {
+        console.log(`Item ${item.id} already has all translations`);
       }
     }
 
+    const result = {
+      success: true,
+      message: 'Translation completed',
+      totalItems: newsItems.length,
+      translatedCount: translatedCount
+    };
+
+    console.log('Final result:', result);
+
     return new Response(
-      JSON.stringify({ 
-        message: 'Translation completed', 
-        totalItems: newsItems.length,
-        translatedCount 
-      }),
+      JSON.stringify(result),
       {
         status: 200,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -140,7 +173,12 @@ Deno.serve(async (req: Request) => {
   } catch (error) {
     console.error('Error:', error);
     return new Response(
-      JSON.stringify({ error: error.message || 'Internal server error' }),
+      JSON.stringify({
+        success: false,
+        error: error.message || 'Internal server error',
+        totalItems: 0,
+        translatedCount: 0
+      }),
       {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
