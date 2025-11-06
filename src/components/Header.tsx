@@ -120,9 +120,10 @@ export default function Header({
             </nav>
 
             <div className="flex items-center space-x-4">
-              <div className="relative">
+              <div className="relative" onMouseLeave={() => setShowLanguages(false)}>
                 <button
                   onClick={() => setShowLanguages(!showLanguages)}
+                  onMouseEnter={() => setShowLanguages(true)}
                   className="hidden md:flex items-center text-gray-600 hover:text-blue-600"
                 >
                   <Globe className="h-5 w-5 mr-1" />

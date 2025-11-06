@@ -1,5 +1,6 @@
 import { ReactNode, useState, useEffect } from 'react';
 import Header from './Header';
+import { useNavigate } from 'react-router-dom';
 
 const translations = {
   ru: {
