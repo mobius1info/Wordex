@@ -4,7 +4,7 @@ import { analyticsTranslations } from '../translations/analyticsTranslations';
 
 export default function EventCalendarPage() {
   const { language } = useLanguage();
-  const t = analyticsTranslations[language].eventCalendar;
+  const t = (analyticsTranslations[language] || analyticsTranslations.ru).eventCalendar;
   const events = [
     {
       date: '18 ноября',

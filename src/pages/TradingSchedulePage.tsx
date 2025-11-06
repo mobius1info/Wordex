@@ -4,7 +4,7 @@ import { simplePageTranslations } from '../translations/simplePageTranslations';
 
 export default function TradingSchedulePage() {
   const { language } = useLanguage();
-  const t = simplePageTranslations[language].tradingSchedule;
+  const t = (simplePageTranslations[language] || simplePageTranslations.ru).tradingSchedule;
   const sessions = [
     { name: 'Токио', open: '00:00', close: '09:00', color: 'bg-red-500' },
     { name: 'Лондон', open: '08:00', close: '17:00', color: 'bg-blue-500' },

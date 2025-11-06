@@ -489,7 +489,7 @@ const translations = {
 
 export default function PropTradingPage() {
   const { language } = useLanguage();
-  const t = translations[language];
+  const t = translations[language] || translations.ru;
 
   const handleAccountClick = (amount: number) => {
     console.log(`Selected account: $${amount.toLocaleString()}`);

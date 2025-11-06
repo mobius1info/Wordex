@@ -4,7 +4,7 @@ import { pageTranslations } from '../translations/pageTranslations';
 
 export default function ForexAdvantagesPage() {
   const { language } = useLanguage();
-  const t = pageTranslations[language].forexAdvantages;
+  const t = (pageTranslations[language] || pageTranslations.ru).forexAdvantages;
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 py-16">

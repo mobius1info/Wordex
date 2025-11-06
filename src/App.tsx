@@ -871,7 +871,7 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const t = translations[language];
+  const t = translations[language] || translations.ru;
 
   useEffect(() => {
     const interval = setInterval(() => {

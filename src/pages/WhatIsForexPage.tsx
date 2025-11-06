@@ -2,13 +2,9 @@ import { TrendingUp, Globe, Clock, Users, BarChart3, Shield } from 'lucide-react
 import { useLanguage } from '../contexts/LanguageContext';
 import { pageTranslations } from '../translations/pageTranslations';
 
-interface WhatIsForexPageProps {
-  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
-}
-
 export default function WhatIsForexPage() {
   const { language } = useLanguage();
-  const t = pageTranslations[language].whatIsForex;
+  const t = (pageTranslations[language] || pageTranslations.ru).whatIsForex;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

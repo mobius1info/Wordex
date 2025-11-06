@@ -23,7 +23,7 @@ export default function Header({
 }: HeaderProps) {
   const [showMobileLanguages, setShowMobileLanguages] = useState(false);
   const [closeTimer, setCloseTimer] = useState<NodeJS.Timeout | null>(null);
-  const t = translations[language];
+  const t = translations[language] || translations.ru;
 
   const languageLabels = {
     ru: 'Русский',

@@ -4,7 +4,7 @@ import { analyticsTranslations } from '../translations/analyticsTranslations';
 
 export default function MarketSurveysPage() {
   const { language } = useLanguage();
-  const t = analyticsTranslations[language].marketSurveys;
+  const t = (analyticsTranslations[language] || analyticsTranslations.ru).marketSurveys;
   const surveys = [
     {
       date: '15 ноября 2025',
