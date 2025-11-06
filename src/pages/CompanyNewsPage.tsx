@@ -8,6 +8,7 @@ interface CompanyNewsPageProps {
 }
 
 export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProps) {
+  console.log('CompanyNewsPage rendered with language:', language);
   const t = analyticsTranslations[language].companyNews;
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -124,6 +125,15 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
               const titleKey = `title_${language}` as keyof NewsItem;
               const contentKey = `content_${language}` as keyof NewsItem;
 
+              console.log(`Item ${index}:`, {
+                language,
+                titleKey,
+                contentKey,
+                hasKey: titleKey in item,
+                value: item[titleKey],
+                originalTitle: item.title
+              });
+
               let displayTitle = item.title;
               let displayContent = item.content;
 
@@ -135,7 +145,7 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
                 displayContent = item[contentKey] as string;
               }
 
-              console.log(`Item ${index}: titleKey=${titleKey}, title=${displayTitle?.substring(0, 30)}`);
+              console.log(`  -> Displaying: ${displayTitle?.substring(0, 50)}`);
 
               return (
                 <div
