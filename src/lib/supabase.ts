@@ -15,6 +15,21 @@ export interface NewsItem {
   category: string;
   language: string;
   published: boolean;
+  publish_ru?: boolean;
+  publish_uk?: boolean;
+  publish_en?: boolean;
+  publish_tr?: boolean;
+  publish_zh?: boolean;
+  title_ru?: string;
+  title_uk?: string;
+  title_en?: string;
+  title_tr?: string;
+  title_zh?: string;
+  content_ru?: string;
+  content_uk?: string;
+  content_en?: string;
+  content_tr?: string;
+  content_zh?: string;
   created_at?: string;
   updated_at?: string;
 }

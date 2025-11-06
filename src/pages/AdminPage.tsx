@@ -46,11 +46,44 @@ export default function AdminPage() {
     }
   };
 
+  const translateContent = async (text: string, sourceLang: string, targetLangs: string[]) => {
+    try {
+      const apiUrl = `${supabaseUrl}/functions/v1/translate-news`;
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${supabaseAnonKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ text, sourceLang, targetLangs }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Translation failed');
+      }
+
+      const data = await response.json();
+      return data.translations;
+    } catch (error) {
+      console.error('Translation error:', error);
+      return null;
+    }
+  };
+
   const handleAdd = async () => {
     if (!formData.title || !formData.content) {
       alert('Заполните все обязательные поля');
       return;
     }
+
+    setLoading(true);
+
+    const selectedLangs = ['ru', 'uk', 'en', 'tr', 'zh'].filter(
+      (lang) => formData[`publish_${lang}` as keyof NewsItem]
+    );
+
+    const titleTranslations = await translateContent(formData.title || '', formData.language || 'ru', selectedLangs);
+    const contentTranslations = await translateContent(formData.content || '', formData.language || 'ru', selectedLangs);
 
     const newsData = {
       ...formData,
@@ -59,9 +92,21 @@ export default function AdminPage() {
       publish_en: formData.publish_en ?? true,
       publish_tr: formData.publish_tr ?? true,
       publish_zh: formData.publish_zh ?? true,
+      title_ru: titleTranslations?.ru || formData.title,
+      title_uk: titleTranslations?.uk || formData.title,
+      title_en: titleTranslations?.en || formData.title,
+      title_tr: titleTranslations?.tr || formData.title,
+      title_zh: titleTranslations?.zh || formData.title,
+      content_ru: contentTranslations?.ru || formData.content,
+      content_uk: contentTranslations?.uk || formData.content,
+      content_en: contentTranslations?.en || formData.content,
+      content_tr: contentTranslations?.tr || formData.content,
+      content_zh: contentTranslations?.zh || formData.content,
     };
 
     const { error } = await supabase.from('news').insert([newsData]);
+
+    setLoading(false);
 
     if (error) {
       alert('Ошибка добавления: ' + error.message);
@@ -358,9 +403,17 @@ export default function AdminPage() {
               </div>
               <button
                 onClick={handleAdd}
-                className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                disabled={loading}
+                className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                Сохранить
+                {loading ? (
+                  <>
+                    <div className="inline-block animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
+                    Перевод и сохранение...
+                  </>
+                ) : (
+                  'Сохранить'
+                )}
               </button>
             </div>
           </div>

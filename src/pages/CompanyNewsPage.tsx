@@ -117,19 +117,26 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
           </div>
         ) : (
           <div className="space-y-6">
-            {displayNews.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-md p-6 sm:p-8 hover:shadow-lg transition-shadow"
-            >
-              <div className="flex items-center text-sm text-gray-500 mb-4">
-                <Calendar className="h-4 w-4 mr-2" />
-                {item.date}
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
-              <div className="text-gray-600 leading-relaxed whitespace-pre-wrap">{item.content}</div>
-            </div>
-            ))}
+            {displayNews.map((item, index) => {
+              const titleKey = `title_${language}` as keyof typeof item;
+              const contentKey = `content_${language}` as keyof typeof item;
+              const displayTitle = item[titleKey] || item.title;
+              const displayContent = item[contentKey] || item.content;
+
+              return (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl shadow-md p-6 sm:p-8 hover:shadow-lg transition-shadow"
+                >
+                  <div className="flex items-center text-sm text-gray-500 mb-4">
+                    <Calendar className="h-4 w-4 mr-2" />
+                    {item.date}
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">{displayTitle}</h3>
+                  <div className="text-gray-600 leading-relaxed whitespace-pre-wrap">{displayContent}</div>
+                </div>
+              );
+            })}
           </div>
         )}
 
