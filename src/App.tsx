@@ -23,6 +23,7 @@ import DepositWithdrawalPage from './pages/DepositWithdrawalPage';
 import GlossaryPage from './pages/GlossaryPage';
 import AboutCompanyPage from './pages/AboutCompanyPage';
 import ContactsPage from './pages/ContactsPage';
+import PropTradingPage from './pages/PropTradingPage';
 
 const translations = {
   ru: {
@@ -45,6 +46,7 @@ const translations = {
       whereToStart: 'С чего начать',
       whatIsForex: 'Что такое форекс',
       forexAdvantages: 'Преимущества форекс',
+      propTrading: 'Проп трейдинг',
       demoAccount: 'Учебный счет',
       accountTypes: 'Торговый счет',
       literature: 'Литература',
@@ -215,6 +217,7 @@ const translations = {
       whereToStart: 'З чого почати',
       whatIsForex: 'Що таке форекс',
       forexAdvantages: 'Переваги форекс',
+      propTrading: 'Проп трейдинг',
       demoAccount: 'Навчальний рахунок',
       accountTypes: 'Торговий рахунок',
       literature: 'Література',
@@ -385,6 +388,7 @@ const translations = {
       whereToStart: 'Where to Start',
       whatIsForex: 'What is Forex',
       forexAdvantages: 'Forex Advantages',
+      propTrading: 'Prop Trading',
       demoAccount: 'Demo Account',
       accountTypes: 'Account Types',
       literature: 'Literature',
@@ -555,6 +559,7 @@ const translations = {
       whereToStart: 'Nereden Başlamalı',
       whatIsForex: 'Forex Nedir',
       forexAdvantages: 'Forex Avantajları',
+      propTrading: 'Prop Trading',
       demoAccount: 'Demo Hesap',
       accountTypes: 'Hesap Türleri',
       literature: 'Literatür',
@@ -725,6 +730,7 @@ const translations = {
       whereToStart: '从哪里开始',
       whatIsForex: '什么是外汇',
       forexAdvantages: '外汇优势',
+      propTrading: '自营交易',
       demoAccount: '模拟账户',
       accountTypes: '账户类型',
       literature: '文献',
@@ -925,6 +931,7 @@ function App() {
       {activePage === 'start' && <WhereToStartPage language={language} />}
       {activePage === 'what-is-forex' && <WhatIsForexPage language={language} />}
       {activePage === 'advantages' && <ForexAdvantagesPage language={language} />}
+      {activePage === 'prop-trading' && <PropTradingPage language={language} />}
       {activePage === 'demo' && <DemoAccountPage language={language} />}
       {activePage === 'trading-schedule' && <TradingSchedulePage language={language} />}
       {activePage === 'company-news' && <CompanyNewsPage language={language} />}

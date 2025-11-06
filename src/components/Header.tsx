@@ -54,6 +54,7 @@ export default function Header({
                     <button onClick={() => setActivePage('start')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.whereToStart}</button>
                     <button onClick={() => setActivePage('what-is-forex')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.whatIsForex}</button>
                     <button onClick={() => setActivePage('advantages')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.forexAdvantages}</button>
+                    <button onClick={() => setActivePage('prop-trading')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.propTrading}</button>
                     <button onClick={() => setActivePage('demo')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.demoAccount}</button>
                     <button onClick={() => setActivePage('account-types')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.accountTypes}</button>
                     <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.literature}</button>
@@ -226,6 +227,7 @@ export default function Header({
                 <button onClick={() => { setActivePage('start'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.whereToStart}</button>
                 <button onClick={() => { setActivePage('what-is-forex'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.whatIsForex}</button>
                 <button onClick={() => { setActivePage('advantages'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.forexAdvantages}</button>
+                <button onClick={() => { setActivePage('prop-trading'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.propTrading}</button>
                 <button onClick={() => { setActivePage('demo'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.demoAccount}</button>
                 <button onClick={() => { setActivePage('account-types'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.accountTypes}</button>
               </div>
