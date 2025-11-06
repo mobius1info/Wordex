@@ -4,7 +4,8 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 export default function WhereToStartPage() {
   const { language } = useLanguage();
-  const t = (pageTranslations[language] || pageTranslations.ru).whereToStart;
+  const translations = pageTranslations[language] || pageTranslations.ru;
+  const t = translations.whereToStart || pageTranslations.ru.whereToStart;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

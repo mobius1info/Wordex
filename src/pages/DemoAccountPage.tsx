@@ -4,7 +4,8 @@ import { pageTranslations } from '../translations/pageTranslations';
 
 export default function DemoAccountPage() {
   const { language } = useLanguage();
-  const t = (pageTranslations[language] || pageTranslations.ru).demoAccount;
+  const translations = pageTranslations[language] || pageTranslations.ru;
+  const t = translations.demoAccount || pageTranslations.ru.demoAccount;
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 py-16">

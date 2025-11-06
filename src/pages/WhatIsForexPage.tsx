@@ -4,7 +4,8 @@ import { pageTranslations } from '../translations/pageTranslations';
 
 export default function WhatIsForexPage() {
   const { language } = useLanguage();
-  const t = (pageTranslations[language] || pageTranslations.ru).whatIsForex;
+  const translations = pageTranslations[language] || pageTranslations.ru;
+  const t = translations.whatIsForex || pageTranslations.ru.whatIsForex;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

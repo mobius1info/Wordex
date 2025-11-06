@@ -8,7 +8,8 @@ interface PageWrapperProps {
 }
 
 export default function PageWrapper({ language = 'ru', pageKey, children }: PageWrapperProps) {
-  const t = (simplePageTranslations[language] || simplePageTranslations.ru)[pageKey];
+  const translations = simplePageTranslations[language] || simplePageTranslations.ru;
+  const t = translations[pageKey] || simplePageTranslations.ru[pageKey];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

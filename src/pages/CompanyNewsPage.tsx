@@ -6,7 +6,8 @@ import { supabase, NewsItem } from '../lib/supabase';
 
 export default function CompanyNewsPage() {
   const { language } = useLanguage();
-  const t = (analyticsTranslations[language] || analyticsTranslations.ru).companyNews;
+  const translations = analyticsTranslations[language] || analyticsTranslations.ru;
+  const t = translations.companyNews || analyticsTranslations.ru.companyNews;
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
 

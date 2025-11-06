@@ -4,7 +4,8 @@ import { pageTranslations } from '../translations/pageTranslations';
 
 export default function AccountTypesPage() {
   const { language } = useLanguage();
-  const t = (pageTranslations[language] || pageTranslations.ru).accountTypes;
+  const translations = pageTranslations[language] || pageTranslations.ru;
+  const t = translations.accountTypes || pageTranslations.ru.accountTypes;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
