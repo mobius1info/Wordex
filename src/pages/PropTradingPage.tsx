@@ -496,6 +496,10 @@ const translations = {
 export default function PropTradingPage({ language }: PropTradingPageProps) {
   const t = translations[language];
 
+  const handleAccountClick = (amount: number) => {
+    console.log(`Selected account: $${amount.toLocaleString()}`);
+  };
+
   return (
     <PageWrapper>
       <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
@@ -505,7 +509,38 @@ export default function PropTradingPage({ language }: PropTradingPageProps) {
               <TrendingUp className="h-10 w-10 text-white" />
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">{t.title}</h1>
-            <p className="text-xl sm:text-2xl text-blue-100 max-w-3xl mx-auto">{t.subtitle}</p>
+            <p className="text-xl sm:text-2xl text-blue-100 max-w-3xl mx-auto mb-10">{t.subtitle}</p>
+
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <button
+                onClick={() => handleAccountClick(3000)}
+                className="group bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-6 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-600 transition-all hover:scale-105 transform shadow-lg"
+              >
+                <DollarSign className="inline h-5 w-5 mr-1" />
+                3,000
+              </button>
+              <button
+                onClick={() => handleAccountClick(5000)}
+                className="group bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-6 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-600 transition-all hover:scale-105 transform shadow-lg"
+              >
+                <DollarSign className="inline h-5 w-5 mr-1" />
+                5,000
+              </button>
+              <button
+                onClick={() => handleAccountClick(10000)}
+                className="group bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-6 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-600 transition-all hover:scale-105 transform shadow-lg"
+              >
+                <DollarSign className="inline h-5 w-5 mr-1" />
+                10,000
+              </button>
+              <button
+                onClick={() => handleAccountClick(25000)}
+                className="group bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-6 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-600 transition-all hover:scale-105 transform shadow-lg"
+              >
+                <DollarSign className="inline h-5 w-5 mr-1" />
+                25,000
+              </button>
+            </div>
           </div>
         </div>
       </div>
