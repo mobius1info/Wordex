@@ -1,5 +1,5 @@
 import { Globe, ChevronDown, Menu, X, TrendingUp, HelpCircle } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 interface HeaderProps {
@@ -9,7 +9,6 @@ interface HeaderProps {
   setLanguage: (lang: 'ru' | 'uk' | 'en' | 'tr' | 'zh') => void;
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (open: boolean) => void;
-  setActivePage: (page: string | null) => void;
   translations: Record<string, Record<string, unknown>>;
 }
 
@@ -20,7 +19,6 @@ export default function Header({
   setLanguage,
   mobileMenuOpen,
   setMobileMenuOpen,
-  setActivePage,
   translations
 }: HeaderProps) {
   const [showMobileLanguages, setShowMobileLanguages] = useState(false);
@@ -39,9 +37,9 @@ export default function Header({
       <header className="sticky top-0 bg-white border-b border-gray-200 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <button onClick={() => setActivePage(null)} className="flex items-center hover:opacity-80 transition-opacity">
+            <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
               <img src="/Logo.png" alt="Vantage Point" className="h-32" />
-            </button>
+            </Link>
 
             <nav className="hidden lg:flex items-center space-x-6">
               <div className="relative group">
@@ -51,13 +49,13 @@ export default function Header({
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <button onClick={() => setActivePage('start')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.whereToStart}</button>
-                    <button onClick={() => setActivePage('what-is-forex')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.whatIsForex}</button>
-                    <button onClick={() => setActivePage('advantages')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.forexAdvantages}</button>
-                    <button onClick={() => setActivePage('prop-trading')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.propTrading}</button>
-                    <button onClick={() => setActivePage('demo')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.demoAccount}</button>
-                    <button onClick={() => setActivePage('account-types')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.accountTypes}</button>
-                    <button onClick={() => { setActivePage(null); setTimeout(() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.literature}</button>
+                    <Link to="/start" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.whereToStart}</Link>
+                    <Link to="/what-is-forex" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.whatIsForex}</Link>
+                    <Link to="/advantages" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.forexAdvantages}</Link>
+                    <Link to="/prop-trading" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.propTrading}</Link>
+                    <Link to="/demo" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.demoAccount}</Link>
+                    <Link to="/account-types" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.accountTypes}</Link>
+                    <Link to="/#features" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.literature}</Link>
                   </div>
                 </div>
               </div>
@@ -69,10 +67,10 @@ export default function Header({
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[220px]">
-                    <button onClick={() => setActivePage('trading-schedule')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.tradingSchedule}</button>
-                    <button onClick={() => setActivePage('market-surveys')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.marketSurveys}</button>
-                    <button onClick={() => setActivePage('event-calendar')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.eventCalendar}</button>
-                    <button onClick={() => setActivePage('quotes')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.quotes}</button>
+                    <Link to="/trading-schedule" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.tradingSchedule}</Link>
+                    <Link to="/market-surveys" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.marketSurveys}</Link>
+                    <Link to="/event-calendar" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.eventCalendar}</Link>
+                    <Link to="/quotes" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.quotes}</Link>
                   </div>
                 </div>
               </div>
@@ -84,9 +82,9 @@ export default function Header({
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[240px]">
-                    <button onClick={() => setActivePage('how-to-trade')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.howToTrade}</button>
-                    <button onClick={() => setActivePage('deposit-withdrawal')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.depositWithdrawal}</button>
-                    <button onClick={() => setActivePage('glossary')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.glossary}</button>
+                    <Link to="/how-to-trade" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.howToTrade}</Link>
+                    <Link to="/deposit-withdrawal" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.depositWithdrawal}</Link>
+                    <Link to="/glossary" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.glossary}</Link>
                   </div>
                 </div>
               </div>
@@ -98,10 +96,10 @@ export default function Header({
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <button onClick={() => setActivePage('platforms')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.platforms}</button>
-                    <button onClick={() => setActivePage('platforms')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.mobileApps}</button>
-                    <button onClick={() => setActivePage('account-types')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.accountTypes}</button>
-                    <button onClick={() => setActivePage('trading-instruments')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.tradingInstruments}</button>
+                    <Link to="/platforms" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.platforms}</Link>
+                    <Link to="/platforms" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.mobileApps}</Link>
+                    <Link to="/account-types" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.accountTypes}</Link>
+                    <Link to="/trading-instruments" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.tradingInstruments}</Link>
                   </div>
                 </div>
               </div>
@@ -113,9 +111,9 @@ export default function Header({
                 </button>
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white border border-gray-200 rounded-lg shadow-xl py-2 min-w-[180px]">
-                    <button onClick={() => setActivePage('about-company')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.aboutCompany}</button>
-                    <button onClick={() => setActivePage('company-news')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.companyNews}</button>
-                    <button onClick={() => setActivePage('contacts')} className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.contacts}</button>
+                    <Link to="/about-company" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.aboutCompany}</Link>
+                    <Link to="/company-news" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.companyNews}</Link>
+                    <Link to="/contacts" className="block w-full text-left px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 hover:text-blue-600 transition-colors">{t.menuItems.contacts}</Link>
                   </div>
                 </div>
               </div>
@@ -224,12 +222,12 @@ export default function Header({
                   <TrendingUp className="h-5 w-5 mr-2" />
                   {t.nav.beginners}
                 </div>
-                <button onClick={() => { setActivePage('start'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.whereToStart}</button>
-                <button onClick={() => { setActivePage('what-is-forex'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.whatIsForex}</button>
-                <button onClick={() => { setActivePage('advantages'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.forexAdvantages}</button>
-                <button onClick={() => { setActivePage('prop-trading'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.propTrading}</button>
-                <button onClick={() => { setActivePage('demo'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.demoAccount}</button>
-                <button onClick={() => { setActivePage('account-types'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.accountTypes}</button>
+                <Link to="/start" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.whereToStart}</Link>
+                <Link to="/what-is-forex" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.whatIsForex}</Link>
+                <Link to="/advantages" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.forexAdvantages}</Link>
+                <Link to="/prop-trading" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.propTrading}</Link>
+                <Link to="/demo" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.demoAccount}</Link>
+                <Link to="/account-types" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.accountTypes}</Link>
               </div>
 
               {/* Analytics Section */}
@@ -238,10 +236,10 @@ export default function Header({
                   <TrendingUp className="h-5 w-5 mr-2" />
                   {t.nav.analytics}
                 </div>
-                <button onClick={() => { setActivePage('trading-schedule'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.tradingSchedule}</button>
-                <button onClick={() => { setActivePage('market-surveys'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.marketSurveys}</button>
-                <button onClick={() => { setActivePage('event-calendar'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.eventCalendar}</button>
-                <button onClick={() => { setActivePage('quotes'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.quotes}</button>
+                <Link to="/trading-schedule" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.tradingSchedule}</Link>
+                <Link to="/market-surveys" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.marketSurveys}</Link>
+                <Link to="/event-calendar" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.eventCalendar}</Link>
+                <Link to="/quotes" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.quotes}</Link>
               </div>
 
               {/* Help Section */}
@@ -250,9 +248,9 @@ export default function Header({
                   <HelpCircle className="h-5 w-5 mr-2" />
                   {t.nav.help}
                 </div>
-                <button onClick={() => { setActivePage('how-to-trade'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.howToTrade}</button>
-                <button onClick={() => { setActivePage('deposit-withdrawal'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.depositWithdrawal}</button>
-                <button onClick={() => { setActivePage('glossary'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.glossary}</button>
+                <Link to="/how-to-trade" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.howToTrade}</Link>
+                <Link to="/deposit-withdrawal" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.depositWithdrawal}</Link>
+                <Link to="/glossary" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.glossary}</Link>
               </div>
 
               {/* Tools Section */}
@@ -261,10 +259,10 @@ export default function Header({
                   <TrendingUp className="h-5 w-5 mr-2" />
                   {t.nav.tools}
                 </div>
-                <button onClick={() => { setActivePage('platforms'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.platforms}</button>
-                <button onClick={() => { setActivePage('platforms'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.mobileApps}</button>
-                <button onClick={() => { setActivePage('account-types'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.accountTypes}</button>
-                <button onClick={() => { setActivePage('trading-instruments'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.tradingInstruments}</button>
+                <Link to="/platforms" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.platforms}</Link>
+                <Link to="/platforms" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.mobileApps}</Link>
+                <Link to="/account-types" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.accountTypes}</Link>
+                <Link to="/trading-instruments" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.tradingInstruments}</Link>
               </div>
 
               {/* About Section */}
@@ -273,9 +271,9 @@ export default function Header({
                   <HelpCircle className="h-5 w-5 mr-2" />
                   {t.nav.about}
                 </div>
-                <button onClick={() => { setActivePage('about-company'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.aboutCompany}</button>
-                <button onClick={() => { setActivePage('company-news'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.companyNews}</button>
-                <button onClick={() => { setActivePage('contacts'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.contacts}</button>
+                <Link to="/about-company" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.aboutCompany}</Link>
+                <Link to="/company-news" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.companyNews}</Link>
+                <Link to="/contacts" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded">{t.menuItems.contacts}</Link>
               </div>
 
               {/* Action Buttons */}

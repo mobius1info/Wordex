@@ -6,24 +6,6 @@ import {
   Clock, Target, Database, LineChart
 } from 'lucide-react';
 import Header from './components/Header';
-import WhereToStartPage from './pages/WhereToStartPage';
-import TradingSchedulePage from './pages/TradingSchedulePage';
-import HowToTradePage from './pages/HowToTradePage';
-import WhatIsForexPage from './pages/WhatIsForexPage';
-import ForexAdvantagesPage from './pages/ForexAdvantagesPage';
-import DemoAccountPage from './pages/DemoAccountPage';
-import TradingInstrumentsPage from './pages/TradingInstrumentsPage';
-import PlatformsPage from './pages/PlatformsPage';
-import AccountTypesPage from './pages/AccountTypesPage';
-import CompanyNewsPage from './pages/CompanyNewsPage';
-import MarketSurveysPage from './pages/MarketSurveysPage';
-import EventCalendarPage from './pages/EventCalendarPage';
-import QuotesPage from './pages/QuotesPage';
-import DepositWithdrawalPage from './pages/DepositWithdrawalPage';
-import GlossaryPage from './pages/GlossaryPage';
-import AboutCompanyPage from './pages/AboutCompanyPage';
-import ContactsPage from './pages/ContactsPage';
-import PropTradingPage from './pages/PropTradingPage';
 
 const translations = {
   ru: {
@@ -888,7 +870,6 @@ function App() {
   const [showLanguages, setShowLanguages] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [activePage, setActivePage] = useState<string | null>(null);
 
   const t = translations[language];
 
@@ -910,10 +891,6 @@ function App() {
     };
   }, [mobileMenuOpen]);
 
-  useEffect(() => {
-    setMobileMenuOpen(false);
-    setShowLanguages(false);
-  }, [activePage]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -924,31 +901,8 @@ function App() {
         setLanguage={setLanguage}
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
-        setActivePage={setActivePage}
         translations={translations}
       />
-
-      {activePage === 'start' && <WhereToStartPage language={language} />}
-      {activePage === 'what-is-forex' && <WhatIsForexPage language={language} />}
-      {activePage === 'advantages' && <ForexAdvantagesPage language={language} />}
-      {activePage === 'prop-trading' && <PropTradingPage language={language} />}
-      {activePage === 'demo' && <DemoAccountPage language={language} />}
-      {activePage === 'trading-schedule' && <TradingSchedulePage language={language} />}
-      {activePage === 'company-news' && <CompanyNewsPage language={language} />}
-      {activePage === 'market-surveys' && <MarketSurveysPage language={language} />}
-      {activePage === 'event-calendar' && <EventCalendarPage language={language} />}
-      {activePage === 'quotes' && <QuotesPage language={language} />}
-      {activePage === 'how-to-trade' && <HowToTradePage language={language} />}
-      {activePage === 'deposit-withdrawal' && <DepositWithdrawalPage language={language} />}
-      {activePage === 'glossary' && <GlossaryPage language={language} />}
-      {activePage === 'about-company' && <AboutCompanyPage language={language} />}
-      {activePage === 'contacts' && <ContactsPage language={language} />}
-      {activePage === 'trading-instruments' && <TradingInstrumentsPage language={language} />}
-      {activePage === 'platforms' && <PlatformsPage language={language} />}
-      {activePage === 'account-types' && <AccountTypesPage language={language} />}
-
-      {!activePage && (
-        <>
       <main>
         <section className="relative h-[600px] sm:h-[700px] overflow-hidden">
           {t.hero.slides.map((slide, index) => (
@@ -1602,8 +1556,6 @@ function App() {
           </div>
         </div>
       </footer>
-        </>
-      )}
     </div>
   );
 }
