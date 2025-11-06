@@ -340,6 +340,22 @@ export default function AdminPage() {
                   </select>
                 </div>
               </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-3">Опубликовать на языках:</label>
+                <div className="grid grid-cols-5 gap-3">
+                  {languages.map((lang) => (
+                    <label key={lang.code} className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={formData[`publish_${lang.code}` as keyof NewsItem] as boolean ?? true}
+                        onChange={(e) => setFormData({ ...formData, [`publish_${lang.code}`]: e.target.checked })}
+                        className="w-4 h-4 text-blue-600 rounded focus:ring-2 focus:ring-blue-500"
+                      />
+                      <span className="text-sm text-gray-700">{lang.name}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
               <button
                 onClick={handleAdd}
                 className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"

@@ -18,10 +18,11 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
 
   const loadNews = async () => {
     setLoading(true);
+    const languageField = `publish_${language}`;
     const { data, error } = await supabase
       .from('news')
       .select('*')
-      .eq('language', language)
+      .eq(languageField, true)
       .eq('published', true)
       .order('created_at', { ascending: false });
 
