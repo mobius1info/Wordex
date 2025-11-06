@@ -12,13 +12,11 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    loadNews();
-  }, [language]);
-
   const loadNews = async () => {
     setLoading(true);
     const languageField = `publish_${language}`;
+    console.log('Loading news for language:', language, 'field:', languageField);
+
     const { data, error } = await supabase
       .from('news')
       .select('*')
@@ -29,10 +27,15 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
     if (error) {
       console.error('Error loading news:', error);
     } else {
+      console.log('Loaded news:', data);
       setNews(data || []);
     }
     setLoading(false);
   };
+
+  useEffect(() => {
+    loadNews();
+  }, [language]);
 
   const fallbackNews = [
     {
@@ -118,14 +121,25 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
         ) : (
           <div className="space-y-6">
             {displayNews.map((item, index) => {
-              const titleKey = `title_${language}` as keyof typeof item;
-              const contentKey = `content_${language}` as keyof typeof item;
-              const displayTitle = item[titleKey] || item.title;
-              const displayContent = item[contentKey] || item.content;
+              const titleKey = `title_${language}` as keyof NewsItem;
+              const contentKey = `content_${language}` as keyof NewsItem;
+
+              let displayTitle = item.title;
+              let displayContent = item.content;
+
+              if (titleKey in item && item[titleKey]) {
+                displayTitle = item[titleKey] as string;
+              }
+
+              if (contentKey in item && item[contentKey]) {
+                displayContent = item[contentKey] as string;
+              }
+
+              console.log(`Item ${index}: titleKey=${titleKey}, title=${displayTitle?.substring(0, 30)}`);
 
               return (
                 <div
-                  key={index}
+                  key={item.id || index}
                   className="bg-white rounded-xl shadow-md p-6 sm:p-8 hover:shadow-lg transition-shadow"
                 >
                   <div className="flex items-center text-sm text-gray-500 mb-4">

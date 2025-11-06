@@ -246,6 +246,41 @@ export default function AdminPage() {
     setIsAuthenticated(false);
   };
 
+  const handleTranslateExisting = async () => {
+    if (!confirm('Перевести все существующие новости на все языки? Это может занять несколько минут.')) {
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+      const apiUrl = `${supabaseUrl}/functions/v1/translate-existing-news`;
+
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${supabaseAnonKey}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Translation failed: ${errorText}`);
+      }
+
+      const data = await response.json();
+      alert(`Успешно! Переведено ${data.translatedCount} из ${data.totalItems} новостей.`);
+      loadNews();
+    } catch (error) {
+      console.error('Translation error:', error);
+      alert('Ошибка перевода: ' + (error as Error).message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     const authStatus = sessionStorage.getItem('adminAuth');
     if (authStatus === 'true') {
@@ -321,6 +356,13 @@ export default function AdminPage() {
             >
               <Plus className="h-5 w-5" />
               Добавить новость
+            </button>
+            <button
+              onClick={handleTranslateExisting}
+              disabled={loading}
+              className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              🌐 Перевести все
             </button>
             <button
               onClick={handleLogout}
