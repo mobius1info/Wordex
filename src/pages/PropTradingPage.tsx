@@ -1,4 +1,4 @@
-import { TrendingUp, DollarSign, Target, Award, CheckCircle, Users, BarChart3, Shield } from 'lucide-react';
+import { TrendingUp, DollarSign, Target, Award, CheckCircle, BarChart3, Shield } from 'lucide-react';
 
 interface PropTradingPageProps {
   language: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
@@ -630,20 +630,6 @@ export default function PropTradingPage({ language }: PropTradingPageProps) {
               <div key={index} className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-orange-500 mr-3 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-700">{tip}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl shadow-md p-8 mb-16">
-          <div className="flex items-center mb-6">
-            <Users className="h-8 w-8 text-blue-600 mr-3" />
-            <h2 className="text-2xl font-bold text-gray-900">{t.popular.title}</h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {t.popular.items.map((company, index) => (
-              <div key={index} className="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-                <span className="font-semibold text-gray-900">{company}</span>
               </div>
             ))}
           </div>
