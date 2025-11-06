@@ -1,9 +1,11 @@
 import { CheckCircle, TrendingUp, Clock, DollarSign, Globe, Zap, Shield, Users } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
 import { pageTranslations } from '../translations/pageTranslations';
 
-export default function ForexAdvantagesPage() {
-  const { language } = useLanguage();
+interface ForexAdvantagesPageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function ForexAdvantagesPage({ language = 'ru' }: ForexAdvantagesPageProps) {
   const translations = pageTranslations[language] || pageTranslations.ru;
   const t = translations.forexAdvantages || pageTranslations.ru.forexAdvantages;
   return (

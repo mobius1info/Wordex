@@ -1,9 +1,13 @@
 import { Clock, Calendar, TrendingUp } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+
 import { simplePageTranslations } from '../translations/simplePageTranslations';
 
-export default function TradingSchedulePage() {
-  const { language } = useLanguage();
+interface TradingSchedulePageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function TradingSchedulePage({ language = 'ru' }: TradingSchedulePageProps) {
+
   const translations = simplePageTranslations[language] || simplePageTranslations.ru;
   const t = translations.tradingSchedule || simplePageTranslations.ru.tradingSchedule;
   const sessions = [

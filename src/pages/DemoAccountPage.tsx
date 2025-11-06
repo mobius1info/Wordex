@@ -1,9 +1,13 @@
 import { BookOpen, CheckCircle, TrendingUp, Shield, Zap, Target } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+
 import { pageTranslations } from '../translations/pageTranslations';
 
-export default function DemoAccountPage() {
-  const { language } = useLanguage();
+interface DemoAccountPageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function DemoAccountPage({ language = 'ru' }: DemoAccountPageProps) {
+
   const translations = pageTranslations[language] || pageTranslations.ru;
   const t = translations.demoAccount || pageTranslations.ru.demoAccount;
   return (

@@ -1,5 +1,5 @@
 import { TrendingUp, DollarSign, Target, Award, CheckCircle, BarChart3, Shield } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+
 
 const translations = {
   ru: {
@@ -487,8 +487,12 @@ const translations = {
   }
 };
 
-export default function PropTradingPage() {
-  const { language } = useLanguage();
+interface PropTradingPageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function PropTradingPage({ language = 'ru' }: PropTradingPageProps) {
+
   const t = translations[language] || translations.ru;
 
   const handleAccountClick = (amount: number) => {

@@ -1,9 +1,13 @@
 import { Download, Monitor, TrendingUp, BarChart3, Shield, DollarSign } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+
 import PageWrapper from '../components/PageWrapper';
 
-export default function HowToTradePage() {
-  const { language } = useLanguage();
+interface HowToTradePageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function HowToTradePage({ language = 'ru' }: HowToTradePageProps) {
+
   return (
     <PageWrapper language={language} pageKey="howToTrade">
       <div className="space-y-12">

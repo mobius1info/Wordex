@@ -1,9 +1,13 @@
 import { TrendingUp, Globe, Clock, Users, BarChart3, Shield } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+
 import { pageTranslations } from '../translations/pageTranslations';
 
-export default function WhatIsForexPage() {
-  const { language } = useLanguage();
+interface WhatIsForexPageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function WhatIsForexPage({ language = 'ru' }: WhatIsForexPageProps) {
+
   const translations = pageTranslations[language] || pageTranslations.ru;
   const t = translations.whatIsForex || pageTranslations.ru.whatIsForex;
 

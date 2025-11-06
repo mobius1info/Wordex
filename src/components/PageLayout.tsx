@@ -1,6 +1,5 @@
-import { ReactNode, useState, useEffect } from 'react';
+import { ReactNode, useState, useEffect, cloneElement, isValidElement } from 'react';
 import Header from './Header';
-import { useLanguage } from '../contexts/LanguageContext';
 
 const translations = {
   ru: {
@@ -44,7 +43,7 @@ interface PageLayoutProps {
 }
 
 export default function PageLayout({ children }: PageLayoutProps) {
-  const { language, setLanguage } = useLanguage();
+  const [language, setLanguage] = useState<'ru' | 'uk' | 'en' | 'tr' | 'zh'>('ru');
   const [showLanguages, setShowLanguages] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -59,6 +58,10 @@ export default function PageLayout({ children }: PageLayoutProps) {
     };
   }, [mobileMenuOpen]);
 
+  const childrenWithLanguage = isValidElement(children)
+    ? cloneElement(children as React.ReactElement<any>, { language })
+    : children;
+
   return (
     <div className="min-h-screen bg-white">
       <Header
@@ -70,7 +73,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
         setMobileMenuOpen={setMobileMenuOpen}
         translations={translations}
       />
-      {children}
+      {childrenWithLanguage}
     </div>
   );
 }

@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+
 import { Calendar, TrendingUp, Award } from 'lucide-react';
 import { analyticsTranslations } from '../translations/analyticsTranslations';
 import { supabase, NewsItem } from '../lib/supabase';
 
-export default function CompanyNewsPage() {
-  const { language } = useLanguage();
+interface CompanyNewsPageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProps) {
+
   const translations = analyticsTranslations[language] || analyticsTranslations.ru;
   const t = translations.companyNews || analyticsTranslations.ru.companyNews;
   const [news, setNews] = useState<NewsItem[]>([]);
