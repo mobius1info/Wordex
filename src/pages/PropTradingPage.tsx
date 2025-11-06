@@ -72,8 +72,7 @@ const translations = {
         '$25,000 счет: $200-300',
         '$50,000 счет: $300-500',
         '$100,000 счет: $500-800'
-      ],
-      note: 'Многие компании возвращают эту плату после первого вывода прибыли.'
+      ]
     },
     tips: {
       title: 'Советы для успеха',
@@ -614,9 +613,6 @@ export default function PropTradingPage({ language }: PropTradingPageProps) {
                 </li>
               ))}
             </ul>
-            <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
-              <p className="text-sm text-green-800">{t.costs.note}</p>
-            </div>
           </div>
         </div>
 
