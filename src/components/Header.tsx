@@ -22,6 +22,7 @@ export default function Header({
   translations
 }: HeaderProps) {
   const [showMobileLanguages, setShowMobileLanguages] = useState(false);
+  const [closeTimer, setCloseTimer] = useState<NodeJS.Timeout | null>(null);
   const t = translations[language];
 
   const languageLabels = {
@@ -30,6 +31,21 @@ export default function Header({
     en: 'English',
     tr: 'Türkçe',
     zh: '中文'
+  };
+
+  const handleMouseLeave = () => {
+    const timer = setTimeout(() => {
+      setShowLanguages(false);
+    }, 300);
+    setCloseTimer(timer);
+  };
+
+  const handleMouseEnter = () => {
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      setCloseTimer(null);
+    }
+    setShowLanguages(true);
   };
 
   return (
@@ -120,10 +136,9 @@ export default function Header({
             </nav>
 
             <div className="flex items-center space-x-4">
-              <div className="relative" onMouseLeave={() => setShowLanguages(false)}>
+              <div className="relative" onMouseLeave={handleMouseLeave} onMouseEnter={handleMouseEnter}>
                 <button
                   onClick={() => setShowLanguages(!showLanguages)}
-                  onMouseEnter={() => setShowLanguages(true)}
                   className="hidden md:flex items-center text-gray-600 hover:text-blue-600"
                 >
                   <Globe className="h-5 w-5 mr-1" />
