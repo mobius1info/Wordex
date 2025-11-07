@@ -1,4 +1,5 @@
-import { TrendingUp, DollarSign, Target, Award, CheckCircle, BarChart3, Shield } from 'lucide-react';
+import { TrendingUp, DollarSign, Target, Award, CheckCircle, BarChart3, Shield, X } from 'lucide-react';
+import { useState } from 'react';
 
 
 const translations = {
@@ -494,9 +495,34 @@ interface PropTradingPageProps {
 export default function PropTradingPage({ language = 'ru' }: PropTradingPageProps) {
 
   const t = translations[language] || translations.ru;
+  const [selectedAccount, setSelectedAccount] = useState<number | null>(null);
+
+  const accountData = {
+    5000: {
+      stages: [
+        { stage: 'Этап 1', profit: '8%', dailyLoss: '5%', totalLoss: '10%', timeframe: 'Без ограничений' },
+        { stage: 'Этап 2', profit: '5%', dailyLoss: '5%', totalLoss: '10%', timeframe: 'Без ограничений' },
+        { stage: 'Funded', profit: 'До 90%', dailyLoss: '5%', totalLoss: '10%', timeframe: 'Бессрочно' }
+      ]
+    },
+    10000: {
+      stages: [
+        { stage: 'Этап 1', profit: '8%', dailyLoss: '5%', totalLoss: '10%', timeframe: 'Без ограничений' },
+        { stage: 'Этап 2', profit: '5%', dailyLoss: '5%', totalLoss: '10%', timeframe: 'Без ограничений' },
+        { stage: 'Funded', profit: 'До 90%', dailyLoss: '5%', totalLoss: '10%', timeframe: 'Бессрочно' }
+      ]
+    },
+    25000: {
+      stages: [
+        { stage: 'Этап 1', profit: '8%', dailyLoss: '5%', totalLoss: '10%', timeframe: 'Без ограничений' },
+        { stage: 'Этап 2', profit: '5%', dailyLoss: '5%', totalLoss: '10%', timeframe: 'Без ограничений' },
+        { stage: 'Funded', profit: 'До 90%', dailyLoss: '5%', totalLoss: '10%', timeframe: 'Бессрочно' }
+      ]
+    }
+  };
 
   const handleAccountClick = (amount: number) => {
-    console.log(`Selected account: $${amount.toLocaleString()}`);
+    setSelectedAccount(amount);
   };
 
   return (
@@ -513,26 +539,76 @@ export default function PropTradingPage({ language = 'ru' }: PropTradingPageProp
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <button
                 onClick={() => handleAccountClick(5000)}
-                className="group bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-6 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-600 transition-all hover:scale-105 transform shadow-lg"
+                className={`group backdrop-blur-md border-2 px-6 py-4 rounded-xl font-bold transition-all hover:scale-105 transform shadow-lg ${
+                  selectedAccount === 5000
+                    ? 'bg-white text-blue-600 border-white'
+                    : 'bg-white/10 border-white/30 text-white hover:bg-white hover:text-blue-600'
+                }`}
               >
                 <DollarSign className="inline h-5 w-5 mr-1" />
                 5,000
               </button>
               <button
                 onClick={() => handleAccountClick(10000)}
-                className="group bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-6 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-600 transition-all hover:scale-105 transform shadow-lg"
+                className={`group backdrop-blur-md border-2 px-6 py-4 rounded-xl font-bold transition-all hover:scale-105 transform shadow-lg ${
+                  selectedAccount === 10000
+                    ? 'bg-white text-blue-600 border-white'
+                    : 'bg-white/10 border-white/30 text-white hover:bg-white hover:text-blue-600'
+                }`}
               >
                 <DollarSign className="inline h-5 w-5 mr-1" />
                 10,000
               </button>
               <button
                 onClick={() => handleAccountClick(25000)}
-                className="group bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-6 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-600 transition-all hover:scale-105 transform shadow-lg"
+                className={`group backdrop-blur-md border-2 px-6 py-4 rounded-xl font-bold transition-all hover:scale-105 transform shadow-lg ${
+                  selectedAccount === 25000
+                    ? 'bg-white text-blue-600 border-white'
+                    : 'bg-white/10 border-white/30 text-white hover:bg-white hover:text-blue-600'
+                }`}
               >
                 <DollarSign className="inline h-5 w-5 mr-1" />
                 25,000
               </button>
             </div>
+
+            {selectedAccount && (
+              <div className="mt-8 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-6 sm:p-8 max-w-4xl mx-auto relative">
+                <button
+                  onClick={() => setSelectedAccount(null)}
+                  className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                  Программа челленджа ${selectedAccount.toLocaleString()}
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b-2 border-gray-300">
+                        <th className="text-left py-3 px-4 font-bold text-gray-900">Этап</th>
+                        <th className="text-left py-3 px-4 font-bold text-gray-900">Цель прибыли</th>
+                        <th className="text-left py-3 px-4 font-bold text-gray-900">Макс. дневная просадка</th>
+                        <th className="text-left py-3 px-4 font-bold text-gray-900">Макс. общая просадка</th>
+                        <th className="text-left py-3 px-4 font-bold text-gray-900">Сроки</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {accountData[selectedAccount as keyof typeof accountData].stages.map((row, index) => (
+                        <tr key={index} className="border-b border-gray-200 hover:bg-blue-50 transition-colors">
+                          <td className="py-4 px-4 font-semibold text-gray-800">{row.stage}</td>
+                          <td className="py-4 px-4 text-gray-700">{row.profit}</td>
+                          <td className="py-4 px-4 text-gray-700">{row.dailyLoss}</td>
+                          <td className="py-4 px-4 text-gray-700">{row.totalLoss}</td>
+                          <td className="py-4 px-4 text-gray-700">{row.timeframe}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
