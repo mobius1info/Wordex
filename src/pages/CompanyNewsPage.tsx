@@ -50,7 +50,7 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
     {
       date: '10 ноября 2025',
       title: 'Запуск нового типа счета - ECN Pro',
-      content: 'WorldForex представляет новый тип торгового счета ECN Pro со спредами от 0 пунктов и прямым доступом к межбанковской ликвидности. Минимальный депозит - $500, комиссия всего $2.5 за лот.',
+      content: 'Vantage Point представляет новый тип торгового счета ECN Pro со спредами от 0 пунктов и прямым доступом к межбанковской ликвидности. Минимальный депозит - $500, комиссия всего $2.5 за лот.',
       category: 'Продукты'
     },
     {
@@ -61,8 +61,8 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
     },
     {
       date: '1 ноября 2025',
-      title: 'WorldForex получил награду "Лучший Forex брокер 2025"',
-      content: 'Мы рады сообщить, что WorldForex был признан лучшим Forex брокером 2025 года по версии международного рейтинга. Это признание нашей приверженности предоставлению лучших торговых условий для наших клиентов.',
+      title: 'Vantage Point получил награду "Лучший Forex брокер 2025"',
+      content: 'Мы рады сообщить, что Vantage Point был признан лучшим Forex брокером 2025 года по версии международного рейтинга. Это признание нашей приверженности предоставлению лучших торговых условий для наших клиентов.',
       category: 'Награды'
     },
     {
@@ -80,7 +80,7 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
     {
       date: '15 октября 2025',
       title: 'Запуск программы кэшбека для активных трейдеров',
-      content: 'WorldForex запускает программу лояльности с возвратом до 15% от спреда на каждую сделку. Чем больше вы торгуете, тем выше ваш кэшбек. Программа доступна для всех клиентов автоматически.',
+      content: 'Vantage Point запускает программу лояльности с возвратом до 15% от спреда на каждую сделку. Чем больше вы торгуете, тем выше ваш кэшбек. Программа доступна для всех клиентов автоматически.',
       category: 'Бонусы'
     },
     {
@@ -188,7 +188,7 @@ export default function CompanyNewsPage({ language = 'ru' }: CompanyNewsPageProp
           <div className="bg-white rounded-xl shadow-lg p-6 text-center">
             <Award className="h-12 w-12 text-green-600 mx-auto mb-4" />
             <h4 className="text-xl font-bold text-gray-900 mb-2">О компании</h4>
-            <p className="text-gray-600 mb-4">История и достижения WorldForex</p>
+            <p className="text-gray-600 mb-4">История и достижения Vantage Point</p>
             <button className="text-green-600 font-semibold hover:text-green-700">
               Перейти →
             </button>

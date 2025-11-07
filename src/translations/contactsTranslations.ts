@@ -5,7 +5,7 @@ export const contactsTranslations = {
     contacts: [
       {
         title: 'Email',
-        content: 'support@worldforex.com',
+        content: 'support@vantagepoint.com',
         description: 'Ответим в течение 2 часов'
       },
       {
@@ -67,7 +67,7 @@ export const contactsTranslations = {
     contacts: [
       {
         title: 'Email',
-        content: 'support@worldforex.com',
+        content: 'support@vantagepoint.com',
         description: 'Відповімо протягом 2 годин'
       },
       {
@@ -129,7 +129,7 @@ export const contactsTranslations = {
     contacts: [
       {
         title: 'Email',
-        content: 'support@worldforex.com',
+        content: 'support@vantagepoint.com',
         description: 'Response within 2 hours'
       },
       {
@@ -191,7 +191,7 @@ export const contactsTranslations = {
     contacts: [
       {
         title: 'Email',
-        content: 'support@worldforex.com',
+        content: 'support@vantagepoint.com',
         description: '2 saat içinde yanıt'
       },
       {
@@ -253,7 +253,7 @@ export const contactsTranslations = {
     contacts: [
       {
         title: '电子邮件',
-        content: 'support@worldforex.com',
+        content: 'support@vantagepoint.com',
         description: '2小时内回复'
       },
       {

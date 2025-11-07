@@ -1,6 +1,6 @@
 export const aboutCompanyTranslations = {
   ru: {
-    title: 'О компании World Forex',
+    title: 'О компании Vantage Point',
     subtitle: 'Мы — международная финансовая компания, предоставляющая услуги трейдинга на валютном рынке Forex. С 2015 года помогаем трейдерам по всему миру достигать финансовых целей.',
     stats: [
       { value: '150,000+', label: 'Активных клиентов' },
@@ -42,14 +42,14 @@ export const aboutCompanyTranslations = {
     regulation: {
       title: 'Регулирование и лицензии',
       paragraphs: [
-        'World Forex зарегистрирована в Сент-Винсенте и Гренадинах и Сент-Люсии. Компания работает в строгом соответствии с международными стандартами финансовой деятельности.',
+        'Vantage Point зарегистрирована в Сент-Винсенте и Гренадинах и Сент-Люсии. Компания работает в строгом соответствии с международными стандартами финансовой деятельности.',
         'Мы следуем политике AML (Anti-Money Laundering) и KYC (Know Your Customer), обеспечивая безопасность средств наших клиентов и предотвращая финансовые преступления.',
         'Средства клиентов хранятся на сегрегированных счетах в ведущих европейских банках, что гарантирует их полную защиту и доступность.'
       ]
     }
   },
   uk: {
-    title: 'Про компанію World Forex',
+    title: 'Про компанію Vantage Point',
     subtitle: 'Ми — міжнародна фінансова компанія, що надає послуги трейдингу на валютному ринку Forex. З 2015 року допомагаємо трейдерам по всьому світу досягати фінансових цілей.',
     stats: [
       { value: '150,000+', label: 'Активних клієнтів' },
@@ -91,14 +91,14 @@ export const aboutCompanyTranslations = {
     regulation: {
       title: 'Регулювання та ліцензії',
       paragraphs: [
-        'World Forex зареєстрована в Сент-Вінсенті та Гренадинах і Сент-Люсії. Компанія працює у суворій відповідності з міжнародними стандартами фінансової діяльності.',
+        'Vantage Point зареєстрована в Сент-Вінсенті та Гренадинах і Сент-Люсії. Компанія працює у суворій відповідності з міжнародними стандартами фінансової діяльності.',
         'Ми дотримуємось політики AML (Anti-Money Laundering) та KYC (Know Your Customer), забезпечуючи безпеку коштів наших клієнтів та запобігаючи фінансовим злочинам.',
         'Кошти клієнтів зберігаються на сегрегованих рахунках у провідних європейських банках, що гарантує їх повний захист та доступність.'
       ]
     }
   },
   en: {
-    title: 'About World Forex',
+    title: 'About Vantage Point',
     subtitle: 'We are an international financial company providing trading services in the Forex currency market. Since 2015, we have been helping traders worldwide achieve their financial goals.',
     stats: [
       { value: '150,000+', label: 'Active clients' },
@@ -140,14 +140,14 @@ export const aboutCompanyTranslations = {
     regulation: {
       title: 'Regulation and Licenses',
       paragraphs: [
-        'World Forex is registered in Saint Vincent and the Grenadines and Saint Lucia. The company operates in strict compliance with international financial standards.',
+        'Vantage Point is registered in Saint Vincent and the Grenadines and Saint Lucia. The company operates in strict compliance with international financial standards.',
         'We follow AML (Anti-Money Laundering) and KYC (Know Your Customer) policies, ensuring the security of our clients\' funds and preventing financial crimes.',
         'Client funds are held in segregated accounts at leading European banks, guaranteeing their full protection and availability.'
       ]
     }
   },
   tr: {
-    title: 'World Forex Hakkında',
+    title: 'Vantage Point Hakkında',
     subtitle: 'Forex döviz piyasasında ticaret hizmetleri sunan uluslararası bir finans şirketiyiz. 2015\'ten beri dünya çapında tüccarların finansal hedeflerine ulaşmasına yardımcı oluyoruz.',
     stats: [
       { value: '150,000+', label: 'Aktif müşteri' },
@@ -189,14 +189,14 @@ export const aboutCompanyTranslations = {
     regulation: {
       title: 'Düzenleme ve Lisanslar',
       paragraphs: [
-        'World Forex, Saint Vincent ve Grenadinler ve Saint Lucia\'da kayıtlıdır. Şirket, uluslararası finansal standartlara sıkı sıkıya uygun olarak faaliyet göstermektedir.',
+        'Vantage Point, Saint Vincent ve Grenadinler ve Saint Lucia\'da kayıtlıdır. Şirket, uluslararası finansal standartlara sıkı sıkıya uygun olarak faaliyet göstermektedir.',
         'Müşterilerimizin fonlarının güvenliğini sağlamak ve finansal suçları önlemek için AML (Kara Para Aklamayı Önleme) ve KYC (Müşterini Tanı) politikalarını takip ediyoruz.',
         'Müşteri fonları, tam koruma ve erişilebilirlik garantisi veren önde gelen Avrupa bankalarında ayrı hesaplarda tutulmaktadır.'
       ]
     }
   },
   zh: {
-    title: '关于World Forex',
+    title: '关于Vantage Point',
     subtitle: '我们是一家国际金融公司，在外汇市场提供交易服务。自2015年以来，我们一直帮助全球交易者实现其财务目标。',
     stats: [
       { value: '150,000+', label: '活跃客户' },
@@ -238,7 +238,7 @@ export const aboutCompanyTranslations = {
     regulation: {
       title: '监管和许可证',
       paragraphs: [
-        'World Forex在圣文森特和格林纳丁斯以及圣卢西亚注册。公司严格遵守国际金融标准运营。',
+        'Vantage Point在圣文森特和格林纳丁斯以及圣卢西亚注册。公司严格遵守国际金融标准运营。',
         '我们遵循AML（反洗钱）和KYC（了解您的客户）政策，确保客户资金的安全并防止金融犯罪。',
         '客户资金存放在领先的欧洲银行的隔离账户中，保证其完全保护和可用性。'
       ]

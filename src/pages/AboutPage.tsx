@@ -22,13 +22,13 @@ export default function AboutPage({ t }: AboutPageProps) {
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
             <p className="text-gray-600 mb-4">
-              Founded in 2011, WorldForex has grown to become one of the most trusted and innovative online brokers in the financial industry. Our commitment to excellence and customer satisfaction has earned us the trust of over 350,000 clients across 50 countries.
+              Founded in 2011, Vantage Point has grown to become one of the most trusted and innovative online brokers in the financial industry. Our commitment to excellence and customer satisfaction has earned us the trust of over 350,000 clients across 50 countries.
             </p>
             <p className="text-gray-600 mb-4">
               We are dedicated to providing our clients with the best trading platforms, competitive spreads, and exceptional customer support. Our team of experts works tirelessly to ensure your trading experience is smooth, secure, and profitable.
             </p>
             <p className="text-gray-600">
-              At WorldForex, we believe in transparency, integrity, and innovation. We continuously upgrade our platforms and services to meet the evolving needs of our trading community.
+              At Vantage Point, we believe in transparency, integrity, and innovation. We continuously upgrade our platforms and services to meet the evolving needs of our trading community.
             </p>
           </div>
 

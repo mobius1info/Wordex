@@ -2,7 +2,7 @@ export const analyticsTranslations = {
   ru: {
     companyNews: {
       title: 'Новости компании',
-      subtitle: 'Будьте в курсе последних событий, обновлений и достижений WorldForex',
+      subtitle: 'Будьте в курсе последних событий, обновлений и достижений Vantage Point',
       subscribe: {
         title: 'Подпишитесь на рассылку',
         subtitle: 'Получайте важные новости и обновления на ваш email',
@@ -58,7 +58,7 @@ export const analyticsTranslations = {
   uk: {
     companyNews: {
       title: 'Новини компанії',
-      subtitle: 'Будьте в курсі останніх подій, оновлень та досягнень WorldForex',
+      subtitle: 'Будьте в курсі останніх подій, оновлень та досягнень Vantage Point',
       subscribe: {
         title: 'Підпишіться на розсилку',
         subtitle: 'Отримуйте важливі новини та оновлення на ваш email',
@@ -114,7 +114,7 @@ export const analyticsTranslations = {
   en: {
     companyNews: {
       title: 'Company News',
-      subtitle: 'Stay informed about the latest events, updates and achievements of WorldForex',
+      subtitle: 'Stay informed about the latest events, updates and achievements of Vantage Point',
       subscribe: {
         title: 'Subscribe to Newsletter',
         subtitle: 'Receive important news and updates to your email',
@@ -170,7 +170,7 @@ export const analyticsTranslations = {
   tr: {
     companyNews: {
       title: 'Şirket Haberleri',
-      subtitle: 'WorldForex\'in en son olayları, güncellemeleri ve başarıları hakkında bilgi sahibi olun',
+      subtitle: 'Vantage Point\'in en son olayları, güncellemeleri ve başarıları hakkında bilgi sahibi olun',
       subscribe: {
         title: 'Bültene Abone Olun',
         subtitle: 'Önemli haberleri ve güncellemeleri e-postanıza alın',
@@ -226,7 +226,7 @@ export const analyticsTranslations = {
   zh: {
     companyNews: {
       title: '公司新闻',
-      subtitle: '了解WorldForex的最新事件、更新和成就',
+      subtitle: '了解Vantage Point的最新事件、更新和成就',
       subscribe: {
         title: '订阅新闻通讯',
         subtitle: '接收重要新闻和更新到您的电子邮件',

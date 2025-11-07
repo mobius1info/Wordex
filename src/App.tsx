@@ -1538,7 +1538,7 @@ function App() {
                 <strong className="text-gray-400">{t.footer.riskWarning.split(':')[0]}:</strong> {t.footer.riskWarning.split(':')[1]}
               </p>
               <div className="flex flex-wrap items-center justify-between gap-4 pt-4">
-                <p>&copy; 2011-2024 WorldForex. {t.footer.rights}</p>
+                <p>&copy; 2011-2024 Vantage Point. {t.footer.rights}</p>
                 <div className="flex items-center space-x-4 text-xs">
                   <a href="#" className="hover:text-white transition-colors">{t.footer.privacy}</a>
                   <span>•</span>
