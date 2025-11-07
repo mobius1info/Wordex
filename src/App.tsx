@@ -64,7 +64,8 @@ const translations = {
         },
       ],
       learnMore: 'Узнать больше',
-      openAccount: 'Открыть счет'
+      openAccount: 'Открыть счет',
+      takeChallenge: 'Пройти челлендж'
     },
     stats: {
       minDeposit: 'Минимальный депозит',
@@ -412,11 +413,12 @@ const translations = {
         {
           badge: 'Opportunity',
           title: 'Prop Trading',
-          subtitle: 'Pass 3 stages of challenge and get opportunity to trade with company funds (3000-5000-10000-25000) sharing 50 - 50 profit'
+          subtitle: 'Pass 3 stages of challenge and get up to $25,000 to manage - sharing profit 80% to 20%'
         },
       ],
       learnMore: 'Learn More',
-      openAccount: 'Open Account'
+      openAccount: 'Open Account',
+      takeChallenge: 'Take Challenge'
     },
     stats: {
       minDeposit: 'Minimum Deposit',
@@ -588,11 +590,12 @@ const translations = {
         {
           badge: 'Fırsat',
           title: 'Prop Trading',
-          subtitle: '3 aşamalı challenge’ı tamamlayın ve şirket fonlarıyla (3000-5000-10000-25000) ticaret yapma fırsatı kazanın, karı 50 - 50 paylaşın'
+          subtitle: '3 aşamalı challenge\'ı tamamlayın ve yönetmek üzere 25.000$\'a kadar kazanın - karı %80 - %20 paylaşın'
         },
       ],
       learnMore: 'Daha Fazla Bilgi',
-      openAccount: 'Hesap Aç'
+      openAccount: 'Hesap Aç',
+      takeChallenge: 'Challenge\'a Katıl'
     },
     stats: {
       minDeposit: 'Minimum Depozito',
@@ -764,11 +767,12 @@ const translations = {
         {
           badge: '机会',
           title: '自营交易',
-          subtitle: '通过3阶段挑战，获得使用公司资金（3000-5000-10000-25000）交易的机会，分享50 - 50利润'
+          subtitle: '通过3阶段挑战，获得高达25,000美元的管理资金 - 分享80% - 20%的利润'
         },
       ],
       learnMore: '了解更多',
-      openAccount: '开设账户'
+      openAccount: '开设账户',
+      takeChallenge: '参加挑战'
     },
     stats: {
       minDeposit: '最低存款',
@@ -1199,7 +1203,7 @@ function App() {
                         <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
                       </button>
                       <button className="bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl text-base sm:text-lg font-bold hover:bg-white/20 transition-all hover:scale-105 transform">
-                        {t.hero.openAccount}
+                        {index === 2 ? t.hero.takeChallenge : t.hero.openAccount}
                       </button>
                     </div>
                   </div>
