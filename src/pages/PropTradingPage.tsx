@@ -584,24 +584,24 @@ export default function PropTradingPage({ language = 'ru' }: PropTradingPageProp
                   Программа челленджа ${selectedAccount.toLocaleString()}
                 </h3>
                 <div className="overflow-x-auto">
-                  <table className="w-full">
+                  <table className="w-full table-fixed">
                     <thead>
                       <tr className="border-b-2 border-gray-300">
-                        <th className="text-left py-3 px-4 font-bold text-gray-900">Этап</th>
-                        <th className="text-left py-3 px-4 font-bold text-gray-900">Цель прибыли</th>
-                        <th className="text-left py-3 px-4 font-bold text-gray-900">Макс. дневная просадка</th>
-                        <th className="text-left py-3 px-4 font-bold text-gray-900">Макс. общая просадка</th>
-                        <th className="text-left py-3 px-4 font-bold text-gray-900">Минимум дней торговли</th>
+                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[15%]">Этап</th>
+                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[18%]">Цель прибыли</th>
+                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[22%]">Макс. дневная просадка</th>
+                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[22%]">Макс. общая просадка</th>
+                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[23%]">Минимум дней торговли</th>
                       </tr>
                     </thead>
                     <tbody>
                       {accountData[selectedAccount as keyof typeof accountData].stages.map((row, index) => (
                         <tr key={index} className="border-b border-gray-200 hover:bg-blue-50 transition-colors">
-                          <td className="py-4 px-4 font-semibold text-gray-800">{row.stage}</td>
-                          <td className="py-4 px-4 text-gray-700">{row.profit}</td>
-                          <td className="py-4 px-4 text-gray-700">{row.dailyLoss}</td>
-                          <td className="py-4 px-4 text-gray-700">{row.totalLoss}</td>
-                          <td className="py-4 px-4 text-gray-700">{row.timeframe}</td>
+                          <td className="py-4 px-4 font-semibold text-gray-800 text-center">{row.stage}</td>
+                          <td className="py-4 px-4 text-gray-700 text-center">{row.profit}</td>
+                          <td className="py-4 px-4 text-gray-700 text-center">{row.dailyLoss}</td>
+                          <td className="py-4 px-4 text-gray-700 text-center">{row.totalLoss}</td>
+                          <td className="py-4 px-4 text-gray-700 text-center">{row.timeframe}</td>
                         </tr>
                       ))}
                     </tbody>
