@@ -4,7 +4,7 @@ import { TrendingUp, DollarSign, Target, Award, CheckCircle, BarChart3, Shield }
 const translations = {
   ru: {
     title: 'Проп трейдинг',
-    subtitle: 'Торгуйте с капиталом компании и получайте до 90% прибыли',
+    subtitle: 'Выберите сумму управления которую хотите получить пройдя отбор и изучите правила',
     intro: {
       title: 'Что такое проп трейдинг?',
       text: 'Проп трейдинг (Proprietary Trading) — это торговля на финансовых рынках с использованием капитала компании, а не собственных средств. Проп-компании предоставляют трейдерам доступ к большому капиталу в обмен на часть прибыли.'
@@ -511,13 +511,6 @@ export default function PropTradingPage({ language = 'ru' }: PropTradingPageProp
             <p className="text-xl sm:text-2xl text-blue-100 max-w-3xl mx-auto mb-10">{t.subtitle}</p>
 
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <button
-                onClick={() => handleAccountClick(3000)}
-                className="group bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-6 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-600 transition-all hover:scale-105 transform shadow-lg"
-              >
-                <DollarSign className="inline h-5 w-5 mr-1" />
-                3,000
-              </button>
               <button
                 onClick={() => handleAccountClick(5000)}
                 className="group bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-6 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-600 transition-all hover:scale-105 transform shadow-lg"
