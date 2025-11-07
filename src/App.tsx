@@ -57,16 +57,6 @@ const translations = {
           title: 'Бонус 100%',
           subtitle: 'Удвойте свой первый депозит и начните с большим капиталом'
         },
-        {
-          badge: 'Быстро',
-          title: 'Торговля Forex',
-          subtitle: 'Начните торговать на мировых рынках с минимальным депозитом $1'
-        },
-        {
-          badge: 'Надежно',
-          title: 'Регулируемый брокер',
-          subtitle: '13+ лет на рынке, средства клиентов под защитой'
-        }
       ],
       learnMore: 'Узнать больше',
       openAccount: 'Открыть счет'
@@ -238,16 +228,6 @@ const translations = {
           title: 'Бонус 100%',
           subtitle: 'Подвойте свій перший депозит і почніть з більшим капіталом'
         },
-        {
-          badge: 'Швидко',
-          title: 'Торгівля Forex',
-          subtitle: 'Почніть торгувати на світових ринках з мінімальним депозитом $1'
-        },
-        {
-          badge: 'Надійно',
-          title: 'Регульований брокер',
-          subtitle: '13+ років на ринку, кошти клієнтів під захистом'
-        }
       ],
       learnMore: 'Дізнатися більше',
       openAccount: 'Відкрити рахунок'
@@ -419,16 +399,6 @@ const translations = {
           title: '100% Bonus',
           subtitle: 'Double your first deposit and start with bigger capital'
         },
-        {
-          badge: 'Fast',
-          title: 'Forex Trading',
-          subtitle: 'Start trading on global markets with minimum deposit of $1'
-        },
-        {
-          badge: 'Reliable',
-          title: 'Regulated Broker',
-          subtitle: '13+ years in the market, client funds protected'
-        }
       ],
       learnMore: 'Learn More',
       openAccount: 'Open Account'
@@ -600,16 +570,6 @@ const translations = {
           title: '%100 Bonus',
           subtitle: 'İlk depozitonuzu ikiye katlayın ve daha büyük sermaye ile başlayın'
         },
-        {
-          badge: 'Hızlı',
-          title: 'Forex Ticareti',
-          subtitle: 'Sadece 1$ minimum depozito ile küresel piyasalarda ticarete başlayın'
-        },
-        {
-          badge: 'Güvenli',
-          title: 'Regüle Edilen Broker',
-          subtitle: '13+ yıldır piyasada, müşteri fonları korumalı'
-        }
       ],
       learnMore: 'Daha Fazla Bilgi',
       openAccount: 'Hesap Aç'
@@ -781,16 +741,6 @@ const translations = {
           title: '100%奖金',
           subtitle: '首次存款翻倍，以更大的资本开始'
         },
-        {
-          badge: '快捷',
-          title: '外汇交易',
-          subtitle: '仅1美元最低存款在全球市场开始交易'
-        },
-        {
-          badge: '可靠',
-          title: '受监管经纪商',
-          subtitle: '13+年市场经验，客户资金受保护'
-        }
       ],
       learnMore: '了解更多',
       openAccount: '开设账户'
