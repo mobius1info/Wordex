@@ -1098,6 +1098,90 @@ function App() {
                     </div>
                   </div>
                 )}
+                {index === 2 && (
+                  <div className="hidden lg:block absolute right-10 top-1/2 -translate-y-1/2 opacity-40 pointer-events-none">
+                    <div className="flex items-center gap-8">
+                      <div className="flex flex-col gap-4">
+                        <div className="bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl p-6 shadow-2xl animate-bounce-slow">
+                          <div className="text-white font-bold text-lg mb-2">Stage 1</div>
+                          <div className="bg-white/20 rounded-lg p-3 mb-2">
+                            <div className="text-white text-sm font-semibold">Target: 8%</div>
+                            <div className="text-white/80 text-xs">Max DD: 5%</div>
+                          </div>
+                          <div className="text-white text-xs">$3,000</div>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col items-center gap-2">
+                        <div className="animate-pulse-slow">
+                          <svg width="60" height="60" viewBox="0 0 60 60" className="text-orange-300">
+                            <circle cx="30" cy="30" r="25" stroke="currentColor" strokeWidth="3" fill="none" strokeDasharray="5,5"/>
+                            <polygon points="25,30 35,35 35,25" fill="currentColor"/>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-4">
+                        <div className="bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl p-6 shadow-2xl animate-bounce-slow" style={{ animationDelay: '0.5s' }}>
+                          <div className="text-white font-bold text-lg mb-2">Stage 2</div>
+                          <div className="bg-white/20 rounded-lg p-3 mb-2">
+                            <div className="text-white text-sm font-semibold">Target: 5%</div>
+                            <div className="text-white/80 text-xs">Max DD: 5%</div>
+                          </div>
+                          <div className="text-white text-xs">$5,000</div>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col items-center gap-2">
+                        <div className="animate-pulse-slow" style={{ animationDelay: '0.3s' }}>
+                          <svg width="60" height="60" viewBox="0 0 60 60" className="text-orange-300">
+                            <circle cx="30" cy="30" r="25" stroke="currentColor" strokeWidth="3" fill="none" strokeDasharray="5,5"/>
+                            <polygon points="25,30 35,35 35,25" fill="currentColor"/>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-4">
+                        <div className="bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-6 shadow-2xl animate-bounce-slow" style={{ animationDelay: '1s' }}>
+                          <div className="text-white font-bold text-lg mb-2">Stage 3</div>
+                          <div className="bg-white/20 rounded-lg p-3 mb-2">
+                            <div className="text-white text-sm font-semibold">Funded!</div>
+                            <div className="text-white/80 text-xs">50/50 Split</div>
+                          </div>
+                          <div className="text-white text-xs">$10,000+</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {index === 2 && (
+                  <div className="lg:hidden absolute bottom-8 left-1/2 -translate-x-1/2 opacity-30 pointer-events-none">
+                    <div className="flex items-center gap-3">
+                      <div className="bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg p-3 shadow-xl animate-bounce-slow">
+                        <div className="text-white text-xs font-bold">Stage 1</div>
+                        <div className="text-white text-xs">$3k</div>
+                      </div>
+                      <div className="animate-pulse-slow">
+                        <svg width="30" height="30" viewBox="0 0 30 30" className="text-orange-300">
+                          <polygon points="10,15 20,18 20,12" fill="currentColor"/>
+                        </svg>
+                      </div>
+                      <div className="bg-gradient-to-br from-orange-500 to-orange-700 rounded-lg p-3 shadow-xl animate-bounce-slow" style={{ animationDelay: '0.5s' }}>
+                        <div className="text-white text-xs font-bold">Stage 2</div>
+                        <div className="text-white text-xs">$5k</div>
+                      </div>
+                      <div className="animate-pulse-slow" style={{ animationDelay: '0.3s' }}>
+                        <svg width="30" height="30" viewBox="0 0 30 30" className="text-orange-300">
+                          <polygon points="10,15 20,18 20,12" fill="currentColor"/>
+                        </svg>
+                      </div>
+                      <div className="bg-gradient-to-br from-orange-600 to-orange-800 rounded-lg p-3 shadow-xl animate-bounce-slow" style={{ animationDelay: '1s' }}>
+                        <div className="text-white text-xs font-bold">Funded</div>
+                        <div className="text-white text-xs">$10k+</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
                   <div className="max-w-4xl text-center lg:text-left">
                     <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium mb-6 border border-white/20">
