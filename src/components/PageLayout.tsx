@@ -207,6 +207,68 @@ export default function PageLayout({ children }: PageLayoutProps) {
         translations={translations}
       />
       {childrenWithLanguage}
+
+      <footer className="bg-gray-900 text-gray-300 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="mb-4">
+                <img src="/Logo copy copy copy copy.png" alt="Vantage Point" className="h-32 w-auto" />
+              </div>
+              <p className="text-sm text-gray-400 mb-4">
+                {translations[language].menuItems.aboutCompany}
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-white font-semibold mb-4">Торговля</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="/#copy-trading" className="hover:text-white transition-colors">Копи-трейдинг</a></li>
+                <li><a href="/#forex" className="hover:text-white transition-colors">Forex/CFD</a></li>
+                <li><a href="/platforms" className="hover:text-white transition-colors">{translations[language].menuItems.platforms}</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-white font-semibold mb-4">Информация</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="/about-company" className="hover:text-white transition-colors">{translations[language].menuItems.aboutCompany}</a></li>
+                <li><a href="/company-news" className="hover:text-white transition-colors">{translations[language].menuItems.companyNews}</a></li>
+                <li><a href="/analytics" className="hover:text-white transition-colors">{translations[language].nav.analytics}</a></li>
+                <li><a href="/help" className="hover:text-white transition-colors">{translations[language].nav.help}</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-white font-semibold mb-4">{translations[language].menuItems.contacts}</h4>
+              <div className="space-y-2 text-sm mb-4">
+                <p>Email: support@vantagepoint.com</p>
+                <p>Поддержка: 24/7</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-800 pt-8">
+            <div className="text-xs text-gray-500 space-y-3">
+              <p>
+                <strong className="text-gray-400">Предупреждение о рисках:</strong> CFD являются сложными инструментами и несут высокий риск быстрой потери денег из-за кредитного плеча. Вы должны понимать, как работают CFD, и можете ли вы позволить себе рискнуть своими деньгами.
+              </p>
+              <div className="flex flex-wrap items-center justify-between gap-4 pt-4">
+                <p>&copy; 2011-2024 Vantage Point. Все права защищены.</p>
+                <div className="flex items-center space-x-4 text-xs">
+                  <a href="#" className="hover:text-white transition-colors">Политика конфиденциальности</a>
+                  <span>•</span>
+                  <a href="#" className="hover:text-white transition-colors">Условия использования</a>
+                  <span>•</span>
+                  <a href="#" className="hover:text-white transition-colors">Документы</a>
+                  <span>•</span>
+                  <a href="/admin" className="hover:text-white transition-colors">Admin</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
