@@ -936,7 +936,7 @@ function App() {
         translations={translations}
       />
       <main>
-        <section className="relative h-[600px] sm:h-[700px] overflow-hidden">
+        <section className="relative h-[600px] sm:h-[700px] lg:h-[750px] overflow-hidden">
           {t.hero.slides.map((slide, index) => (
             <div
               key={index}
@@ -1146,9 +1146,9 @@ function App() {
                           <div className="text-white font-bold text-lg mb-2">Stage 3</div>
                           <div className="bg-white/20 rounded-lg p-3 mb-2">
                             <div className="text-white text-sm font-semibold">Funded!</div>
-                            <div className="text-white/80 text-xs">50/50 Split</div>
+                            <div className="text-white/80 text-xs">80/20 Split</div>
                           </div>
-                          <div className="text-white text-xs">$10,000+</div>
+                          <div className="text-white text-xs">$25,000</div>
                         </div>
                       </div>
                     </div>
@@ -1182,7 +1182,7 @@ function App() {
                     </div>
                   </div>
                 )}
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 lg:pr-[500px]">
                   <div className="max-w-4xl text-center lg:text-left">
                     <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium mb-6 border border-white/20">
                       ✨ {slide.badge}
@@ -1190,7 +1190,7 @@ function App() {
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                       {slide.title}
                     </h1>
-                    <p className="text-lg sm:text-xl lg:text-2xl text-white/80 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    <p className="text-base sm:text-lg lg:text-xl text-white/80 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                       {slide.subtitle}
                     </p>
                     <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start">
