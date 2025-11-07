@@ -57,6 +57,11 @@ const translations = {
           title: 'Бонус 100%',
           subtitle: 'Удвойте свой первый депозит и начните с большим капиталом'
         },
+        {
+          badge: 'Возможность',
+          title: 'Проп Трейдинг',
+          subtitle: 'Пройди 3 этапа челленджа и получи возможность торговать на деньги (3000-5000-10000-25000) компании разделяя прибыль 50 - 50'
+        },
       ],
       learnMore: 'Узнать больше',
       openAccount: 'Открыть счет'
@@ -227,6 +232,11 @@ const translations = {
           badge: 'Вигідно',
           title: 'Бонус 100%',
           subtitle: 'Подвойте свій перший депозит і почніть з більшим капіталом'
+        },
+        {
+          badge: 'Можливість',
+          title: 'Проп Трейдинг',
+          subtitle: 'Пройди 3 етапи челленджу і отримай можливість торгувати на гроші (3000-5000-10000-25000) компанії розділяючи прибуток 50 - 50'
         },
       ],
       learnMore: 'Дізнатися більше',
@@ -399,6 +409,11 @@ const translations = {
           title: '100% Bonus',
           subtitle: 'Double your first deposit and start with bigger capital'
         },
+        {
+          badge: 'Opportunity',
+          title: 'Prop Trading',
+          subtitle: 'Pass 3 stages of challenge and get opportunity to trade with company funds (3000-5000-10000-25000) sharing 50 - 50 profit'
+        },
       ],
       learnMore: 'Learn More',
       openAccount: 'Open Account'
@@ -570,6 +585,11 @@ const translations = {
           title: '%100 Bonus',
           subtitle: 'İlk depozitonuzu ikiye katlayın ve daha büyük sermaye ile başlayın'
         },
+        {
+          badge: 'Fırsat',
+          title: 'Prop Trading',
+          subtitle: '3 aşamalı challenge’ı tamamlayın ve şirket fonlarıyla (3000-5000-10000-25000) ticaret yapma fırsatı kazanın, karı 50 - 50 paylaşın'
+        },
       ],
       learnMore: 'Daha Fazla Bilgi',
       openAccount: 'Hesap Aç'
@@ -740,6 +760,11 @@ const translations = {
           badge: '优惠',
           title: '100%奖金',
           subtitle: '首次存款翻倍，以更大的资本开始'
+        },
+        {
+          badge: '机会',
+          title: '自营交易',
+          subtitle: '通过3阶段挑战，获得使用公司资金（3000-5000-10000-25000）交易的机会，分享50 - 50利润'
         },
       ],
       learnMore: '了解更多',
