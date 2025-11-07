@@ -1224,17 +1224,17 @@ function App() {
           </div>
           <button
             onClick={() => setCurrentSlide((prev) => prev === 0 ? t.hero.slides.length - 1 : prev - 1)}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-3 rounded-full transition-all hover:scale-110 border border-white/20 group"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-2 sm:p-3 rounded-full transition-all hover:scale-110 border border-white/20 group"
             aria-label="Previous slide"
           >
-            <ChevronLeft className="h-6 w-6 group-hover:-translate-x-0.5 transition-transform" />
+            <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6 group-hover:-translate-x-0.5 transition-transform" />
           </button>
           <button
             onClick={() => setCurrentSlide((prev) => (prev + 1) % t.hero.slides.length)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-3 rounded-full transition-all hover:scale-110 border border-white/20 group"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-2 sm:p-3 rounded-full transition-all hover:scale-110 border border-white/20 group"
             aria-label="Next slide"
           >
-            <ChevronRight className="h-6 w-6 group-hover:translate-x-0.5 transition-transform" />
+            <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6 group-hover:translate-x-0.5 transition-transform" />
           </button>
         </section>
 
