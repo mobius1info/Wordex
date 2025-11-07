@@ -208,20 +208,20 @@ export default function PageLayout({ children }: PageLayoutProps) {
       />
       {childrenWithLanguage}
 
-      <footer className="bg-gray-900 text-gray-300 py-12">
+      <footer className="bg-gray-900 text-gray-300 py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="mb-4">
-                <img src="/Logo copy copy copy copy.png" alt="Vantage Point" className="h-32 w-auto" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
+            <div className="text-center sm:text-left">
+              <div className="mb-4 flex justify-center sm:justify-start">
+                <img src="/Logo copy copy copy copy.png" alt="Vantage Point" className="h-24 sm:h-32 w-auto" />
               </div>
               <p className="text-sm text-gray-400 mb-4">
                 {translations[language].menuItems.aboutCompany}
               </p>
             </div>
 
-            <div>
-              <h4 className="text-white font-semibold mb-4">Торговля</h4>
+            <div className="text-center sm:text-left">
+              <h4 className="text-white font-semibold mb-3 sm:mb-4">Торговля</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="/#copy-trading" className="hover:text-white transition-colors">Копи-трейдинг</a></li>
                 <li><a href="/#forex" className="hover:text-white transition-colors">Forex/CFD</a></li>
@@ -229,8 +229,8 @@ export default function PageLayout({ children }: PageLayoutProps) {
               </ul>
             </div>
 
-            <div>
-              <h4 className="text-white font-semibold mb-4">Информация</h4>
+            <div className="text-center sm:text-left">
+              <h4 className="text-white font-semibold mb-3 sm:mb-4">Информация</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="/about-company" className="hover:text-white transition-colors">{translations[language].menuItems.aboutCompany}</a></li>
                 <li><a href="/company-news" className="hover:text-white transition-colors">{translations[language].menuItems.companyNews}</a></li>
@@ -239,22 +239,22 @@ export default function PageLayout({ children }: PageLayoutProps) {
               </ul>
             </div>
 
-            <div>
-              <h4 className="text-white font-semibold mb-4">{translations[language].menuItems.contacts}</h4>
+            <div className="text-center sm:text-left">
+              <h4 className="text-white font-semibold mb-3 sm:mb-4">{translations[language].menuItems.contacts}</h4>
               <div className="space-y-2 text-sm mb-4">
-                <p>Email: support@vantagepoint.com</p>
+                <p className="break-words">Email: support@vantage-point.digital</p>
                 <p>Поддержка: 24/7</p>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8">
+          <div className="border-t border-gray-800 pt-6 sm:pt-8">
             <div className="text-xs text-gray-500 space-y-3">
-              <p>
+              <p className="text-center sm:text-left">
                 <strong className="text-gray-400">Предупреждение о рисках:</strong> CFD являются сложными инструментами и несут высокий риск быстрой потери денег из-за кредитного плеча. Вы должны понимать, как работают CFD, и можете ли вы позволить себе рискнуть своими деньгами.
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-                <p>&copy; 2021-2025 Vantage Point. Все права защищены.</p>
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 pt-4">
+                <p className="text-center">&copy; 2021-2025 Vantage Point. Все права защищены.</p>
               </div>
             </div>
           </div>
