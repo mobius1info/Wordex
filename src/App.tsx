@@ -48,12 +48,24 @@ const translations = {
     hero: {
       slides: [
         {
+          badge: 'Популярно',
           title: 'Копи-трейдинг',
           subtitle: 'Следуйте за успешными трейдерами и автоматически копируйте их сделки'
         },
         {
+          badge: 'Выгодно',
           title: 'Бонус 100%',
           subtitle: 'Удвойте свой первый депозит и начните с большим капиталом'
+        },
+        {
+          badge: 'Быстро',
+          title: 'Торговля Forex',
+          subtitle: 'Начните торговать на мировых рынках с минимальным депозитом $1'
+        },
+        {
+          badge: 'Надежно',
+          title: 'Регулируемый брокер',
+          subtitle: '13+ лет на рынке, средства клиентов под защитой'
         }
       ],
       learnMore: 'Узнать больше',
@@ -217,12 +229,24 @@ const translations = {
     hero: {
       slides: [
         {
+          badge: 'Популярно',
           title: 'Копі-трейдинг',
           subtitle: 'Слідуйте за успішними трейдерами та автоматично копіюйте їх угоди'
         },
         {
+          badge: 'Вигідно',
           title: 'Бонус 100%',
           subtitle: 'Подвойте свій перший депозит і почніть з більшим капіталом'
+        },
+        {
+          badge: 'Швидко',
+          title: 'Торгівля Forex',
+          subtitle: 'Почніть торгувати на світових ринках з мінімальним депозитом $1'
+        },
+        {
+          badge: 'Надійно',
+          title: 'Регульований брокер',
+          subtitle: '13+ років на ринку, кошти клієнтів під захистом'
         }
       ],
       learnMore: 'Дізнатися більше',
@@ -386,12 +410,24 @@ const translations = {
     hero: {
       slides: [
         {
+          badge: 'Popular',
           title: 'Copy Trading',
           subtitle: 'Follow successful traders and automatically copy their trades'
         },
         {
+          badge: 'Profitable',
           title: '100% Bonus',
           subtitle: 'Double your first deposit and start with bigger capital'
+        },
+        {
+          badge: 'Fast',
+          title: 'Forex Trading',
+          subtitle: 'Start trading on global markets with minimum deposit of $1'
+        },
+        {
+          badge: 'Reliable',
+          title: 'Regulated Broker',
+          subtitle: '13+ years in the market, client funds protected'
         }
       ],
       learnMore: 'Learn More',
@@ -555,12 +591,24 @@ const translations = {
     hero: {
       slides: [
         {
+          badge: 'Popüler',
           title: 'Kopya Ticaret',
           subtitle: 'Başarılı yatırımcıları takip edin ve işlemlerini otomatik olarak kopyalayın'
         },
         {
+          badge: 'Karlı',
           title: '%100 Bonus',
           subtitle: 'İlk depozitonuzu ikiye katlayın ve daha büyük sermaye ile başlayın'
+        },
+        {
+          badge: 'Hızlı',
+          title: 'Forex Ticareti',
+          subtitle: 'Sadece 1$ minimum depozito ile küresel piyasalarda ticarete başlayın'
+        },
+        {
+          badge: 'Güvenli',
+          title: 'Regüle Edilen Broker',
+          subtitle: '13+ yıldır piyasada, müşteri fonları korumalı'
         }
       ],
       learnMore: 'Daha Fazla Bilgi',
@@ -724,12 +772,24 @@ const translations = {
     hero: {
       slides: [
         {
+          badge: '热门',
           title: '复制交易',
           subtitle: '跟随成功的交易者并自动复制他们的交易'
         },
         {
+          badge: '优惠',
           title: '100%奖金',
           subtitle: '首次存款翻倍，以更大的资本开始'
+        },
+        {
+          badge: '快捷',
+          title: '外汇交易',
+          subtitle: '仅1美元最低存款在全球市场开始交易'
+        },
+        {
+          badge: '可靠',
+          title: '受监管经纪商',
+          subtitle: '13+年市场经验，客户资金受保护'
         }
       ],
       learnMore: '了解更多',
@@ -1066,7 +1126,7 @@ function App() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
                   <div className="max-w-4xl text-center lg:text-left">
                     <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium mb-6 border border-white/20">
-                      ✨ {index === 0 ? 'Популярно' : index === 1 ? 'Выгодно' : index === 2 ? 'Быстро' : 'Надежно'}
+                      ✨ {slide.badge}
                     </div>
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                       {slide.title}
