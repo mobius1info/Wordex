@@ -1554,9 +1554,9 @@ function App() {
 
       <footer className="bg-gray-900 text-gray-300 py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
-            <div className="text-center sm:text-left">
-              <div className="mb-4 flex justify-center sm:justify-start">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
+            <div className="text-center lg:text-left">
+              <div className="mb-4 flex justify-center lg:justify-start">
                 <img src="/Logo copy copy copy copy.png" alt="Vantage Point" className="h-24 sm:h-32 w-auto" />
               </div>
               <p className="text-sm text-gray-400 mb-4">
@@ -1564,26 +1564,28 @@ function App() {
               </p>
             </div>
 
-            <div className="text-center sm:text-left">
-              <h4 className="text-white font-semibold mb-3 sm:mb-4">{t.footer.trading}</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">{t.footer.copyTrading}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{t.footer.forexCFD}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{t.footer.platforms}</a></li>
-              </ul>
+            <div className="grid grid-cols-2 lg:contents gap-6">
+              <div className="text-center lg:text-left">
+                <h4 className="text-white font-semibold mb-3 sm:mb-4">{t.footer.trading}</h4>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="#" className="hover:text-white transition-colors">{t.footer.copyTrading}</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">{t.footer.forexCFD}</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">{t.footer.platforms}</a></li>
+                </ul>
+              </div>
+
+              <div className="text-center lg:text-left">
+                <h4 className="text-white font-semibold mb-3 sm:mb-4">{t.footer.information}</h4>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="#" className="hover:text-white transition-colors">{t.footer.about}</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">{t.footer.documents}</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">{t.footer.analytics}</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">{t.footer.education}</a></li>
+                </ul>
+              </div>
             </div>
 
-            <div className="text-center sm:text-left">
-              <h4 className="text-white font-semibold mb-3 sm:mb-4">{t.footer.information}</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">{t.footer.about}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{t.footer.documents}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{t.footer.analytics}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{t.footer.education}</a></li>
-              </ul>
-            </div>
-
-            <div className="text-center sm:text-left">
+            <div className="text-center lg:text-left">
               <h4 className="text-white font-semibold mb-3 sm:mb-4">{t.footer.contacts}</h4>
               <div className="space-y-2 text-sm mb-4">
                 <p className="break-words">Email: support@vantage-point.digital</p>

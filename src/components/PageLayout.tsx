@@ -210,9 +210,9 @@ export default function PageLayout({ children }: PageLayoutProps) {
 
       <footer className="bg-gray-900 text-gray-300 py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
-            <div className="text-center sm:text-left">
-              <div className="mb-4 flex justify-center sm:justify-start">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
+            <div className="text-center lg:text-left">
+              <div className="mb-4 flex justify-center lg:justify-start">
                 <img src="/Logo copy copy copy copy.png" alt="Vantage Point" className="h-24 sm:h-32 w-auto" />
               </div>
               <p className="text-sm text-gray-400 mb-4">
@@ -220,26 +220,28 @@ export default function PageLayout({ children }: PageLayoutProps) {
               </p>
             </div>
 
-            <div className="text-center sm:text-left">
-              <h4 className="text-white font-semibold mb-3 sm:mb-4">Торговля</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="/#copy-trading" className="hover:text-white transition-colors">Копи-трейдинг</a></li>
-                <li><a href="/#forex" className="hover:text-white transition-colors">Forex/CFD</a></li>
-                <li><a href="/platforms" className="hover:text-white transition-colors">{translations[language].menuItems.platforms}</a></li>
-              </ul>
+            <div className="grid grid-cols-2 lg:contents gap-6">
+              <div className="text-center lg:text-left">
+                <h4 className="text-white font-semibold mb-3 sm:mb-4">Торговля</h4>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="/#copy-trading" className="hover:text-white transition-colors">Копи-трейдинг</a></li>
+                  <li><a href="/#forex" className="hover:text-white transition-colors">Forex/CFD</a></li>
+                  <li><a href="/platforms" className="hover:text-white transition-colors">{translations[language].menuItems.platforms}</a></li>
+                </ul>
+              </div>
+
+              <div className="text-center lg:text-left">
+                <h4 className="text-white font-semibold mb-3 sm:mb-4">Информация</h4>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="/about-company" className="hover:text-white transition-colors">{translations[language].menuItems.aboutCompany}</a></li>
+                  <li><a href="/company-news" className="hover:text-white transition-colors">{translations[language].menuItems.companyNews}</a></li>
+                  <li><a href="/analytics" className="hover:text-white transition-colors">{translations[language].nav.analytics}</a></li>
+                  <li><a href="/help" className="hover:text-white transition-colors">{translations[language].nav.help}</a></li>
+                </ul>
+              </div>
             </div>
 
-            <div className="text-center sm:text-left">
-              <h4 className="text-white font-semibold mb-3 sm:mb-4">Информация</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="/about-company" className="hover:text-white transition-colors">{translations[language].menuItems.aboutCompany}</a></li>
-                <li><a href="/company-news" className="hover:text-white transition-colors">{translations[language].menuItems.companyNews}</a></li>
-                <li><a href="/analytics" className="hover:text-white transition-colors">{translations[language].nav.analytics}</a></li>
-                <li><a href="/help" className="hover:text-white transition-colors">{translations[language].nav.help}</a></li>
-              </ul>
-            </div>
-
-            <div className="text-center sm:text-left">
+            <div className="text-center lg:text-left">
               <h4 className="text-white font-semibold mb-3 sm:mb-4">{translations[language].menuItems.contacts}</h4>
               <div className="space-y-2 text-sm mb-4">
                 <p className="break-words">Email: support@vantage-point.digital</p>
