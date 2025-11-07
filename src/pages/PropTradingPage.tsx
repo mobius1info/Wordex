@@ -536,39 +536,48 @@ export default function PropTradingPage({ language = 'ru' }: PropTradingPageProp
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">{t.title}</h1>
             <p className="text-xl sm:text-2xl text-blue-100 max-w-3xl mx-auto mb-10">{t.subtitle}</p>
 
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
+            <div className="flex flex-wrap justify-center gap-6 mt-8">
               <button
                 onClick={() => handleAccountClick(5000)}
-                className={`group backdrop-blur-md border-2 px-6 py-4 rounded-xl font-bold transition-all hover:scale-105 transform shadow-lg ${
+                className={`group relative overflow-hidden px-8 py-5 rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-110 transform shadow-2xl ${
                   selectedAccount === 5000
-                    ? 'bg-white text-blue-600 border-white'
-                    : 'bg-white/10 border-white/30 text-white hover:bg-white hover:text-blue-600'
+                    ? 'bg-gradient-to-br from-emerald-400 to-emerald-600 text-white ring-4 ring-emerald-300 ring-offset-2'
+                    : 'bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md border-2 border-white/40 text-white hover:from-emerald-400 hover:to-emerald-600 hover:border-emerald-300'
                 }`}
               >
-                <DollarSign className="inline h-5 w-5 mr-1" />
-                5,000
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+                <span className="relative flex items-center gap-2">
+                  <DollarSign className="h-6 w-6" />
+                  5,000
+                </span>
               </button>
               <button
                 onClick={() => handleAccountClick(10000)}
-                className={`group backdrop-blur-md border-2 px-6 py-4 rounded-xl font-bold transition-all hover:scale-105 transform shadow-lg ${
+                className={`group relative overflow-hidden px-8 py-5 rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-110 transform shadow-2xl ${
                   selectedAccount === 10000
-                    ? 'bg-white text-blue-600 border-white'
-                    : 'bg-white/10 border-white/30 text-white hover:bg-white hover:text-blue-600'
+                    ? 'bg-gradient-to-br from-blue-400 to-blue-600 text-white ring-4 ring-blue-300 ring-offset-2'
+                    : 'bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md border-2 border-white/40 text-white hover:from-blue-400 hover:to-blue-600 hover:border-blue-300'
                 }`}
               >
-                <DollarSign className="inline h-5 w-5 mr-1" />
-                10,000
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+                <span className="relative flex items-center gap-2">
+                  <DollarSign className="h-6 w-6" />
+                  10,000
+                </span>
               </button>
               <button
                 onClick={() => handleAccountClick(25000)}
-                className={`group backdrop-blur-md border-2 px-6 py-4 rounded-xl font-bold transition-all hover:scale-105 transform shadow-lg ${
+                className={`group relative overflow-hidden px-8 py-5 rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-110 transform shadow-2xl ${
                   selectedAccount === 25000
-                    ? 'bg-white text-blue-600 border-white'
-                    : 'bg-white/10 border-white/30 text-white hover:bg-white hover:text-blue-600'
+                    ? 'bg-gradient-to-br from-amber-400 to-amber-600 text-white ring-4 ring-amber-300 ring-offset-2'
+                    : 'bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md border-2 border-white/40 text-white hover:from-amber-400 hover:to-amber-600 hover:border-amber-300'
                 }`}
               >
-                <DollarSign className="inline h-5 w-5 mr-1" />
-                25,000
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+                <span className="relative flex items-center gap-2">
+                  <DollarSign className="h-6 w-6" />
+                  25,000
+                </span>
               </button>
             </div>
 
