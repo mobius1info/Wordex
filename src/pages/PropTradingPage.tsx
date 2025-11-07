@@ -500,23 +500,23 @@ export default function PropTradingPage({ language = 'ru' }: PropTradingPageProp
   const accountData = {
     5000: {
       stages: [
-        { stage: 'Этап 1', profit: '8%', dailyLoss: '5%', totalLoss: '10%', timeframe: '3 дня' },
-        { stage: 'Этап 2', profit: '5%', dailyLoss: '5%', totalLoss: '10%', timeframe: '7 дней' },
-        { stage: 'Счет в управление', profit: 'До 90%', dailyLoss: '5%', totalLoss: '10%', timeframe: 'Бессрочно' }
+        { stage: 'Этап 1', balance: '$5,000', profit: '8%', dailyLoss: '5%', totalLoss: '10%', timeframe: '3 дня' },
+        { stage: 'Этап 2', balance: '$5,000', profit: '5%', dailyLoss: '5%', totalLoss: '10%', timeframe: '7 дней' },
+        { stage: 'Счет в управление', balance: '$5,000', profit: 'До 90%', dailyLoss: '5%', totalLoss: '10%', timeframe: 'Бессрочно' }
       ]
     },
     10000: {
       stages: [
-        { stage: 'Этап 1', profit: '10%', dailyLoss: '4%', totalLoss: '8%', timeframe: '5 дней' },
-        { stage: 'Этап 2', profit: '6%', dailyLoss: '4%', totalLoss: '8%', timeframe: '10 дней' },
-        { stage: 'Счет в управление', profit: 'До 85%', dailyLoss: '4%', totalLoss: '8%', timeframe: 'Бессрочно' }
+        { stage: 'Этап 1', balance: '$10,000', profit: '10%', dailyLoss: '4%', totalLoss: '8%', timeframe: '5 дней' },
+        { stage: 'Этап 2', balance: '$10,000', profit: '6%', dailyLoss: '4%', totalLoss: '8%', timeframe: '10 дней' },
+        { stage: 'Счет в управление', balance: '$10,000', profit: 'До 85%', dailyLoss: '4%', totalLoss: '8%', timeframe: 'Бессрочно' }
       ]
     },
     25000: {
       stages: [
-        { stage: 'Этап 1', profit: '12%', dailyLoss: '3%', totalLoss: '6%', timeframe: '7 дней' },
-        { stage: 'Этап 2', profit: '8%', dailyLoss: '3%', totalLoss: '6%', timeframe: '14 дней' },
-        { stage: 'Счет в управление', profit: 'До 80%', dailyLoss: '3%', totalLoss: '6%', timeframe: 'Бессрочно' }
+        { stage: 'Этап 1', balance: '$25,000', profit: '12%', dailyLoss: '3%', totalLoss: '6%', timeframe: '7 дней' },
+        { stage: 'Этап 2', balance: '$25,000', profit: '8%', dailyLoss: '3%', totalLoss: '6%', timeframe: '14 дней' },
+        { stage: 'Счет в управление', balance: '$25,000', profit: 'До 80%', dailyLoss: '3%', totalLoss: '6%', timeframe: 'Бессрочно' }
       ]
     }
   };
@@ -596,17 +596,19 @@ export default function PropTradingPage({ language = 'ru' }: PropTradingPageProp
                   <table className="w-full table-fixed">
                     <thead>
                       <tr className="border-b-2 border-gray-300">
-                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[15%]">Этап</th>
-                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[18%]">Цель прибыли</th>
-                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[22%]">Макс. дневная просадка</th>
-                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[22%]">Макс. общая просадка</th>
-                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[23%]">Минимум дней торговли</th>
+                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[12%]">Этап</th>
+                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[15%]">Начальный баланс счета</th>
+                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[15%]">Цель прибыли</th>
+                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[19%]">Макс. дневная просадка</th>
+                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[19%]">Макс. общая просадка</th>
+                        <th className="text-center py-3 px-4 font-bold text-gray-900 w-[20%]">Минимум дней торговли</th>
                       </tr>
                     </thead>
                     <tbody>
                       {accountData[selectedAccount as keyof typeof accountData].stages.map((row, index) => (
                         <tr key={index} className="border-b border-gray-200 hover:bg-blue-50 transition-colors">
                           <td className="py-4 px-4 font-semibold text-gray-800 text-center">{row.stage}</td>
+                          <td className="py-4 px-4 text-gray-700 text-center">{row.balance}</td>
                           <td className="py-4 px-4 text-gray-700 text-center">{row.profit}</td>
                           <td className="py-4 px-4 text-gray-700 text-center">{row.dailyLoss}</td>
                           <td className="py-4 px-4 text-gray-700 text-center">{row.totalLoss}</td>
