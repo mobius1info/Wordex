@@ -35,7 +35,7 @@ export default function HelpPage({ t }: HelpPageProps) {
             <p className="text-gray-600 mb-4">
               Send us your questions anytime
             </p>
-            <p className="text-purple-600 font-semibold">support@wforex.com</p>
+            <p className="text-purple-600 font-semibold">support@vantage-point.digital</p>
             <p className="text-sm text-gray-500 mt-2">Response within 2 hours</p>
           </div>
 

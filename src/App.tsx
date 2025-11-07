@@ -1586,7 +1586,7 @@ function App() {
             <div>
               <h4 className="text-white font-semibold mb-4">{t.footer.contacts}</h4>
               <div className="space-y-2 text-sm mb-4">
-                <p>Email: support@wforex.com</p>
+                <p>Email: support@vantage-point.digital</p>
                 <p>{t.footer.support}</p>
               </div>
             </div>
