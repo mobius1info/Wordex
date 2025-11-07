@@ -507,16 +507,16 @@ export default function PropTradingPage({ language = 'ru' }: PropTradingPageProp
     },
     10000: {
       stages: [
-        { stage: 'Этап 1', profit: '8%', dailyLoss: '5%', totalLoss: '10%', timeframe: '3 дня' },
-        { stage: 'Этап 2', profit: '5%', dailyLoss: '5%', totalLoss: '10%', timeframe: '7 дней' },
-        { stage: 'Счет в управление', profit: 'До 90%', dailyLoss: '5%', totalLoss: '10%', timeframe: 'Бессрочно' }
+        { stage: 'Этап 1', profit: '10%', dailyLoss: '4%', totalLoss: '8%', timeframe: '5 дней' },
+        { stage: 'Этап 2', profit: '6%', dailyLoss: '4%', totalLoss: '8%', timeframe: '10 дней' },
+        { stage: 'Счет в управление', profit: 'До 85%', dailyLoss: '4%', totalLoss: '8%', timeframe: 'Бессрочно' }
       ]
     },
     25000: {
       stages: [
-        { stage: 'Этап 1', profit: '8%', dailyLoss: '5%', totalLoss: '10%', timeframe: '3 дня' },
-        { stage: 'Этап 2', profit: '5%', dailyLoss: '5%', totalLoss: '10%', timeframe: '7 дней' },
-        { stage: 'Счет в управление', profit: 'До 90%', dailyLoss: '5%', totalLoss: '10%', timeframe: 'Бессрочно' }
+        { stage: 'Этап 1', profit: '12%', dailyLoss: '3%', totalLoss: '6%', timeframe: '7 дней' },
+        { stage: 'Этап 2', profit: '8%', dailyLoss: '3%', totalLoss: '6%', timeframe: '14 дней' },
+        { stage: 'Счет в управление', profit: 'До 80%', dailyLoss: '3%', totalLoss: '6%', timeframe: 'Бессрочно' }
       ]
     }
   };
