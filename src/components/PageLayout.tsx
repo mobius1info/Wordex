@@ -254,7 +254,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
                 <strong className="text-gray-400">Предупреждение о рисках:</strong> CFD являются сложными инструментами и несут высокий риск быстрой потери денег из-за кредитного плеча. Вы должны понимать, как работают CFD, и можете ли вы позволить себе рискнуть своими деньгами.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-                <p>&copy; 2011-2024 Vantage Point. Все права защищены.</p>
+                <p>&copy; 2021-2025 Vantage Point. Все права защищены.</p>
               </div>
             </div>
           </div>
