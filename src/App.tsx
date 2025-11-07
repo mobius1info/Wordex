@@ -3,7 +3,7 @@ import {
   Globe, DollarSign, Users,
   Smartphone, Monitor, Award, BarChart3, BookOpen, HelpCircle, Settings,
   Copy, Zap, Gift, CreditCard, ArrowRight, CheckCircle, Star, Download,
-  Clock, Target, Database, LineChart
+  Clock, Target, Database, LineChart, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import Header from './components/Header';
 
@@ -1222,6 +1222,20 @@ function App() {
               />
             ))}
           </div>
+          <button
+            onClick={() => setCurrentSlide((prev) => prev === 0 ? t.hero.slides.length - 1 : prev - 1)}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-3 rounded-full transition-all hover:scale-110 border border-white/20 group"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="h-6 w-6 group-hover:-translate-x-0.5 transition-transform" />
+          </button>
+          <button
+            onClick={() => setCurrentSlide((prev) => (prev + 1) % t.hero.slides.length)}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-3 rounded-full transition-all hover:scale-110 border border-white/20 group"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="h-6 w-6 group-hover:translate-x-0.5 transition-transform" />
+          </button>
         </section>
 
         <section className="py-20 bg-gradient-to-b from-white to-gray-50 -mt-20 relative z-10">
