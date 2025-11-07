@@ -1,38 +1,31 @@
 import { Mail, Phone, MapPin, MessageCircle, Send, Clock } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { contactsTranslations } from '../translations/contactsTranslations';
 
-export default function ContactsPage() {
+interface ContactsPageProps {
+  language?: 'ru' | 'uk' | 'en' | 'tr' | 'zh';
+}
+
+export default function ContactsPage({ language = 'ru' }: ContactsPageProps) {
+  const t = contactsTranslations[language] || contactsTranslations.ru;
+
   const contacts = [
     {
       icon: <Mail className="h-8 w-8 text-blue-600" />,
-      title: 'Email',
-      content: 'support@worldforex.com',
-      description: 'Ответим в течение 2 часов'
+      title: t.contacts[0].title,
+      content: t.contacts[0].content,
+      description: t.contacts[0].description
     },
     {
       icon: <Phone className="h-8 w-8 text-green-600" />,
-      title: 'Телефон',
-      content: '+1 (855) 123-4567',
-      description: 'Доступен 24/7'
+      title: t.contacts[1].title,
+      content: t.contacts[1].content,
+      description: t.contacts[1].description
     },
     {
       icon: <MessageCircle className="h-8 w-8 text-purple-600" />,
-      title: 'Онлайн-чат',
-      content: 'Написать в чат',
-      description: 'Мгновенные ответы'
-    }
-  ];
-
-  const offices = [
-    {
-      country: 'Сент-Винсент и Гренадины',
-      address: 'Suite 305, Griffith Corporate Centre, Beachmont, Kingstown',
-      description: 'Главный офис'
-    },
-    {
-      country: 'Сент-Люсия',
-      address: 'First Floor, First St Vincent Bank Ltd Building, James Street, Kingstown',
-      description: 'Региональный офис'
+      title: t.contacts[2].title,
+      content: t.contacts[2].content,
+      description: t.contacts[2].description
     }
   ];
 
@@ -40,9 +33,9 @@ export default function ContactsPage() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">Контакты</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">{t.title}</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Свяжитесь с нами любым удобным способом. Наша команда поддержки работает 24/7
+            {t.subtitle}
           </p>
         </div>
 
@@ -61,38 +54,38 @@ export default function ContactsPage() {
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Напишите нам</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">{t.form.title}</h2>
             <form className="space-y-6">
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Ваше имя</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">{t.form.nameLabel}</label>
                 <input
                   type="text"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Иван Иванов"
+                  placeholder={t.form.namePlaceholder}
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">{t.form.emailLabel}</label>
                 <input
                   type="email"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="ivan@example.com"
+                  placeholder={t.form.emailPlaceholder}
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Тема сообщения</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">{t.form.subjectLabel}</label>
                 <input
                   type="text"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Вопрос о торговле"
+                  placeholder={t.form.subjectPlaceholder}
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Сообщение</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">{t.form.messageLabel}</label>
                 <textarea
                   rows={5}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Ваше сообщение..."
+                  placeholder={t.form.messagePlaceholder}
                 ></textarea>
               </div>
               <button
@@ -100,16 +93,16 @@ export default function ContactsPage() {
                 className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center"
               >
                 <Send className="h-5 w-5 mr-2" />
-                Отправить сообщение
+                {t.form.submitButton}
               </button>
             </form>
           </div>
 
           <div>
             <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Наши офисы</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.offices.title}</h2>
               <div className="space-y-6">
-                {offices.map((office, index) => (
+                {t.offices.list.map((office, index) => (
                   <div key={index} className="border-l-4 border-blue-600 pl-4">
                     <div className="flex items-start mb-2">
                       <MapPin className="h-5 w-5 text-blue-600 mr-2 flex-shrink-0 mt-1" />
@@ -126,19 +119,19 @@ export default function ContactsPage() {
 
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-8">
               <Clock className="h-12 w-12 mb-4" />
-              <h3 className="text-2xl font-bold mb-3">Время работы</h3>
+              <h3 className="text-2xl font-bold mb-3">{t.workingHours.title}</h3>
               <div className="space-y-2 text-blue-100">
                 <p className="flex justify-between">
-                  <span>Поддержка:</span>
-                  <span className="font-semibold">24/7</span>
+                  <span>{t.workingHours.support}</span>
+                  <span className="font-semibold">{t.workingHours.supportTime}</span>
                 </p>
                 <p className="flex justify-between">
-                  <span>Торговля:</span>
-                  <span className="font-semibold">24/5</span>
+                  <span>{t.workingHours.trading}</span>
+                  <span className="font-semibold">{t.workingHours.tradingTime}</span>
                 </p>
                 <p className="flex justify-between">
-                  <span>Офис:</span>
-                  <span className="font-semibold">Пн-Пт 9:00-18:00</span>
+                  <span>{t.workingHours.office}</span>
+                  <span className="font-semibold">{t.workingHours.officeTime}</span>
                 </p>
               </div>
             </div>
@@ -146,12 +139,12 @@ export default function ContactsPage() {
         </div>
 
         <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg">
-          <h4 className="font-semibold text-blue-900 mb-3">Часто задаваемые вопросы</h4>
+          <h4 className="font-semibold text-blue-900 mb-3">{t.faq.title}</h4>
           <p className="text-blue-800 mb-4">
-            Перед тем как связаться с нами, ознакомьтесь с нашим разделом FAQ — возможно, вы найдете там ответ на свой вопрос.
+            {t.faq.text}
           </p>
           <button className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-            Перейти к FAQ
+            {t.faq.button}
           </button>
         </div>
       </div>
