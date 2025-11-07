@@ -507,8 +507,8 @@ export default function PropTradingPage({ language = 'ru' }: PropTradingPageProp
     },
     10000: {
       stages: [
-        { stage: 'Этап 1', balance: '$10,000', profit: '10%', dailyLoss: '4%', totalLoss: '8%', timeframe: '5 дней' },
-        { stage: 'Этап 2', balance: '$10,000', profit: '6%', dailyLoss: '4%', totalLoss: '8%', timeframe: '10 дней' },
+        { stage: 'Этап 1', balance: '$2,500', profit: '10%', dailyLoss: '4%', totalLoss: '8%', timeframe: '5 дней' },
+        { stage: 'Этап 2', balance: '$5,000', profit: '6%', dailyLoss: '4%', totalLoss: '8%', timeframe: '10 дней' },
         { stage: 'Счет в управление', balance: '$10,000', profit: 'До 85%', dailyLoss: '4%', totalLoss: '8%', timeframe: 'Бессрочно' }
       ]
     },
