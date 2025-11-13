@@ -109,7 +109,7 @@ const translations = {
     },
     platforms: {
       title: 'Торговая платформа',
-      subtitle: 'MetaTrader 4 и MetaTrader 5 - самые популярные платформы в мире',
+      subtitle: 'Vantage Trader 7 - самая популярная платформа в мире',
       feature1: {
         title: 'Для всех устройств',
         description: 'Windows, Mac, Android, iOS, Linux, WebTrader'
