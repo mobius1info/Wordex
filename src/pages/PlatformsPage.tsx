@@ -17,7 +17,7 @@ export default function PlatformsPage({ language = 'ru' }: PlatformsPageProps) {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="max-w-4xl mx-auto mb-12">
           <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-blue-600">
             <div className="flex items-center mb-6">
               <Monitor className="h-12 w-12 text-blue-600 mr-4" />
@@ -43,49 +43,6 @@ export default function PlatformsPage({ language = 'ru' }: PlatformsPageProps) {
               </button>
               <button className="flex-1 border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
                 {t.mt4.webButton}
-              </button>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-purple-600">
-            <div className="flex items-center mb-6">
-              <Monitor className="h-12 w-12 text-purple-600 mr-4" />
-              <h2 className="text-3xl font-bold text-gray-900">MetaTrader 5</h2>
-            </div>
-            <p className="text-gray-600 mb-6 text-lg">
-              Новое поколение торговых платформ с расширенными возможностями
-            </p>
-
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">Все функции MT4 + расширенные возможности</span>
-              </div>
-              <div className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">38 встроенных индикаторов</span>
-              </div>
-              <div className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">Больше таймфреймов для анализа</span>
-              </div>
-              <div className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">Экономический календарь встроен</span>
-              </div>
-              <div className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">Улучшенная система тестирования</span>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <button className="flex-1 bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors flex items-center justify-center">
-                <Download className="h-5 w-5 mr-2" />
-                Скачать MT5
-              </button>
-              <button className="flex-1 border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors">
-                Веб-версия
               </button>
             </div>
           </div>
