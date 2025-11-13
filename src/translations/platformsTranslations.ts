@@ -3,7 +3,7 @@ export const platformsTranslations = {
     title: 'Торговая платформа',
     subtitle: 'Профессиональные инструменты для успешной торговли на любом устройстве',
     mt4: {
-      title: 'MetaTrader 4',
+      title: 'Vantage Trader 7',
       description: 'Самая популярная торговая платформа в мире с миллионами пользователей',
       features: [
         'Удобный и интуитивный интерфейс',
@@ -12,7 +12,7 @@ export const platformsTranslations = {
         'Торговые сигналы и советники',
         'Встроенный маркет индикаторов'
       ],
-      downloadButton: 'Скачать MT4',
+      downloadButton: 'Скачать VT7',
       webButton: 'Веб-версия'
     },
     mt5: {
@@ -70,7 +70,7 @@ export const platformsTranslations = {
     title: 'Торгова платформа',
     subtitle: 'Професійні інструменти для успішної торгівлі на будь-якому пристрої',
     mt4: {
-      title: 'MetaTrader 4',
+      title: 'Vantage Trader 7',
       description: 'Найпопулярніша торгова платформа у світі з мільйонами користувачів',
       features: [
         'Зручний та інтуїтивний інтерфейс',
@@ -79,7 +79,7 @@ export const platformsTranslations = {
         'Торгові сигнали та радники',
         'Вбудований маркет індикаторів'
       ],
-      downloadButton: 'Завантажити MT4',
+      downloadButton: 'Завантажити VT7',
       webButton: 'Веб-версія'
     },
     mt5: {
@@ -137,7 +137,7 @@ export const platformsTranslations = {
     title: 'Trading Platforms',
     subtitle: 'Professional tools for successful trading on any device',
     mt4: {
-      title: 'MetaTrader 4',
+      title: 'Vantage Trader 7',
       description: 'The world\'s most popular trading platform with millions of users',
       features: [
         'User-friendly and intuitive interface',
@@ -146,7 +146,7 @@ export const platformsTranslations = {
         'Trading signals and advisors',
         'Built-in indicators market'
       ],
-      downloadButton: 'Download MT4',
+      downloadButton: 'Download VT7',
       webButton: 'Web Version'
     },
     mt5: {
@@ -204,7 +204,7 @@ export const platformsTranslations = {
     title: 'Ticaret Platformları',
     subtitle: 'Her cihazda başarılı ticaret için profesyonel araçlar',
     mt4: {
-      title: 'MetaTrader 4',
+      title: 'Vantage Trader 7',
       description: 'Milyonlarca kullanıcıyla dünyanın en popüler ticaret platformu',
       features: [
         'Kullanıcı dostu ve sezgisel arayüz',
@@ -213,7 +213,7 @@ export const platformsTranslations = {
         'Ticaret sinyalleri ve danışmanlar',
         'Yerleşik gösterge pazarı'
       ],
-      downloadButton: 'MT4 İndir',
+      downloadButton: 'VT7 İndir',
       webButton: 'Web Sürümü'
     },
     mt5: {
@@ -271,7 +271,7 @@ export const platformsTranslations = {
     title: '交易平台',
     subtitle: '适用于任何设备的专业成功交易工具',
     mt4: {
-      title: 'MetaTrader 4',
+      title: 'Vantage Trader 7',
       description: '拥有数百万用户的全球最受欢迎的交易平台',
       features: [
         '用户友好且直观的界面',
@@ -280,7 +280,7 @@ export const platformsTranslations = {
         '交易信号和顾问',
         '内置指标市场'
       ],
-      downloadButton: '下载MT4',
+      downloadButton: '下载VT7',
       webButton: '网页版'
     },
     mt5: {
