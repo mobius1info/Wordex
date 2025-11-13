@@ -1443,11 +1443,7 @@ function App() {
                 <div className="flex flex-wrap gap-4">
                   <button className="group bg-white text-gray-900 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all inline-flex items-center shadow-xl hover:scale-105 transform">
                     <Download className="h-5 w-5 mr-2" />
-                    MetaTrader 4
-                  </button>
-                  <button className="group bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all inline-flex items-center hover:scale-105 transform">
-                    <Download className="h-5 w-5 mr-2" />
-                    MetaTrader 5
+                    Vantage Trader 7
                   </button>
                 </div>
               </div>
