@@ -108,7 +108,7 @@ const translations = {
       }
     },
     platforms: {
-      title: 'Торговые платформы',
+      title: 'Торговая платформа',
       subtitle: 'MetaTrader 4 и MetaTrader 5 - самые популярные платформы в мире',
       feature1: {
         title: 'Для всех устройств',
@@ -173,7 +173,7 @@ const translations = {
       contacts: 'Контакты',
       copyTrading: 'Копи-трейдинг',
       forexCFD: 'Forex/CFD',
-      platforms: 'Торговые платформы',
+      platforms: 'Торговая платформа',
       about: 'О компании',
       documents: 'Документы',
       analytics: 'Аналитика',
@@ -1403,7 +1403,7 @@ function App() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-semibold mb-6 border border-white/20">
-                  Торговые платформы
+                  Торговая платформа
                 </div>
                 <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
                   {t.platforms.title}

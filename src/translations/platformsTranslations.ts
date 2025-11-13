@@ -1,6 +1,6 @@
 export const platformsTranslations = {
   ru: {
-    title: 'Торговые платформы',
+    title: 'Торговая платформа',
     subtitle: 'Профессиональные инструменты для успешной торговли на любом устройстве',
     mt4: {
       title: 'MetaTrader 4',
@@ -67,7 +67,7 @@ export const platformsTranslations = {
     }
   },
   uk: {
-    title: 'Торгові платформи',
+    title: 'Торгова платформа',
     subtitle: 'Професійні інструменти для успішної торгівлі на будь-якому пристрої',
     mt4: {
       title: 'MetaTrader 4',

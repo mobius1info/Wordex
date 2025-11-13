@@ -12,7 +12,7 @@ export const simplePageTranslations = {
     aboutCompany: { title: 'О компании', subtitle: 'Информация о нашей компании' },
     contacts: { title: 'Контакты', subtitle: 'Свяжитесь с нами' },
     tradingInstruments: { title: 'Торговые инструменты', subtitle: 'Доступные активы для торговли' },
-    platforms: { title: 'Торговые платформы', subtitle: 'MetaTrader 4 и MetaTrader 5' },
+    platforms: { title: 'Торговая платформа', subtitle: 'MetaTrader 4 и MetaTrader 5' },
     accountTypes: { title: 'Типы счетов', subtitle: 'Выберите подходящий торговый счет' }
   },
   en: {
@@ -44,7 +44,7 @@ export const simplePageTranslations = {
     aboutCompany: { title: 'Про компанію', subtitle: 'Інформація про нашу компанію' },
     contacts: { title: 'Контакти', subtitle: "Зв'яжіться з нами" },
     tradingInstruments: { title: 'Торгові інструменти', subtitle: 'Доступні активи для торгівлі' },
-    platforms: { title: 'Торгові платформи', subtitle: 'MetaTrader 4 та MetaTrader 5' },
+    platforms: { title: 'Торгова платформа', subtitle: 'MetaTrader 4 та MetaTrader 5' },
     accountTypes: { title: 'Типи рахунків', subtitle: 'Оберіть відповідний торговий рахунок' }
   },
   tr: {
