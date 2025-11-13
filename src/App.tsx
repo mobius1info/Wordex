@@ -1441,9 +1441,11 @@ function App() {
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-4">
-                  <button className="group bg-white text-gray-900 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all inline-flex items-center shadow-xl hover:scale-105 transform">
-                    <Download className="h-5 w-5 mr-2" />
-                    Vantage Trader 7
+                  <button className="group relative bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-500 text-white px-10 py-5 rounded-2xl font-bold hover:shadow-2xl transition-all inline-flex items-center overflow-hidden hover:scale-105 transform">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <Download className="h-6 w-6 mr-3 relative z-10 group-hover:animate-bounce" />
+                    <span className="relative z-10 text-lg tracking-wide">Vantage Trader 7</span>
+                    <div className="absolute -right-8 -top-8 w-24 h-24 bg-white/20 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
                   </button>
                 </div>
               </div>
