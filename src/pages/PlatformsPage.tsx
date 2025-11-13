@@ -17,33 +17,51 @@ export default function PlatformsPage({ language = 'ru' }: PlatformsPageProps) {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto mb-12">
-          <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-blue-600">
-            <div className="flex items-center mb-6">
-              <Monitor className="h-12 w-12 text-blue-600 mr-4" />
-              <h2 className="text-3xl font-bold text-gray-900">{t.mt4.title}</h2>
-            </div>
-            <p className="text-gray-600 mb-6 text-lg">
-              {t.mt4.description}
-            </p>
+        <div className="max-w-5xl mx-auto mb-16">
+          <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 rounded-3xl shadow-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-teal-500/10"></div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-blue-600/20 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal-400/20 to-cyan-600/20 rounded-full blur-3xl"></div>
 
-            <div className="space-y-4 mb-8">
-              {t.mt4.features.map((feature, idx) => (
-                <div key={idx} className="flex items-start">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">{feature}</span>
+            <div className="relative p-10">
+              <div className="flex items-center mb-8">
+                <div className="bg-gradient-to-br from-cyan-400 to-blue-500 p-4 rounded-2xl shadow-lg mr-6">
+                  <Monitor className="h-14 w-14 text-white" />
                 </div>
-              ))}
-            </div>
+                <div>
+                  <h2 className="text-4xl font-bold text-white mb-2">{t.mt4.title}</h2>
+                  <div className="flex items-center gap-2">
+                    <div className="h-1.5 w-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
+                    <span className="text-cyan-300 text-sm font-semibold">Professional Trading Platform</span>
+                  </div>
+                </div>
+              </div>
 
-            <div className="flex gap-4">
-              <button className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center">
-                <Download className="h-5 w-5 mr-2" />
-                {t.mt4.downloadButton}
-              </button>
-              <button className="flex-1 border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-                {t.mt4.webButton}
-              </button>
+              <p className="text-gray-200 mb-8 text-lg leading-relaxed">
+                {t.mt4.description}
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-4 mb-10">
+                {t.mt4.features.map((feature, idx) => (
+                  <div key={idx} className="flex items-start bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/10 transition-all">
+                    <div className="bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg p-1.5 mr-3 flex-shrink-0">
+                      <CheckCircle className="h-5 w-5 text-white" />
+                    </div>
+                    <span className="text-gray-100 font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex gap-4">
+                <button className="group relative flex-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-teal-500 text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl transition-all flex items-center justify-center overflow-hidden hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Download className="h-6 w-6 mr-3 relative z-10 group-hover:animate-bounce" />
+                  <span className="relative z-10 text-lg">{t.mt4.downloadButton}</span>
+                </button>
+                <button className="flex-1 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all hover:scale-105">
+                  {t.mt4.webButton}
+                </button>
+              </div>
             </div>
           </div>
         </div>
