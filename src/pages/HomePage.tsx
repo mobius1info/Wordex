@@ -39,9 +39,14 @@ export default function HomePage({ t, currentSlide, setCurrentSlide }: HomePageP
                     <button className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">
                       {t.hero.learnMore}
                     </button>
-                    <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-colors">
+                    <a
+                      href="https://cabinet.vantage-point.digital/auth/registration"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-colors"
+                    >
                       {t.hero.openAccount}
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -432,12 +437,22 @@ export default function HomePage({ t, currentSlide, setCurrentSlide }: HomePageP
             {t.cta.subtitle}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-red-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-700 transition-colors shadow-lg">
+            <a
+              href="https://cabinet.vantage-point.digital/auth/registration"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-red-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-700 transition-colors shadow-lg"
+            >
               {t.cta.openReal}
-            </button>
-            <button className="bg-white text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors">
+            </a>
+            <a
+              href="https://cabinet.vantage-point.digital/auth/registration"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
               {t.cta.tryDemo}
-            </button>
+            </a>
           </div>
           <p className="mt-6 text-blue-200 text-sm">
             {t.cta.features}

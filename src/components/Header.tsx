@@ -164,13 +164,23 @@ export default function Header({
                 )}
               </div>
 
-              <button className="hidden md:block bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+              <a
+                href="https://cabinet.vantage-point.digital/auth/registration"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:block bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              >
                 {t.nav.openAccount}
-              </button>
+              </a>
 
-              <button className="hidden md:block text-blue-600 font-semibold hover:text-blue-700">
+              <a
+                href="https://cabinet.vantage-point.digital/auth/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:block text-blue-600 font-semibold hover:text-blue-700"
+              >
                 {t.nav.login}
-              </button>
+              </a>
 
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -291,12 +301,22 @@ export default function Header({
 
               {/* Action Buttons */}
               <div className="space-y-3 border-t border-gray-200 pt-4">
-                <button className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                <a
+                  href="https://cabinet.vantage-point.digital/auth/registration"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center"
+                >
                   {t.nav.openAccount}
-                </button>
-                <button className="w-full text-blue-600 font-semibold hover:text-blue-700 py-2">
+                </a>
+                <a
+                  href="https://cabinet.vantage-point.digital/auth/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-blue-600 font-semibold hover:text-blue-700 py-2 text-center"
+                >
                   {t.nav.login}
-                </button>
+                </a>
               </div>
             </div>
           </div>
