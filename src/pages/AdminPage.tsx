@@ -34,15 +34,20 @@ export default function AdminPage() {
       return;
     }
 
-    const { data, error } = await supabase
-      .from('news')
-      .select('*')
-      .order('created_at', { ascending: false });
+    try {
+      const { data, error } = await supabase
+        .from('news')
+        .select('*')
+        .order('created_at', { ascending: false });
 
-    if (error) {
-      alert('Ошибка загрузки новостей: ' + error.message);
-    } else {
-      setNews(data || []);
+      if (error) {
+        console.error('Error loading news:', error);
+        alert('Ошибка загрузки новостей: ' + error.message);
+      } else {
+        setNews(data || []);
+      }
+    } catch (error) {
+      console.error('Unexpected error loading news:', error);
     }
   };
 
@@ -298,17 +303,10 @@ export default function AdminPage() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      loadNews();
+      setLoading(true);
+      loadNews().finally(() => setLoading(false));
     }
   }, [isAuthenticated]);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-xl text-gray-600">Загрузка...</div>
-      </div>
-    );
-  }
 
   if (!isAuthenticated) {
     return (
@@ -498,8 +496,15 @@ export default function AdminPage() {
           </div>
         )}
 
+        {loading && (
+          <div className="text-center py-8">
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-600 border-t-transparent"></div>
+            <p className="text-gray-600 mt-4">Загрузка новостей...</p>
+          </div>
+        )}
+
         <div className="space-y-4">
-          {news.map((item) => (
+          {!loading && news.map((item) => (
             <div key={item.id} className="bg-white rounded-xl shadow-md p-6">
               {editingId === item.id ? (
                 <div className="space-y-4">
@@ -634,7 +639,7 @@ export default function AdminPage() {
           ))}
         </div>
 
-        {news.length === 0 && (
+        {!loading && news.length === 0 && (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">Новостей пока нет</p>
           </div>
